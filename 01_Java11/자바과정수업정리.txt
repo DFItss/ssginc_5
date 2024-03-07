@@ -119,6 +119,9 @@ https://docs.oracle.com/en/java/javase/11/docs/api/java.base/module-summary.html
 
 
 2) public static  void main( String [] args ) 필수
+ ==> 반드시 위 코드 형식으로 지정해야 된다.
+ ==> main 메서드라고 부른다.
+ ==> 실행하기 위한 시작점(starting point ) 역할이다.
 
 # 생성된 소스
 public class Hello {
@@ -126,14 +129,14 @@ public class Hello {
 	public static void main(String[] args) {
 
 	}
-
 }
 
 ==> 클래스명(Hello)과 파일명(Hello.java)이 일치해야 된다.
 ==> 대소문자 구별
-==> 클래스 갯수는 2개 
+==> 클래스 갯수는 3개 
      Hello: 개발자가 만든 클래스
      String: API
+     System: API
 
 
 ==> Hello.java 소스파일 작성
@@ -141,5 +144,7 @@ public class Hello {
     Hello.class (byte code, package explore에서는 안보임. navigator에서 보임 )
         |     실행, 인터프리터 ( java.exe )
        결과   ( 콘솔(console)에 결과값이 출력됨 )	    
+
+
 
 ######################################################
