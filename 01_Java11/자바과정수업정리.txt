@@ -101,3 +101,45 @@ Module는 체크 해제하기.
 #############################
 API의 메뉴얼 제공: API문서 ( API documentation)
 https://docs.oracle.com/en/java/javase/11/docs/api/java.base/module-summary.html
+
+#######################
+소스파일 작성 ( *.java )
+
+1) 클래스 이름지정 방법
+   - 반드시 첫글자는 영문자 또는 _ 또는 $ 만 가능
+     이후에 숫자지정 가능.
+
+   - 대소문자 구별
+
+   - 클래스는 첫글자는 반드시 대문자로 지정 ( 관례 )
+
+   - 특수문자는 2개만 가능 ( _, $ )
+
+   - 단어간 공백문자 불가
+
+
+2) public static  void main( String [] args ) 필수
+
+# 생성된 소스
+public class Hello {
+
+	public static void main(String[] args) {
+
+	}
+
+}
+
+==> 클래스명(Hello)과 파일명(Hello.java)이 일치해야 된다.
+==> 대소문자 구별
+==> 클래스 갯수는 2개 
+     Hello: 개발자가 만든 클래스
+     String: API
+
+
+==> Hello.java 소스파일 작성
+        |     컴파일, 컴파일러( javac.exe ), eclipse가 자동으로 해줌.
+    Hello.class (byte code, package explore에서는 안보임. navigator에서 보임 )
+        |     실행, 인터프리터 ( java.exe )
+       결과   ( 콘솔(console)에 결과값이 출력됨 )	    
+
+######################################################
