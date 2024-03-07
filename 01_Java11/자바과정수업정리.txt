@@ -1,0 +1,74 @@
+회원가입
+1. 구글
+2. github
+3. 오라클
+   www.oracle.com
+
+
+JDK 다운로드
+java.oracle.com
+(https://www.oracle.com/java/technologies/)
+
+
+java 개발 환경 3가지 ( 기준: 디바이스:장치)
+
+1) Java SE ( Java Standard Edition)
+   - 일반 PC
+   - Java 기술
+   - JDK 설치함으로 구축 가능
+
+2) Java EE ( Java Enterprise Edition)
+   - 웹서버 ( Tomcat 9 )
+    예> 웹 페이지 개발
+   - 서블릿,JSP
+   - Tomcat 설치함으로 구축 가능
+
+3) Java ME ( Java Micro Edition)
+   - 휴대용 장치
+    
+
+JDK(Java Development Kit) 설치
+기본설치폴더(JDK홈디렉터리):
+C:\Program Files\Java\jdk-11
+
+환경변수 설정
+시작오른쪽클릭> 시스템 > 고급 시스템 설정 > 환경변수 > 시스템 변수
+# JAVA_HOME용도: JDK홈디렉터리 지정
+JAVA_HOME=C:\Program Files\Java\jdk-11
+
+# path용도: 명령어 경로 지정
+javac.exe  java.exe 
+PATH=C:\Program Files\Java\jdk-11;값2;값3
+
+
+자바에서 사용되는 압축 형식 3가지
+1) jar
+  - *.class 파일들이 압축된 형식
+  예> *.jar
+
+2) war
+  - 서블릿/jsp로 만든 웹 어플리케이션 압축된 형식
+  예> *.war
+ 
+3) ear
+  - jar + war ===> ear로 압축
+   예> *.ear
+
+
+eclipse 개발 도구 ( IDE 툴 )
+- 인텔리제이
+  www.jetbrains.com
+- VSC
+
+www.eclipse.org
+
+download > Download Packages
+주의할점 2가지
+1) JDK 버전 확인
+2) SE 환경 개발?
+     - 비웹개발
+     Eclipse IDE for Java Developers
+
+   EE 환경 개발?
+     - 웹개발
+     Eclipse IDE for Enterprise Java and Web Developers
