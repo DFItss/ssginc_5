@@ -72,3 +72,32 @@ download > Download Packages
    EE 환경 개발?
      - 웹개발
      Eclipse IDE for Enterprise Java and Web Developers
+
+eclipse 설치후 설정
+
+window > preference > 
+general > workspace 
+> text file encoding 값을 utf-8로 설정.
+==> utf-8로 설정해야 한글사용이 가능
+
+window > preference > 
+general > Appearance > Colors and Fonts 
+> Basic  > Text Font
+==> 글꼴설정
+
+window > preference > Java
+> Installed JREs
+
+==> eclipse에 내장된 openjdk 대신에
+   우리가 설치한 jdk11 사용하도록 변경하자.
+###########################################
+프로젝트 생성
+File > New  > Java Project 선택 
+
+Project Name 지정,
+JRE는 JavaSE-11 설정,
+Module는 체크 해제하기.
+
+#############################
+API의 메뉴얼 제공: API문서 ( API documentation)
+https://docs.oracle.com/en/java/javase/11/docs/api/java.base/module-summary.html
