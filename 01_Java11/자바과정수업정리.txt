@@ -411,6 +411,7 @@ Hello.class (byte code, 자바인식이 가능)
 
   1) 용도
     - 데이터 저장 ( 기본형 데이터 및 참조형 데이터 저장용도 )
+    - 언제든지 값이 변경될 수 있음.
 
   2)사용방법 3단계
     (1) 변수선언
@@ -418,8 +419,8 @@ Hello.class (byte code, 자바인식이 가능)
 	- 문법:
 
 	    데이터타입 변수명;
-         예>  int num;
-	     String name;
+         예>  int num;      // int 때문에 4byte 영역확보
+	     String name;  // String 참조형이기 때문에 4byte 영역확보
 
     (2) 변수초기화
         - 생성된 변수에 처음 값을 저장하는 작업
@@ -430,13 +431,30 @@ Hello.class (byte code, 자바인식이 가능)
 	     name = "홍길동";
 
     (3) 변수 사용
-       System.out.println(num);
+       System.out.println(num);  // 19
        System.out.println(name);
 
 
+     (4) 변수값 변경
+        num=29;
+        System.out.println(num);  // 29
 
 
+4. 기본형 변수 vs 참조형 변수
 
+  1) 기본형 변수
+    - 기본형 데이터를 저장하는 변수
+    예> 
+        int num;   // 실제값이 저장
+	num = 20;
+    
+    ==> num 변수안에 20이 저장됨.
 
+  2) 참조형 변수
+    - 참조형 데이터를 저장하는 변수
+   
+   예>
+       String name;  // 주소값이 저장
+       name ="홍길동";
 
-
+   ==> name 변수 안에 "홍길동"이 저장된 주소값이 저장됨.
