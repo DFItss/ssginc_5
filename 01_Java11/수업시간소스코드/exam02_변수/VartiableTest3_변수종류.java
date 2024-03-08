@@ -13,7 +13,10 @@ public class VartiableTest3_변수종류 {
 		// 메서드 안
 		int num = 10; //로컬 변수
 		
-
+		int num2=0;     //로컬 변수, 초기화
+		System.out.println(num);
+		System.out.println(num2);
+		
 	}//main 메서드 영역
 	
 }// class 영역
