@@ -19,7 +19,7 @@ public class VartiableTest1 {
 		float weight;   // 4byte , weight는 기본형 변수
 		boolean isMarried; // 1byte , isMarried는 기본형 변수
 		
-		// 2. 변수초기화 => 생성된 변수에 처음 값을 저장하는 작업
+		// 2. 변수 초기화 => 생성된 변수에 처음 값을 저장하는 작업
 		// 문법: 변수명=값;
 		name="홍길동";
 		age=20;
