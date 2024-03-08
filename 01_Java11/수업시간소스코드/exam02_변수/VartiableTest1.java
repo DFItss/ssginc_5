@@ -24,16 +24,21 @@ public class VartiableTest1 {
 		name="홍길동";
 		age=20;
 		address="서울";
-		height=182.45;
-		weight=67.22F;
+		height=182.45D;   // doubel(8byte)  = float(4byte)
+		weight=67.22F;    
 		isMarried=false;
 		
 		//3. 변수사용
 		System.out.println(name);
-		System.out.println(age);
+		System.out.println(age);  // 20
 		System.out.println(address);
 		System.out.println(height);
 		System.out.println(weight);
 		System.out.println(isMarried);
+		
+		//4. 변수값 변경
+		age= 30;
+		System.out.println(age);  // 30
+		
 	}
 }
