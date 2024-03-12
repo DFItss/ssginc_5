@@ -25,5 +25,13 @@ public class Operator06_3항연산자 {
 		System.out.println(result2);
 		
 		
+		// 3항 연산자 중첩
+		
+		// 문법:   (조건식)?참문장:거짓문장;
+		// 참문장 또는 거짓문장이 새로운 3항연산자가 될 수 있다.
+		
+		int result3 = (100>200)?(100>50)?100:200:(100 < 150 )?300:400;
+		System.out.println(result3); // 300
+		
 	}
 }
