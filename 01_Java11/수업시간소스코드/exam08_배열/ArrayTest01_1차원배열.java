@@ -29,6 +29,7 @@ public class ArrayTest01_1차원배열 {
 		System.out.println(num[0]);
 		System.out.println(num[1]);
 		System.out.println(num[2]);
+		//System.out.println(num[3]); // 없는 요소 접근시 예외 발생됨. java.lang.ArrayIndexOutOfBoundsException
 		
 	}//end main
 }//end class
