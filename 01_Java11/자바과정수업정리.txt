@@ -1216,5 +1216,60 @@ https://raccoonjy.tistory.com/10
 	 System.out.println(num[0]);
 	 System.out.println(num[1]);
 	 System.out.println(num[2]);
-
+         //System.out.println(num[3]); // 없는 요소 접근시 예외 발생됨. java.lang.ArrayIndexOutOfBoundsException
 	 System.out.println(num.length)
+
+
+    4) 배열요소 접근 방법
+
+       가. 직접 인덱스 지정
+         예> num[0]
+	  ==> 접근할 요소가 많으면 비효율적임.
+
+       나. (일반) for문 이용
+         예>
+	    for(int idx=0; idx < num.length; idx++){
+               System.out.println( num[idx] );
+	    }
+	  ==> 단점은 조건을 잘못 지정하면 예외가 발생된다.
+	   
+       다. 향상된 for문 ( foreach 문 )
+
+          문법: 
+	        for(변수: 배열명 ){
+
+		}
+
+         예>  for( int n : num ){
+		 System.out.println(n);
+	      }
+
+
+10. new 이용한 방법 이외의 방법 2가지 살펴보기
+ 
+    1) new 이용
+      예> int [] num;
+          num = new int[3];
+          num[0]=10;
+	  num[1]=20;
+	  num[2]=30;
+
+    2) 리터럴(값) 이용 ( ************ )
+    문법:
+          데이터형 [] 배열명 = { 값, 값2, 값3,....  };
+     
+      예> int [] num = {10, 20, 30};
+
+    특징: 한번에 구현해야 된다.
+
+         int [] num;
+	  num = {10, 20, 30}; // 에러 발생
+
+    3) new + 리터럴 혼합 형태 ( *********)
+
+    문법:
+          데이터형 [] 배열명;
+	  배열명= new 데이터형[]{ 값, 값2, 값3,....  };
+     
+      예> int [] num;
+          num = new int[]{10, 20, 30};
