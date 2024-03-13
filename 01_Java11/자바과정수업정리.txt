@@ -1112,3 +1112,32 @@ https://raccoonjy.tistory.com/10
    하지만 do~while 문은 나중에 조건식이 실행되기 때문에 조건이 처음부터 false라도 반드시 1번은 문장이 실행된다.
    
    결론은 조건과 무관하게 무조건 1번은 실행해야되는 경우라면 do~while문을 사용한다.
+
+
+8. break문, continue문
+ 
+  1) break문
+   용도:  반복문을 빠져나올때 사용.
+   문법:
+         if(조건식)break;
+
+        for(int n=1; n <= 5; n++ ){
+	      //n값이 3일때 중단
+              if(n==3)break; //1128라인으로 점프
+              System.out.println("hello");
+	}
+
+        System.out.println("END");
+
+    
+  2) continue 문
+   용도: 반복해야되는 여러 문장들중 특정문장들을 특정회차에서 skip할 때 사용.
+   문법:
+         if(조건식)continue;
+
+	for(int n=1; n <= 5; n++ ){
+	   if(n==3)continue;  // 1141라인으로 점프. 반복문의 끝(})으로 ...
+           System.out.println("hello" + n);
+	}
+
+        System.out.println("END");
