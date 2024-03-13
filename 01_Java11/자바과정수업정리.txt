@@ -1,129 +1,129 @@
-íšŒì›ê°€ìž…
-1. êµ¬ê¸€
+È¸¿ø°¡ÀÔ
+1. ±¸±Û
 2. github
-3. ì˜¤ë¼í´
+3. ¿À¶óÅ¬
    www.oracle.com
 
 
-JDK ë‹¤ìš´ë¡œë“œ
+JDK ´Ù¿î·Îµå
 java.oracle.com
 (https://www.oracle.com/java/technologies/)
 
 
-java ê°œë°œ í™˜ê²½ 3ê°€ì§€ ( ê¸°ì¤€: ë””ë°”ì´ìŠ¤:ìž¥ì¹˜)
+java °³¹ß È¯°æ 3°¡Áö ( ±âÁØ: µð¹ÙÀÌ½º:ÀåÄ¡)
 
 1) Java SE ( Java Standard Edition)
-   - ì¼ë°˜ PC
-   - Java ê¸°ìˆ 
-   - JDK ì„¤ì¹˜í•¨ìœ¼ë¡œ êµ¬ì¶• ê°€ëŠ¥
+   - ÀÏ¹Ý PC
+   - Java ±â¼ú
+   - JDK ¼³Ä¡ÇÔÀ¸·Î ±¸Ãà °¡´É
 
 2) Java EE ( Java Enterprise Edition)
-   - ì›¹ì„œë²„ ( Tomcat 9 )
-    ì˜ˆ> ì›¹ íŽ˜ì´ì§€ ê°œë°œ
-   - ì„œë¸”ë¦¿,JSP
-   - Tomcat ì„¤ì¹˜í•¨ìœ¼ë¡œ êµ¬ì¶• ê°€ëŠ¥
+   - À¥¼­¹ö ( Tomcat 9 )
+    ¿¹> À¥ ÆäÀÌÁö °³¹ß
+   - ¼­ºí¸´,JSP
+   - Tomcat ¼³Ä¡ÇÔÀ¸·Î ±¸Ãà °¡´É
 
 3) Java ME ( Java Micro Edition)
-   - íœ´ëŒ€ìš© ìž¥ì¹˜
+   - ÈÞ´ë¿ë ÀåÄ¡
     
 
-JDK(Java Development Kit) ì„¤ì¹˜
-ê¸°ë³¸ì„¤ì¹˜í´ë”(JDKí™ˆë””ë ‰í„°ë¦¬):
+JDK(Java Development Kit) ¼³Ä¡
+±âº»¼³Ä¡Æú´õ(JDKÈ¨µð·ºÅÍ¸®):
 C:\Program Files\Java\jdk-11
 
-í™˜ê²½ë³€ìˆ˜ ì„¤ì •
-ì‹œìž‘ì˜¤ë¥¸ìª½í´ë¦­> ì‹œìŠ¤í…œ > ê³ ê¸‰ ì‹œìŠ¤í…œ ì„¤ì • > í™˜ê²½ë³€ìˆ˜ > ì‹œìŠ¤í…œ ë³€ìˆ˜
-# JAVA_HOMEìš©ë„: JDKí™ˆë””ë ‰í„°ë¦¬ ì§€ì •
+È¯°æº¯¼ö ¼³Á¤
+½ÃÀÛ¿À¸¥ÂÊÅ¬¸¯> ½Ã½ºÅÛ > °í±Þ ½Ã½ºÅÛ ¼³Á¤ > È¯°æº¯¼ö > ½Ã½ºÅÛ º¯¼ö
+# JAVA_HOME¿ëµµ: JDKÈ¨µð·ºÅÍ¸® ÁöÁ¤
 JAVA_HOME=C:\Program Files\Java\jdk-11
 
-# pathìš©ë„: ëª…ë ¹ì–´ ê²½ë¡œ ì§€ì •
+# path¿ëµµ: ¸í·É¾î °æ·Î ÁöÁ¤
 javac.exe  java.exe 
-PATH=C:\Program Files\Java\jdk-11;ê°’2;ê°’3
+PATH=C:\Program Files\Java\jdk-11;°ª2;°ª3
 
 
-ìžë°”ì—ì„œ ì‚¬ìš©ë˜ëŠ” ì••ì¶• í˜•ì‹ 3ê°€ì§€
+ÀÚ¹Ù¿¡¼­ »ç¿ëµÇ´Â ¾ÐÃà Çü½Ä 3°¡Áö
 1) jar
-  - *.class íŒŒì¼ë“¤ì´ ì••ì¶•ëœ í˜•ì‹
-  ì˜ˆ> *.jar
+  - *.class ÆÄÀÏµéÀÌ ¾ÐÃàµÈ Çü½Ä
+  ¿¹> *.jar
 
 2) war
-  - ì„œë¸”ë¦¿/jspë¡œ ë§Œë“  ì›¹ ì–´í”Œë¦¬ì¼€ì´ì…˜ ì••ì¶•ëœ í˜•ì‹
-  ì˜ˆ> *.war
+  - ¼­ºí¸´/jsp·Î ¸¸µç À¥ ¾îÇÃ¸®ÄÉÀÌ¼Ç ¾ÐÃàµÈ Çü½Ä
+  ¿¹> *.war
  
 3) ear
-  - jar + war ===> earë¡œ ì••ì¶•
-   ì˜ˆ> *.ear
+  - jar + war ===> ear·Î ¾ÐÃà
+   ¿¹> *.ear
 
 
-eclipse ê°œë°œ ë„êµ¬ ( IDE íˆ´ )
-- ì¸í…”ë¦¬ì œì´
+eclipse °³¹ß µµ±¸ ( IDE Åø )
+- ÀÎÅÚ¸®Á¦ÀÌ
   www.jetbrains.com
 - VSC
 
 www.eclipse.org
 
 download > Download Packages
-ì£¼ì˜í• ì  2ê°€ì§€
-1) JDK ë²„ì „ í™•ì¸
-2) SE í™˜ê²½ ê°œë°œ?
-     - ë¹„ì›¹ê°œë°œ
+ÁÖÀÇÇÒÁ¡ 2°¡Áö
+1) JDK ¹öÀü È®ÀÎ
+2) SE È¯°æ °³¹ß?
+     - ºñÀ¥°³¹ß
      Eclipse IDE for Java Developers
 
-   EE í™˜ê²½ ê°œë°œ?
-     - ì›¹ê°œë°œ
+   EE È¯°æ °³¹ß?
+     - À¥°³¹ß
      Eclipse IDE for Enterprise Java and Web Developers
 
-eclipse ì„¤ì¹˜í›„ ì„¤ì •
+eclipse ¼³Ä¡ÈÄ ¼³Á¤
 
 window > preference > 
 general > workspace 
-> text file encoding ê°’ì„ utf-8ë¡œ ì„¤ì •.
-==> utf-8ë¡œ ì„¤ì •í•´ì•¼ í•œê¸€ì‚¬ìš©ì´ ê°€ëŠ¥
+> text file encoding °ªÀ» utf-8·Î ¼³Á¤.
+==> utf-8·Î ¼³Á¤ÇØ¾ß ÇÑ±Û»ç¿ëÀÌ °¡´É
 
 window > preference > 
 general > Appearance > Colors and Fonts 
 > Basic  > Text Font
-==> ê¸€ê¼´ì„¤ì •
+==> ±Û²Ã¼³Á¤
 
 window > preference > Java
 > Installed JREs
 
-==> eclipseì— ë‚´ìž¥ëœ openjdk ëŒ€ì‹ ì—
-   ìš°ë¦¬ê°€ ì„¤ì¹˜í•œ jdk11 ì‚¬ìš©í•˜ë„ë¡ ë³€ê²½í•˜ìž.
+==> eclipse¿¡ ³»ÀåµÈ openjdk ´ë½Å¿¡
+   ¿ì¸®°¡ ¼³Ä¡ÇÑ jdk11 »ç¿ëÇÏµµ·Ï º¯°æÇÏÀÚ.
 ###########################################
-í”„ë¡œì íŠ¸ ìƒì„±
-File > New  > Java Project ì„ íƒ 
+ÇÁ·ÎÁ§Æ® »ý¼º
+File > New  > Java Project ¼±ÅÃ 
 
-Project Name ì§€ì •,
-JREëŠ” JavaSE-11 ì„¤ì •,
-ModuleëŠ” ì²´í¬ í•´ì œí•˜ê¸°.
+Project Name ÁöÁ¤,
+JRE´Â JavaSE-11 ¼³Á¤,
+Module´Â Ã¼Å© ÇØÁ¦ÇÏ±â.
 
 #############################
-APIì˜ ë©”ë‰´ì–¼ ì œê³µ: APIë¬¸ì„œ ( API documentation)
+APIÀÇ ¸Þ´º¾ó Á¦°ø: API¹®¼­ ( API documentation)
 https://docs.oracle.com/en/java/javase/11/docs/api/java.base/module-summary.html
 
 #######################
-ì†ŒìŠ¤íŒŒì¼ ìž‘ì„± ( *.java )
+¼Ò½ºÆÄÀÏ ÀÛ¼º ( *.java )
 
-1) í´ëž˜ìŠ¤ ì´ë¦„ì§€ì • ë°©ë²•
-   - ë°˜ë“œì‹œ ì²«ê¸€ìžëŠ” ì˜ë¬¸ìž ë˜ëŠ” _ ë˜ëŠ” $ ë§Œ ê°€ëŠ¥
-     ì´í›„ì— ìˆ«ìžì§€ì • ê°€ëŠ¥.
+1) Å¬·¡½º ÀÌ¸§ÁöÁ¤ ¹æ¹ý
+   - ¹Ýµå½Ã Ã¹±ÛÀÚ´Â ¿µ¹®ÀÚ ¶Ç´Â _ ¶Ç´Â $ ¸¸ °¡´É
+     ÀÌÈÄ¿¡ ¼ýÀÚÁöÁ¤ °¡´É.
 
-   - ëŒ€ì†Œë¬¸ìž êµ¬ë³„
+   - ´ë¼Ò¹®ÀÚ ±¸º°
 
-   - í´ëž˜ìŠ¤ëŠ” ì²«ê¸€ìžëŠ” ë°˜ë“œì‹œ ëŒ€ë¬¸ìžë¡œ ì§€ì • ( ê´€ë¡€ )
+   - Å¬·¡½º´Â Ã¹±ÛÀÚ´Â ¹Ýµå½Ã ´ë¹®ÀÚ·Î ÁöÁ¤ ( °ü·Ê )
 
-   - íŠ¹ìˆ˜ë¬¸ìžëŠ” 2ê°œë§Œ ê°€ëŠ¥ ( _, $ )
+   - Æ¯¼ö¹®ÀÚ´Â 2°³¸¸ °¡´É ( _, $ )
 
-   - ë‹¨ì–´ê°„ ê³µë°±ë¬¸ìž ë¶ˆê°€
+   - ´Ü¾î°£ °ø¹é¹®ÀÚ ºÒ°¡
 
 
-2) public static  void main( String [] args ) í•„ìˆ˜
- ==> ë°˜ë“œì‹œ ìœ„ ì½”ë“œ í˜•ì‹ìœ¼ë¡œ ì§€ì •í•´ì•¼ ëœë‹¤.
- ==> main ë©”ì„œë“œë¼ê³  ë¶€ë¥¸ë‹¤.
- ==> ì‹¤í–‰í•˜ê¸° ìœ„í•œ ì‹œìž‘ì (starting point ) ì—­í• ì´ë‹¤.
+2) public static  void main( String [] args ) ÇÊ¼ö
+ ==> ¹Ýµå½Ã À§ ÄÚµå Çü½ÄÀ¸·Î ÁöÁ¤ÇØ¾ß µÈ´Ù.
+ ==> main ¸Þ¼­µå¶ó°í ºÎ¸¥´Ù.
+ ==> ½ÇÇàÇÏ±â À§ÇÑ ½ÃÀÛÁ¡(starting point ) ¿ªÇÒÀÌ´Ù.
 
-# ìƒì„±ëœ ì†ŒìŠ¤
+# »ý¼ºµÈ ¼Ò½º
 public class Hello {
 
 	public static void main(String[] args) {
@@ -131,168 +131,168 @@ public class Hello {
 	}
 }
 
-==> í´ëž˜ìŠ¤ëª…(Hello)ê³¼ íŒŒì¼ëª…(Hello.java)ì´ ì¼ì¹˜í•´ì•¼ ëœë‹¤.
-==> ëŒ€ì†Œë¬¸ìž êµ¬ë³„
-==> í´ëž˜ìŠ¤ ê°¯ìˆ˜ëŠ” 3ê°œ 
-     Hello: ê°œë°œìžê°€ ë§Œë“  í´ëž˜ìŠ¤
+==> Å¬·¡½º¸í(Hello)°ú ÆÄÀÏ¸í(Hello.java)ÀÌ ÀÏÄ¡ÇØ¾ß µÈ´Ù.
+==> ´ë¼Ò¹®ÀÚ ±¸º°
+==> Å¬·¡½º °¹¼ö´Â 3°³ 
+     Hello: °³¹ßÀÚ°¡ ¸¸µç Å¬·¡½º
      String: API
      System: API
 
 
-==> Hello.java ì†ŒìŠ¤íŒŒì¼ ìž‘ì„±
-        |     ì»´íŒŒì¼, ì»´íŒŒì¼ëŸ¬( javac.exe ), eclipseê°€ ìžë™ìœ¼ë¡œ í•´ì¤Œ.
-    Hello.class (byte code, package exploreì—ì„œëŠ” ì•ˆë³´ìž„. navigatorì—ì„œ ë³´ìž„ )
-        |     ì‹¤í–‰, ì¸í„°í”„ë¦¬í„° ( java.exe )
-       ê²°ê³¼   ( ì½˜ì†”(console)ì— ê²°ê³¼ê°’ì´ ì¶œë ¥ë¨ )	    
+==> Hello.java ¼Ò½ºÆÄÀÏ ÀÛ¼º
+        |     ÄÄÆÄÀÏ, ÄÄÆÄÀÏ·¯( javac.exe ), eclipse°¡ ÀÚµ¿À¸·Î ÇØÁÜ.
+    Hello.class (byte code, package explore¿¡¼­´Â ¾Èº¸ÀÓ. navigator¿¡¼­ º¸ÀÓ )
+        |     ½ÇÇà, ÀÎÅÍÇÁ¸®ÅÍ ( java.exe )
+       °á°ú   ( ÄÜ¼Ö(console)¿¡ °á°ú°ªÀÌ Ãâ·ÂµÊ )	    
 
 
 
 ######################################################
-ì´í´ë¦½ìŠ¤ ë‹¨ì¶•í‚¤
-1. í•œì¤„ ì‚­ì œ
+ÀÌÅ¬¸³½º ´ÜÃàÅ°
+1. ÇÑÁÙ »èÁ¦
     ctrl + d
 
-2. ì¤„ ë°”ê¿ˆ
-    alt + í™”ì‚´í‘œí‚¤
+2. ÁÙ ¹Ù²Þ
+    alt + È­»ìÇ¥Å°
 
-3. í•œì¤„ ë³µì‚¬
-   ctrl + alt + í™”ì‚´í‘œí‚¤
+3. ÇÑÁÙ º¹»ç
+   ctrl + alt + È­»ìÇ¥Å°
 
-4. ëª…ë ¹ì–´ ì·¨ì†Œ
+4. ¸í·É¾î Ãë¼Ò
    ctrl + z
 
-5. íŒŒì¼ì €ìž¥
+5. ÆÄÀÏÀúÀå
    ctrl + s
 
-6. ì½˜ì†” ì¶œë ¥
-   sysoutí•˜ê³  ctrl + spacebar
+6. ÄÜ¼Ö Ãâ·Â
+   sysoutÇÏ°í ctrl + spacebar
 
-7. í•œì¤„ ì£¼ì„
-   //  , ctrl + / ( í† ê¸€ )
+7. ÇÑÁÙ ÁÖ¼®
+   //  , ctrl + / ( Åä±Û )
 
-8. ì—¬ëŸ¬ì¤„ ì£¼ì„
+8. ¿©·¯ÁÙ ÁÖ¼®
    /*
        , ctrl + shift +  /
    */
 
 ######################################################
-ì‹ë³„ìž ( identifier )
-1. ê°œë…:
-    ìžë°”ì†ŒìŠ¤ì˜ ë‹¨ì–´ ì˜ë¯¸
+½Äº°ÀÚ ( identifier )
+1. °³³ä:
+    ÀÚ¹Ù¼Ò½ºÀÇ ´Ü¾î ÀÇ¹Ì
 
-2. ë¬¸ë²•
-   - ì²«ê¸€ìžëŠ” ë°˜ë“œì‹œ ì˜ë¬¸ìž ë˜ëŠ” íŠ¹ìˆ˜ë¬¸ìž( _, $)
-     ì´í›„ì— ìˆ«ìžì§€ì • ê°€ëŠ¥
-   - ëŒ€ì†Œë¬¸ìž êµ¬ë³„í•¨.
-   - í•œê¸€ì§€ì • ê°€ëŠ¥. (ê¶Œìž¥ì•ˆí•¨)
+2. ¹®¹ý
+   - Ã¹±ÛÀÚ´Â ¹Ýµå½Ã ¿µ¹®ÀÚ ¶Ç´Â Æ¯¼ö¹®ÀÚ( _, $)
+     ÀÌÈÄ¿¡ ¼ýÀÚÁöÁ¤ °¡´É
+   - ´ë¼Ò¹®ÀÚ ±¸º°ÇÔ.
+   - ÇÑ±ÛÁöÁ¤ °¡´É. (±ÇÀå¾ÈÇÔ)
 
-3. ëŒ€ìƒ 3ê°€ì§€
+3. ´ë»ó 3°¡Áö
 
-  1) í´ëž˜ìŠ¤
-     - ì²«ê¸€ìžëŠ” ë°˜ë“œì‹œ ëŒ€ë¬¸ìž
-     - ê¶Œìž¥ì€ ëª…ì‚¬í˜• 
+  1) Å¬·¡½º
+     - Ã¹±ÛÀÚ´Â ¹Ýµå½Ã ´ë¹®ÀÚ
+     - ±ÇÀåÀº ¸í»çÇü 
 
-  2) ë³€ìˆ˜
-     - ì†Œë¬¸ìž
-     - ê¶Œìž¥ì€ ëª…ì‚¬í˜•
+  2) º¯¼ö
+     - ¼Ò¹®ÀÚ
+     - ±ÇÀåÀº ¸í»çÇü
 
-  3) ë©”ì„œë“œ
-     - ì†Œë¬¸ìž
-     - ê¶Œìž¥ì€ ë™ì‚¬í˜•
+  3) ¸Þ¼­µå
+     - ¼Ò¹®ÀÚ
+     - ±ÇÀåÀº µ¿»çÇü
 
-4. ì‹ë³„ìž ì¢…ë¥˜ 2ê°€ì§€ ( ê¸°ì¤€ì€ ì£¼ì²´ )
+4. ½Äº°ÀÚ Á¾·ù 2°¡Áö ( ±âÁØÀº ÁÖÃ¼ )
 
-  ê°€. API
-     - ì´ë¦„ì´ ì •í•´ì ¸ ìžˆìŒ ( ì˜ˆì•½ì–´, í‚¤ì›Œë“œ )
-     - ì‹œìŠ¤í…œ ì •ì˜ ì‹ë³„ìž
-     ì˜ˆ> String, System, static, void, public, class
+  °¡. API
+     - ÀÌ¸§ÀÌ Á¤ÇØÁ® ÀÖÀ½ ( ¿¹¾à¾î, Å°¿öµå )
+     - ½Ã½ºÅÛ Á¤ÀÇ ½Äº°ÀÚ
+     ¿¹> String, System, static, void, public, class
          println, interface, abstract, protected, private,
 	 final, transient, default, switch, if, for,..........
 
-  ë‚˜. ê°œë°œìž(ì‚¬ìš©ìž)
-     - ì‚¬ìš©ìž ì •ì˜ ì‹ë³„ìž
-     ì˜ˆ> args, Hello
-     - ë°˜ë“œì‹œ ì˜ˆì•½ì–´ëŠ” ì œì™¸í•˜ê³  ì§€ì •í•´ì•¼ ëœë‹¤. (***********)
+  ³ª. °³¹ßÀÚ(»ç¿ëÀÚ)
+     - »ç¿ëÀÚ Á¤ÀÇ ½Äº°ÀÚ
+     ¿¹> args, Hello
+     - ¹Ýµå½Ã ¿¹¾à¾î´Â Á¦¿ÜÇÏ°í ÁöÁ¤ÇØ¾ß µÈ´Ù. (***********)
 
-==> ë‚˜ë¨¸ì§€ ì—°ì‚°ìž(operator)ì™€ ê°’(ë°ì´í„°,ë¦¬í„°ëŸ´:literal)ìœ¼ë¡œ êµ¬ì„±ë¨.
-   ë¦¬í„°ëŸ´ í˜•ì‹
-   :  "í™ê¸¸ë™"
-      'ë‚¨'
+==> ³ª¸ÓÁö ¿¬»êÀÚ(operator)¿Í °ª(µ¥ÀÌÅÍ,¸®ÅÍ·²:literal)À¸·Î ±¸¼ºµÊ.
+   ¸®ÅÍ·² Çü½Ä
+   :  "È«±æµ¿"
+      '³²'
       35
       true
       183.45
 
 
   ##############################
-  () : ì†Œê´„í˜¸
-  {} : ì¤‘ê´„í˜¸
-  [] : ëŒ€ê´„í˜¸
+  () : ¼Ò°ýÈ£
+  {} : Áß°ýÈ£
+  [] : ´ë°ýÈ£
   #########################################################
-ìžë°”ì˜ ë°ì´í„° ì¢…ë¥˜ ( ë°ì´í„°í˜•, data type ) ===> ë¬´ì¡°ê±´ ì™¸ìš°ê¸°
-==> ìžë°”ì–¸ì–´ê°€ ì¸ì‹ ê°€ëŠ¥í•œ ë°ì´í„° ì¢…ë¥˜ê°€ ë¬´ì—‡ì¸ì§€ ì‚´íŽ´ë³´ìž.
+ÀÚ¹ÙÀÇ µ¥ÀÌÅÍ Á¾·ù ( µ¥ÀÌÅÍÇü, data type ) ===> ¹«Á¶°Ç ¿Ü¿ì±â
+==> ÀÚ¹Ù¾ð¾î°¡ ÀÎ½Ä °¡´ÉÇÑ µ¥ÀÌÅÍ Á¾·ù°¡ ¹«¾ùÀÎÁö »ìÆìº¸ÀÚ.
 
-  ê°€. ê¸°ë³¸í˜• ë°ì´í„°í˜• ( Primitive Data Type: PDT )
+  °¡. ±âº»Çü µ¥ÀÌÅÍÇü ( Primitive Data Type: PDT )
   
-      - ìˆ˜ì¹˜í˜• --- ì •ìˆ˜ :   byte (  1byte )
+      - ¼öÄ¡Çü --- Á¤¼ö :   byte (  1byte )
                          short ( 2byte )
-			 int   ( 4byte ) : ê¸°ë³¸
+			 int   ( 4byte ) : ±âº»
 			 long  ( 8byte )
-                   - 10ì§„ìˆ˜, 2ì§„ìˆ˜, 8ì§„ìˆ˜, 16ì§„ìˆ˜ ëª¨ë‘ ì‚¬ìš© ê°€ëŠ¥
-                    ì˜ˆ>  10ì§„ìˆ˜: 100, -30, 0
-                        2ì§„ìˆ˜: 0|1 ì´ìš© ( 0bê°’ )
+                   - 10Áø¼ö, 2Áø¼ö, 8Áø¼ö, 16Áø¼ö ¸ðµÎ »ç¿ë °¡´É
+                    ¿¹>  10Áø¼ö: 100, -30, 0
+                        2Áø¼ö: 0|1 ÀÌ¿ë ( 0b°ª )
 		             0b1, 0b0
-                        8ì§„ìˆ˜: 0~7 ì´ìš© ( 0ê°’ )
+                        8Áø¼ö: 0~7 ÀÌ¿ë ( 0°ª )
 			      01, 02,...07
-                        16ì§„ìˆ˜: 0~9, A,B,C,D,E,F ì´ìš© ( 0xê°’)
+                        16Áø¼ö: 0~9, A,B,C,D,E,F ÀÌ¿ë ( 0x°ª)
 			      0x0, 0x1,..... 0xF
 			       
 
-             ---- ì‹¤ìˆ˜ :  float ( 4byte )
-	                 double ( 8byte ) : ê¸°ë³¸
-                         - ì†Œìˆ˜ì ì´ìš©, ì§€ìˆ˜í‘œí˜„ ê°€ëŠ¥
-		 ì˜ˆ>  3.14 ( 3.14D, 3.14d ) ===> doubleë¡œ ì²˜ë¦¬ë¨
+             ---- ½Ç¼ö :  float ( 4byte )
+	                 double ( 8byte ) : ±âº»
+                         - ¼Ò¼öÁ¡ÀÌ¿ë, Áö¼öÇ¥Çö °¡´É
+		 ¿¹>  3.14 ( 3.14D, 3.14d ) ===> double·Î Ã³¸®µÊ
 
-			   3.14F ( 3.14f)  ====> floatë¡œ ì²˜ë¦¬ë¨
+			   3.14F ( 3.14f)  ====> float·Î Ã³¸®µÊ
 
 
-      - ë¬¸ìží˜• -- char ( 2byte, ìºë¦­í„°ë¼ê³  ì½ìŒ )
-                   -ìžë°”ëŠ” ì „ì„¸ê³„ì˜ ëª¨ë“  ê¸€ìž í‘œí˜„ ê°€ëŠ¥ (í•œê¸€í¬í•¨)
-                   -ì´ìŠ¤ì¼€ì´í”„ ë¬¸ìž(escape) ì§€ì • ê°€ëŠ¥
-		     ì˜ˆ> \t ( tab í´ë¦­íš¨ê³¼ ì–»ìŒ) 
-		        \n  ( enter íš¨ê³¼ ì–»ìŒ )
-			\"  ( " ì¶œë ¥ )
-			\'  ( ' ì¶œë ¥ )
-			\\  ( \ ì¶œë ¥ )
+      - ¹®ÀÚÇü -- char ( 2byte, Ä³¸¯ÅÍ¶ó°í ÀÐÀ½ )
+                   -ÀÚ¹Ù´Â Àü¼¼°èÀÇ ¸ðµç ±ÛÀÚ Ç¥Çö °¡´É (ÇÑ±ÛÆ÷ÇÔ)
+                   -ÀÌ½ºÄÉÀÌÇÁ ¹®ÀÚ(escape) ÁöÁ¤ °¡´É
+		     ¿¹> \t ( tab Å¬¸¯È¿°ú ¾òÀ½) 
+		        \n  ( enter È¿°ú ¾òÀ½ )
+			\"  ( " Ãâ·Â )
+			\'  ( ' Ãâ·Â )
+			\\  ( \ Ãâ·Â )
 
-	           - ë‹¨ í•˜ë‚˜ì˜ ë¬¸ìž í‘œí˜„ì‹ì—  ì‚¬ìš©ë¨.
-		     ë°˜ë“œì‹œ '' (í™‘ë”°ì˜´í‘œ)ë¡œ ê°ì‹¸ì•¼ ëœë‹¤.
-		     ì˜ˆ>  'ë‚¨',  'ì—¬' ,  'A', 'B'
+	           - ´Ü ÇÏ³ªÀÇ ¹®ÀÚ Ç¥Çö½Ä¿¡  »ç¿ëµÊ.
+		     ¹Ýµå½Ã '' (È¬µû¿ÈÇ¥)·Î °¨½Î¾ß µÈ´Ù.
+		     ¿¹>  '³²',  '¿©' ,  'A', 'B'
                   
-		  * ë¬¸ìžì—´ì€ ì°¸ì¡°í˜•ì´ë‹¤.
-                   ==> ë¬¸ìžì—´ì€ ë¬¸ìžê°€ ì—¬ëŸ¬ê°œ
-		   ==> ë°˜ë“œì‹œ "" (ìŒë”°ì˜´í‘œ)ë¡œ ê°ì‹¸ì•¼ ëœë‹¤.
-		   ì˜ˆ> "í™ê¸¸ë™", "ì„œìš¸"
-		   ==> String í´ëž˜ìŠ¤ íƒ€ìž…ìœ¼ë¡œ ê´€ë¦¬ë¨
+		  * ¹®ÀÚ¿­Àº ÂüÁ¶ÇüÀÌ´Ù.
+                   ==> ¹®ÀÚ¿­Àº ¹®ÀÚ°¡ ¿©·¯°³
+		   ==> ¹Ýµå½Ã "" (½Öµû¿ÈÇ¥)·Î °¨½Î¾ß µÈ´Ù.
+		   ¿¹> "È«±æµ¿", "¼­¿ï"
+		   ==> String Å¬·¡½º Å¸ÀÔÀ¸·Î °ü¸®µÊ
 		   
-      - ë…¼ë¦¬í˜• : boolean ( 1byte, ë¶ˆë¦° ë¼ê³  ì½ìŒ )
-                 - ì°¸/ê±°ì§“ í‘œí˜„
-		   ì°¸ì€ true í‘œí˜„ë˜ê³ 
-		   ê±°ì§“ì€ false(ê¸°ë³¸) í‘œí˜„ë¨.
+      - ³í¸®Çü : boolean ( 1byte, ºÒ¸° ¶ó°í ÀÐÀ½ )
+                 - Âü/°ÅÁþ Ç¥Çö
+		   ÂüÀº true Ç¥ÇöµÇ°í
+		   °ÅÁþÀº false(±âº») Ç¥ÇöµÊ.
 
-  ====> ê¸°ë³¸í˜• ë°ì´í„° ê°¯ìˆ˜ëŠ” 8ê°œì´ë‹¤.
+  ====> ±âº»Çü µ¥ÀÌÅÍ °¹¼ö´Â 8°³ÀÌ´Ù.
 
-  ë‚˜. ì°¸ì¡°í˜• ë°ì´í„°í˜• ( Reference Data Type: RDT )
-     - ê¸°ë³¸í˜• 8ê°œ ì œì™¸í•œ ë‚˜ë¨¸ì§€ê°€ ëª¨ë‘ ì°¸ì¡°í˜•ì´ë‹¤.
-     - ëŒ€í‘œì ìœ¼ë¡œ í´ëž˜ìŠ¤, ì¸í„°íŽ˜ì´ìŠ¤, ë°°ì—´ì´ë‹¤. (****************)
+  ³ª. ÂüÁ¶Çü µ¥ÀÌÅÍÇü ( Reference Data Type: RDT )
+     - ±âº»Çü 8°³ Á¦¿ÜÇÑ ³ª¸ÓÁö°¡ ¸ðµÎ ÂüÁ¶ÇüÀÌ´Ù.
+     - ´ëÇ¥ÀûÀ¸·Î Å¬·¡½º, ÀÎÅÍÆäÀÌ½º, ¹è¿­ÀÌ´Ù. (****************)
 ############################################################################
-###### ì°¸ê³ í• ë§Œí•œ ì‚¬ì´íŠ¸ ì†Œê°œ ##############################################
+###### Âü°íÇÒ¸¸ÇÑ »çÀÌÆ® ¼Ò°³ ##############################################
 ############################################################################
-# ìžë°” ì†Œê°œ ë° íŠ¹ì§•
+# ÀÚ¹Ù ¼Ò°³ ¹× Æ¯Â¡
 https://velog.io/@kojam9041/Java-%EC%9E%90%EB%B0%94-%EC%86%8C%EA%B0%9C-%EB%B0%8F-%ED%8A%B9%EC%A7%95
 https://s-bug.tistory.com/57
 
-# ì§„ë²• ê´€ë ¨ ì§§ì€ ë™ì˜ìƒ 
-2ì§„ìˆ˜, 8ì§„ìˆ˜, 10ì§„ìˆ˜, 16ì§„ìˆ˜ ë³€í™˜ ê³µë¶€ í•˜ì‹¤ ë•Œ ì°¸ê³ 
+# Áø¹ý °ü·Ã ÂªÀº µ¿¿µ»ó 
+2Áø¼ö, 8Áø¼ö, 10Áø¼ö, 16Áø¼ö º¯È¯ °øºÎ ÇÏ½Ç ¶§ Âü°í
 https://www.youtube.com/watch?v=y26oXFInsoI
 https://www.youtube.com/shorts/WJo3bZlbHwg
 https://www.youtube.com/shorts/dTT_cQrIQJk
@@ -302,97 +302,97 @@ https://www.youtube.com/shorts/lm3Z4ALBHXY
 https://www.youtube.com/shorts/FQGLS10uYOk
 https://www.youtube.com/shorts/AY5CECThfZ0
 
-# ìžë°” ë°ì´í„° íƒ€ìž…, ë³€ìˆ˜, ë¦¬í„°ëŸ´ 
+# ÀÚ¹Ù µ¥ÀÌÅÍ Å¸ÀÔ, º¯¼ö, ¸®ÅÍ·² 
 https://catsbi.oopy.io/6541026f-1e19-4117-8fef-aea145e4fc1b
 ############################################################################
 ############################################################################
 
 
-Hello.java ( ì†ŒìŠ¤íŒŒì¼, ì˜ë‹¨ì–´ë¡œ êµ¬ì„±, ìžë°”ì¸ì‹ ë¶ˆê°€ )
+Hello.java ( ¼Ò½ºÆÄÀÏ, ¿µ´Ü¾î·Î ±¸¼º, ÀÚ¹ÙÀÎ½Ä ºÒ°¡ )
   |
-  |  <=== ìžë°”ê°€ ì¸ì‹ê°€ëŠ¥í•œ ì½”ë“œë¡œ ë³€ê²½í•´ì•¼ ëœë‹¤.
-  |       ì»´íŒŒì¼ í•œë‹¤ê³  í•œë‹¤.
+  |  <=== ÀÚ¹Ù°¡ ÀÎ½Ä°¡´ÉÇÑ ÄÚµå·Î º¯°æÇØ¾ß µÈ´Ù.
+  |       ÄÄÆÄÀÏ ÇÑ´Ù°í ÇÑ´Ù.
   |
-Hello.class (byte code, ìžë°”ì¸ì‹ì´ ê°€ëŠ¥)
+Hello.class (byte code, ÀÚ¹ÙÀÎ½ÄÀÌ °¡´É)
 ##############################################################
-1ì¼ì°¨ ë¦¬ë·°
+1ÀÏÂ÷ ¸®ºä
 
-1. ìžë°” 3ê°€ì§€ í™˜ê²½
-  - Java SE: ê¸°ë³¸ê°œë°œ í™˜ê²½, JDK ì„¤ì¹˜(2ê°œì˜ í™˜ê²½ë³€ìˆ˜: JAVA_HOME, PATH )
-  - Java EE: ì›¹ ê°œë°œ í™˜ê²½ ( ì„œë¸”ë¦¿/jsp ), Tomcatì„¤ì¹˜
-  - Java ME: ëª¨ë°”ì¼ í™˜ê²½
+1. ÀÚ¹Ù 3°¡Áö È¯°æ
+  - Java SE: ±âº»°³¹ß È¯°æ, JDK ¼³Ä¡(2°³ÀÇ È¯°æº¯¼ö: JAVA_HOME, PATH )
+  - Java EE: À¥ °³¹ß È¯°æ ( ¼­ºí¸´/jsp ), Tomcat¼³Ä¡
+  - Java ME: ¸ð¹ÙÀÏ È¯°æ
 
-2. ìžë°” íŠ¹ì§•
-  - í”Œëž«í¼(OS)ì— ë…ë¦½ì ==> ìƒì„±ëœ class íŒŒì¼ì„ ì–´ë–¤ OSì—ì„œë„ ê·¸ëƒ¥ ì‹¤í–‰ì´ ê°€ëŠ¥í•˜ë‹¤.
-  - ê°ì²´ì§€í–¥ í”„ë¡œê·¸ëž˜ë°(Object Oriented Programming: OOP )
+2. ÀÚ¹Ù Æ¯Â¡
+  - ÇÃ·§Æû(OS)¿¡ µ¶¸³Àû==> »ý¼ºµÈ class ÆÄÀÏÀ» ¾î¶² OS¿¡¼­µµ ±×³É ½ÇÇàÀÌ °¡´ÉÇÏ´Ù.
+  - °´Ã¼ÁöÇâ ÇÁ·Î±×·¡¹Ö(Object Oriented Programming: OOP )
 
-3. ìžë°” í”„ë¡œê·¸ëž¨ ê°œë°œ ìˆœì„œ
+3. ÀÚ¹Ù ÇÁ·Î±×·¥ °³¹ß ¼ø¼­
 
-   1) ì†ŒìŠ¤ìž‘ì„± ( Hello.java )
-      - ê°œë°œìžê°€ ì´í•´í•  ìˆ˜ ìžˆëŠ” ì˜ë‹¨ì–´ ì½”ë“œë¡œ êµ¬ì„±
+   1) ¼Ò½ºÀÛ¼º ( Hello.java )
+      - °³¹ßÀÚ°¡ ÀÌÇØÇÒ ¼ö ÀÖ´Â ¿µ´Ü¾î ÄÚµå·Î ±¸¼º
    
-   2) ì»´íŒŒì¼ ë‹¨ê³„ ( javac.exe ì»´íŒŒì¼ëŸ¬ ì´ìš© )
+   2) ÄÄÆÄÀÏ ´Ü°è ( javac.exe ÄÄÆÄÀÏ·¯ ÀÌ¿ë )
        Hello.java ----------> Hello.class ( bytecode )
       
-      ë¬¸ë²•: javac  Hello.java
+      ¹®¹ý: javac  Hello.java
 
-   3) ì‹¤í–‰ ë‹¨ê³„ ( java.exe ì¸í„°í”„ë¦¬í„° ì´ìš© )
-      Hello.class ----------------> ê²°ê³¼ê°’ ì¶œë ¥
+   3) ½ÇÇà ´Ü°è ( java.exe ÀÎÅÍÇÁ¸®ÅÍ ÀÌ¿ë )
+      Hello.class ----------------> °á°ú°ª Ãâ·Â
 
-      ë¬¸ë²•: java  Hello
+      ¹®¹ý: java  Hello
 
 4. JVM ( Java Virtual Machine)
-  - ì—­í• : bytecodeì¸ class ì‹¤í–‰ì‹œí‚´
-  - JDKì„¤ì¹˜í•˜ë©´ JVMì´ êµ¬ì¶•ë¨
-  - S/Wì´ì§€ë§Œ H/W íŠ¹ì§•ì„ ê°€ì§ ( ë‹¤ì–‘í•œ ë©”ëª¨ë¦¬ í¬í•¨ )
-    ì£¼ìš” ë©”ëª¨ë¦¬: stack, heap, method area
+  - ¿ªÇÒ: bytecodeÀÎ class ½ÇÇà½ÃÅ´
+  - JDK¼³Ä¡ÇÏ¸é JVMÀÌ ±¸ÃàµÊ
+  - S/WÀÌÁö¸¸ H/W Æ¯Â¡À» °¡Áü ( ´Ù¾çÇÑ ¸Þ¸ð¸® Æ÷ÇÔ )
+    ÁÖ¿ä ¸Þ¸ð¸®: stack, heap, method area
 
-5. ìžë°”ì—ì„œ ì‚¬ìš© ê°€ëŠ¥í•œ ë°ì´í„° ì¢…ë¥˜ ( ***************** )
+5. ÀÚ¹Ù¿¡¼­ »ç¿ë °¡´ÉÇÑ µ¥ÀÌÅÍ Á¾·ù ( ***************** )
 
-   ê°€. ê¸°ë³¸í˜• ë°ì´í„° ( ë°ì´í„°ì¢…ë¥˜, data type )
+   °¡. ±âº»Çü µ¥ÀÌÅÍ ( µ¥ÀÌÅÍÁ¾·ù, data type )
       - Primitive Data Type: PDT
-      - ì¢…ë¥˜:
-               ìˆ˜ì¹˜í˜•  - ì •ìˆ˜í˜• : byte  (1byte)
+      - Á¾·ù:
+               ¼öÄ¡Çü  - Á¤¼öÇü : byte  (1byte)
 	                       short (2byte)
-			       int   (4byte): ê¸°ë³¸
+			       int   (4byte): ±âº»
 			       long  (8byte)
 			      
-			      ì •ìˆ˜ê°’(ë¦¬í„°ëŸ´)í‘œí˜„: 10ì§„ìˆ˜, 2ì§„ìˆ˜(0|1), 8ì§„ìˆ˜(0~7), 
-			                      16ì§„ìˆ˜(0~9,A,B,C,D,E,F) ëª¨ë‘ ì‚¬ìš© ê°€ëŠ¥
-                                         ì˜ˆ>   10    0bê°’   0ê°’   0xê°’
-			      ë§Œì•½ì— 100 ì •ìˆ˜ë¥¼ ì“°ë©´ ê¸°ë³¸ì¸ intë¡œ ì²˜ë¦¬ê°€  ëœë‹¤. 	
-			      longìœ¼ë¡œ ì²˜ë¦¬í•˜ê³  ì‹¶ìœ¼ë©´ 100L ì§€ì •í•œë‹¤.
+			      Á¤¼ö°ª(¸®ÅÍ·²)Ç¥Çö: 10Áø¼ö, 2Áø¼ö(0|1), 8Áø¼ö(0~7), 
+			                      16Áø¼ö(0~9,A,B,C,D,E,F) ¸ðµÎ »ç¿ë °¡´É
+                                         ¿¹>   10    0b°ª   0°ª   0x°ª
+			      ¸¸¾à¿¡ 100 Á¤¼ö¸¦ ¾²¸é ±âº»ÀÎ int·Î Ã³¸®°¡  µÈ´Ù. 	
+			      longÀ¸·Î Ã³¸®ÇÏ°í ½ÍÀ¸¸é 100L ÁöÁ¤ÇÑ´Ù.
 					 
-	                ì‹¤ìˆ˜í˜• : float (4byte) 
-                               double (8byte): ê¸°ë³¸
-                              ì‹¤ìˆ˜ê°’(ë¦¬í„°ëŸ´)í‘œí˜„: ì†Œìˆ˜ì ì´ìš©, ì§€ìˆ˜í‘œí˜„ ê°€ëŠ¥
-			           ì˜ˆ>  31.4, 31.4D   ===> double ì²˜ë¦¬
-				       31.4F  ==> float ì²˜ë¦¬
+	                ½Ç¼öÇü : float (4byte) 
+                               double (8byte): ±âº»
+                              ½Ç¼ö°ª(¸®ÅÍ·²)Ç¥Çö: ¼Ò¼öÁ¡ÀÌ¿ë, Áö¼öÇ¥Çö °¡´É
+			           ¿¹>  31.4, 31.4D   ===> double Ã³¸®
+				       31.4F  ==> float Ã³¸®
 
 
-	       ë¬¸ìží˜•          : char(2byte)
-                               -ë¬¸ìží˜•(ë¦¬í„°ëŸ´)í‘œí˜„: ë°˜ë“œì‹œ '' ì‚¬ìš©
-			        ì˜ˆ> 'A', 'ë‚¨'
-                               - escape ë¬¸ìž ( \t, \n, \\, \', \" )
-			       - ì „ì„¸ê³„ì˜ ëª¨ë“  ë¬¸ìž í‘œí˜„ ê°€ëŠ¥
+	       ¹®ÀÚÇü          : char(2byte)
+                               -¹®ÀÚÇü(¸®ÅÍ·²)Ç¥Çö: ¹Ýµå½Ã '' »ç¿ë
+			        ¿¹> 'A', '³²'
+                               - escape ¹®ÀÚ ( \t, \n, \\, \', \" )
+			       - Àü¼¼°èÀÇ ¸ðµç ¹®ÀÚ Ç¥Çö °¡´É
 
-	       ë…¼ë¦¬í˜•          : boolean (1byte)
-                                ë…¼ë¦¬í˜•(ë¦¬í„°ëŸ´)í‘œí˜„:   true, false
+	       ³í¸®Çü          : boolean (1byte)
+                                ³í¸®Çü(¸®ÅÍ·²)Ç¥Çö:   true, false
 
 
-   ë‚˜. ì°¸ì¡°í˜• ë°ì´í„° 
+   ³ª. ÂüÁ¶Çü µ¥ÀÌÅÍ 
       - Reference Data Type: RDT
-      - ê¸°ë³¸í˜• 8ê°œ ì œì™¸í•œ ë‚˜ë¨¸ì§€ ëª¨ë‘
-       ëŒ€í‘œì : í´ëž˜ìŠ¤, ì¸í„°íŽ˜ì´ìŠ¤, ë°°ì—´
+      - ±âº»Çü 8°³ Á¦¿ÜÇÑ ³ª¸ÓÁö ¸ðµÎ
+       ´ëÇ¥Àû: Å¬·¡½º, ÀÎÅÍÆäÀÌ½º, ¹è¿­
 ##############################################################################
-2ì¼ì°¨
+2ÀÏÂ÷
 
-1. ì •ìˆ˜ì—ì„œ long íƒ€ìž…ìœ¼ë¡œ ì‚¬ìš©í•  ë•ŒëŠ” ë‹¤ìŒê³¼ ê°™ì´ ì •ìˆ˜ê°’L ì§€ì •í•œë‹¤.
-  ì˜ˆ> 300L
+1. Á¤¼ö¿¡¼­ long Å¸ÀÔÀ¸·Î »ç¿ëÇÒ ¶§´Â ´ÙÀ½°ú °°ÀÌ Á¤¼ö°ªL ÁöÁ¤ÇÑ´Ù.
+  ¿¹> 300L
 
-2. ê¸°ë³¸í˜• 8ê°œì— í•´ë‹¹ë˜ëŠ” í´ëž˜ìŠ¤ 8ê°œë¥¼ ì œê³µí•œë‹¤.
+2. ±âº»Çü 8°³¿¡ ÇØ´çµÇ´Â Å¬·¡½º 8°³¸¦ Á¦°øÇÑ´Ù.
 
- ê¸°ë³¸í˜•          ì°¸ì¡°í˜•(í´ëž˜ìŠ¤) ==> wrapper í´ëž˜ìŠ¤ë¼ê³  ë¶€ë¥¸ë‹¤.
+ ±âº»Çü          ÂüÁ¶Çü(Å¬·¡½º) ==> wrapper Å¬·¡½º¶ó°í ºÎ¸¥´Ù.
  ----------------------------
  byte		Byte
  short		Short
@@ -407,405 +407,507 @@ Hello.class (byte code, ìžë°”ì¸ì‹ì´ ê°€ëŠ¥)
 
 
 #################################################
-3. ë³€ìˆ˜ ( variable )
+3. º¯¼ö ( variable )
 
-  1) ìš©ë„
-    - ë°ì´í„° ì €ìž¥ ( ê¸°ë³¸í˜• ë°ì´í„° ë° ì°¸ì¡°í˜• ë°ì´í„° ì €ìž¥ìš©ë„ )
-    - ì–¸ì œë“ ì§€ ê°’ì´ ë³€ê²½ë  ìˆ˜ ìžˆìŒ.
+  1) ¿ëµµ
+    - µ¥ÀÌÅÍ ÀúÀå ( ±âº»Çü µ¥ÀÌÅÍ ¹× ÂüÁ¶Çü µ¥ÀÌÅÍ ÀúÀå¿ëµµ )
+    - ¾ðÁ¦µçÁö °ªÀÌ º¯°æµÉ ¼ö ÀÖÀ½.
 
-  2)ì‚¬ìš©ë°©ë²• 3ë‹¨ê³„
-    (1) ë³€ìˆ˜ì„ ì–¸
-        - ë°ì´í„°ê°€ ì €ìž¥ëœ ì˜ì—­ í™•ë³´ ìž‘ì—… ( ë©”ëª¨ë¦¬ì— ì €ìž¥ë˜ê³  ë©”ëª¨ë¦¬ ìœ„ì¹˜ì— í•´ë‹¹ë˜ëŠ” ì´ë¦„ ì§€ì •)
-	- ë¬¸ë²•:
+  2)»ç¿ë¹æ¹ý 3´Ü°è
+    (1) º¯¼ö¼±¾ð
+        - µ¥ÀÌÅÍ°¡ ÀúÀåµÈ ¿µ¿ª È®º¸ ÀÛ¾÷ ( ¸Þ¸ð¸®¿¡ ÀúÀåµÇ°í ¸Þ¸ð¸® À§Ä¡¿¡ ÇØ´çµÇ´Â ÀÌ¸§ ÁöÁ¤)
+	- ¹®¹ý:
 
-	    ë°ì´í„°íƒ€ìž… ë³€ìˆ˜ëª…;
-         ì˜ˆ>  int num;      // int ë•Œë¬¸ì— 4byte ì˜ì—­í™•ë³´
-	     String name;  // String ì°¸ì¡°í˜•ì´ê¸° ë•Œë¬¸ì— 4byte ì˜ì—­í™•ë³´
+	    µ¥ÀÌÅÍÅ¸ÀÔ º¯¼ö¸í;
+         ¿¹>  int num;      // int ¶§¹®¿¡ 4byte ¿µ¿ªÈ®º¸
+	     String name;  // String ÂüÁ¶ÇüÀÌ±â ¶§¹®¿¡ 4byte ¿µ¿ªÈ®º¸
 
-    (2) ë³€ìˆ˜ì´ˆê¸°í™”
-        - ìƒì„±ëœ ë³€ìˆ˜ì— ì²˜ìŒ ê°’ì„ ì €ìž¥í•˜ëŠ” ìž‘ì—…
-        - ë¬¸ë²•:
-	     ë³€ìˆ˜ëª…=ê°’;
+    (2) º¯¼öÃÊ±âÈ­
+        - »ý¼ºµÈ º¯¼ö¿¡ Ã³À½ °ªÀ» ÀúÀåÇÏ´Â ÀÛ¾÷
+        - ¹®¹ý:
+	     º¯¼ö¸í=°ª;
 
-         ì˜ˆ>  num = 19;
-	     name = "í™ê¸¸ë™";
+         ¿¹>  num = 19;
+	     name = "È«±æµ¿";
 
-    (3) ë³€ìˆ˜ ì‚¬ìš©
+    (3) º¯¼ö »ç¿ë
        System.out.println(num);  // 19
        System.out.println(name);
 
 
-     (4) ë³€ìˆ˜ê°’ ë³€ê²½
+     (4) º¯¼ö°ª º¯°æ
         num=29;
         System.out.println(num);  // 29
 
 
-4. ê¸°ë³¸í˜• ë³€ìˆ˜ vs ì°¸ì¡°í˜• ë³€ìˆ˜
+4. ±âº»Çü º¯¼ö vs ÂüÁ¶Çü º¯¼ö
 
-  1) ê¸°ë³¸í˜• ë³€ìˆ˜
-    - ê¸°ë³¸í˜• ë°ì´í„°ë¥¼ ì €ìž¥í•˜ëŠ” ë³€ìˆ˜
-    ì˜ˆ> 
-        int num;   // ì‹¤ì œê°’ì´ ì €ìž¥
+  1) ±âº»Çü º¯¼ö
+    - ±âº»Çü µ¥ÀÌÅÍ¸¦ ÀúÀåÇÏ´Â º¯¼ö
+    ¿¹> 
+        int num;   // ½ÇÁ¦°ªÀÌ ÀúÀå
 	num = 20;
     
-    ==> num ë³€ìˆ˜ì•ˆì— 20ì´ ì €ìž¥ë¨.
+    ==> num º¯¼ö¾È¿¡ 20ÀÌ ÀúÀåµÊ.
 
-  2) ì°¸ì¡°í˜• ë³€ìˆ˜
-    - ì°¸ì¡°í˜• ë°ì´í„°ë¥¼ ì €ìž¥í•˜ëŠ” ë³€ìˆ˜
+  2) ÂüÁ¶Çü º¯¼ö
+    - ÂüÁ¶Çü µ¥ÀÌÅÍ¸¦ ÀúÀåÇÏ´Â º¯¼ö
    
-   ì˜ˆ>
-       String name;  // ì£¼ì†Œê°’ì´ ì €ìž¥
-       name ="í™ê¸¸ë™";
+   ¿¹>
+       String name;  // ÁÖ¼Ò°ªÀÌ ÀúÀå
+       name ="È«±æµ¿";
 
-   ==> name ë³€ìˆ˜ ì•ˆì— "í™ê¸¸ë™"ì´ ì €ìž¥ëœ ì£¼ì†Œê°’ì´ ì €ìž¥ë¨.
+   ==> name º¯¼ö ¾È¿¡ "È«±æµ¿"ÀÌ ÀúÀåµÈ ÁÖ¼Ò°ªÀÌ ÀúÀåµÊ.
 
-5. ë³€ìˆ˜ ì¢…ë¥˜ ( **************************)
-  - ë³€ìˆ˜ ì„ ì–¸ ìœ„ì¹˜ì™€ ìš©ë„ì— ë”°ë¥¸ ë¶„ë¥˜
+5. º¯¼ö Á¾·ù ( **************************)
+  - º¯¼ö ¼±¾ð À§Ä¡¿Í ¿ëµµ¿¡ µû¸¥ ºÐ·ù
 
-  ê°€. ë¡œì»¬ ë³€ìˆ˜ ( local variable )
-      - ë©”ì„œë“œì•ˆì—ì„œ ì„ ì–¸
-      - ìƒì„±ì‹œì : ë©”ì„œë“œ í˜¸ì¶œì‹œ ë³€ìˆ˜ìƒì„±ë¨ 
-        ì œê±°ì‹œì : ë©”ì„œë“œ í˜¸ì¶œí›„ ìž‘ì—…ì´ ëª¨ë‘ ëë‚¬ì„ ë•Œ
-      - ìƒì„±íšŸìˆ˜: ë©”ì„œë“œ í˜¸ì¶œí• ë•Œë§ˆë‹¤ ë§¤ë²ˆ ìƒì„±ë˜ê³  
-                ë©”ì„œë“œ ìž‘ì—…ì´ ëë‚˜ë©´ ë§¤ë²ˆ ì‚­ì œë¨. ( ì¼ì‹œì ìœ¼ë¡œ ì‚¬ìš©í•  ëª©ì ìœ¼ë¡œ ì£¼ë¡œ ì‚¬ìš©ë¨ )
-      - ì €ìž¥ë©”ëª¨ë¦¬: stack ë©”ëª¨ë¦¬
-      - ì„ ì–¸ë§Œí•˜ê³  ì´ˆê¸°í™”í•˜ì§€ ì•Šìœ¼ë©´ ìžë™ì´ˆê¸°í™” ì•ˆë¨.
-        ë°˜ë“œì‹œ ì‚¬ìš©ì „ì— ì´ˆê¸°í™”í•´ì•¼ ëœë‹¤. (******************)
-  ë‚˜. ì¸ìŠ¤í„´ìŠ¤ ë³€ìˆ˜ ( instance variable )
-      - ë©”ì„œë“œ ë°–ì—ì„œ ì„ ì–¸
-      - ìƒì„±ì‹œì : í´ëž˜ìŠ¤ ê°ì²´ ìƒì„±(new í‚¤ì›Œë“œ ì´ìš©)ì‹œ ë³€ìˆ˜ìƒì„±ë¨ 
-        ì œê±°ì‹œì : í´ëž˜ìŠ¤ ê°ì²´ê°€ ì œê±°ë  ë•Œ ë³€ìˆ˜ê°€ ì‚­ì œë¨.
-          ==> ê°œë°œìžê°€ í´ëž˜ìŠ¤ë¥¼ ì‚¬ìš©í•˜ê¸° ìœ„í•´ì„œ new ì´ìš©í•œë‹¤. ( í´ëž˜ìŠ¤ ì˜ì—­ í™•ë³´ )
-	      ì‚¬ìš©ëœ í´ëž˜ìŠ¤ ì˜ì—­ì„ ì œê±°ëŠ” ê°œë°œìžê°€ í•˜ì§€ ì•Šê³  ìžë°”ê°€ ìžë™ìœ¼ë¡œ ì œê±°í•´ì¤€ë‹¤.
-	      ì œê±°í•´ì£¼ëŠ” í”„ë¡œì„¸ìŠ¤ëŠ” GC ( Garbage Collector)ê°€ í•´ì¤€ë‹¤.
-	  ==> C ì–¸ì–´ëŠ” ì˜ì—­ í™•ë³´ ë° ì œê±°ë¥¼ ê°œë°œìžê°€ ëª¨ë‘ ì§ì ‘ í•´ì•¼ëœë‹¤.
-      - ìƒì„±íšŸìˆ˜: new í• ë•Œë§ˆë‹¤ ë§¤ë²ˆ ìƒì„±.
-      - ì €ìž¥ë©”ëª¨ë¦¬: heap ë©”ëª¨ë¦¬
-      - ì„ ì–¸ë§Œí•˜ê³  ì´ˆê¸°í™”í•˜ì§€ ì•Šìœ¼ë©´ ìžë™ìœ¼ë¡œ ê¸°ë³¸ê°’ìœ¼ë¡œ ì´ˆê¸°í™”ëœë‹¤.
-        ê¸°ë³¸í˜•:
-	    ì •ìˆ˜: 0
-	    ì‹¤ìˆ˜: 0.0
-	    ë¬¸ìž: \u0000
-	    ë…¼ë¦¬: false
-	ì°¸ì¡°í˜•: null
-  ë‹¤. í´ëž˜ìŠ¤ ë³€ìˆ˜ ( class variable, static variable)
-      - ë©”ì„œë“œ ë°–ì—ì„œ ì„ ì–¸ + static í‚¤ì›Œë“œ ì¶”ê°€
-      - ìƒì„±ì‹œì : í”„ë¡œê·¸ëž¨ ì‹¤í–‰ì‹œ ë³€ìˆ˜ ìƒì„±ë¨ 
-        ì œê±°ì‹œì : í”„ë¡œê·¸ëž¨ ì¢…ë£Œì‹œ ë³€ìˆ˜ê°€ ì‚­ì œë¨.
-      - ìƒì„±íšŸìˆ˜: 1 ë²ˆ
-      - ì €ìž¥ë©”ëª¨ë¦¬: method area ë©”ëª¨ë¦¬  
-      - ì„ ì–¸ë§Œí•˜ê³  ì´ˆê¸°í™”í•˜ì§€ ì•Šìœ¼ë©´ ìžë™ìœ¼ë¡œ ê¸°ë³¸ê°’ìœ¼ë¡œ ì´ˆê¸°í™”ëœë‹¤.
-        ê¸°ë³¸í˜•:
-	    ì •ìˆ˜: 0
-	    ì‹¤ìˆ˜: 0.0
-	    ë¬¸ìž: \u0000
-	    ë…¼ë¦¬: false
+  °¡. ·ÎÄÃ º¯¼ö ( local variable )
+      - ¸Þ¼­µå¾È¿¡¼­ ¼±¾ð
+      - »ý¼º½ÃÁ¡: ¸Þ¼­µå È£Ãâ½Ã º¯¼ö»ý¼ºµÊ 
+        Á¦°Å½ÃÁ¡: ¸Þ¼­µå È£ÃâÈÄ ÀÛ¾÷ÀÌ ¸ðµÎ ³¡³µÀ» ¶§
+      - »ý¼ºÈ½¼ö: ¸Þ¼­µå È£ÃâÇÒ¶§¸¶´Ù ¸Å¹ø »ý¼ºµÇ°í 
+                ¸Þ¼­µå ÀÛ¾÷ÀÌ ³¡³ª¸é ¸Å¹ø »èÁ¦µÊ. ( ÀÏ½ÃÀûÀ¸·Î »ç¿ëÇÒ ¸ñÀûÀ¸·Î ÁÖ·Î »ç¿ëµÊ )
+      - ÀúÀå¸Þ¸ð¸®: stack ¸Þ¸ð¸®
+      - ¼±¾ð¸¸ÇÏ°í ÃÊ±âÈ­ÇÏÁö ¾ÊÀ¸¸é ÀÚµ¿ÃÊ±âÈ­ ¾ÈµÊ.
+        ¹Ýµå½Ã »ç¿ëÀü¿¡ ÃÊ±âÈ­ÇØ¾ß µÈ´Ù. (******************)
+  ³ª. ÀÎ½ºÅÏ½º º¯¼ö ( instance variable )
+      - ¸Þ¼­µå ¹Û¿¡¼­ ¼±¾ð
+      - »ý¼º½ÃÁ¡: Å¬·¡½º °´Ã¼ »ý¼º(new Å°¿öµå ÀÌ¿ë)½Ã º¯¼ö»ý¼ºµÊ 
+        Á¦°Å½ÃÁ¡: Å¬·¡½º °´Ã¼°¡ Á¦°ÅµÉ ¶§ º¯¼ö°¡ »èÁ¦µÊ.
+          ==> °³¹ßÀÚ°¡ Å¬·¡½º¸¦ »ç¿ëÇÏ±â À§ÇØ¼­ new ÀÌ¿ëÇÑ´Ù. ( Å¬·¡½º ¿µ¿ª È®º¸ )
+	      »ç¿ëµÈ Å¬·¡½º ¿µ¿ªÀ» Á¦°Å´Â °³¹ßÀÚ°¡ ÇÏÁö ¾Ê°í ÀÚ¹Ù°¡ ÀÚµ¿À¸·Î Á¦°ÅÇØÁØ´Ù.
+	      Á¦°ÅÇØÁÖ´Â ÇÁ·Î¼¼½º´Â GC ( Garbage Collector)°¡ ÇØÁØ´Ù.
+	  ==> C ¾ð¾î´Â ¿µ¿ª È®º¸ ¹× Á¦°Å¸¦ °³¹ßÀÚ°¡ ¸ðµÎ Á÷Á¢ ÇØ¾ßµÈ´Ù.
+      - »ý¼ºÈ½¼ö: new ÇÒ¶§¸¶´Ù ¸Å¹ø »ý¼º.
+      - ÀúÀå¸Þ¸ð¸®: heap ¸Þ¸ð¸®
+      - ¼±¾ð¸¸ÇÏ°í ÃÊ±âÈ­ÇÏÁö ¾ÊÀ¸¸é ÀÚµ¿À¸·Î ±âº»°ªÀ¸·Î ÃÊ±âÈ­µÈ´Ù.
+        ±âº»Çü:
+	    Á¤¼ö: 0
+	    ½Ç¼ö: 0.0
+	    ¹®ÀÚ: \u0000
+	    ³í¸®: false
+	ÂüÁ¶Çü: null
+  ´Ù. Å¬·¡½º º¯¼ö ( class variable, static variable)
+      - ¸Þ¼­µå ¹Û¿¡¼­ ¼±¾ð + static Å°¿öµå Ãß°¡
+      - »ý¼º½ÃÁ¡: ÇÁ·Î±×·¥ ½ÇÇà½Ã º¯¼ö »ý¼ºµÊ 
+        Á¦°Å½ÃÁ¡: ÇÁ·Î±×·¥ Á¾·á½Ã º¯¼ö°¡ »èÁ¦µÊ.
+      - »ý¼ºÈ½¼ö: 1 ¹ø
+      - ÀúÀå¸Þ¸ð¸®: method area ¸Þ¸ð¸®  
+      - ¼±¾ð¸¸ÇÏ°í ÃÊ±âÈ­ÇÏÁö ¾ÊÀ¸¸é ÀÚµ¿À¸·Î ±âº»°ªÀ¸·Î ÃÊ±âÈ­µÈ´Ù.
+        ±âº»Çü:
+	    Á¤¼ö: 0
+	    ½Ç¼ö: 0.0
+	    ¹®ÀÚ: \u0000
+	    ³í¸®: false
 
-	ì°¸ì¡°í˜•: null
+	ÂüÁ¶Çü: null
 	  
-6. ë³€ìˆ˜ íŠ¹ì§•
+6. º¯¼ö Æ¯Â¡
 
-  1) ë³€ìˆ˜ëª…ì´ ë™ì¼í•˜ë©´ ì•ˆë¨
-  2) ë¡œì»¬ë³€ìˆ˜ëŠ” ì‚¬ìš©ì „ì— ë°˜ë“œì‹œ ì´ˆê¸°í™”
-     ì´ˆê¸°í™” ì•ˆí•˜ë©´ ì»´íŒŒì¼ ì—ëŸ¬ê°€ ë°œìƒë¨.
+  1) º¯¼ö¸íÀÌ µ¿ÀÏÇÏ¸é ¾ÈµÊ
+  2) ·ÎÄÃº¯¼ö´Â »ç¿ëÀü¿¡ ¹Ýµå½Ã ÃÊ±âÈ­
+     ÃÊ±âÈ­ ¾ÈÇÏ¸é ÄÄÆÄÀÏ ¿¡·¯°¡ ¹ß»ýµÊ.
 
-  3) ë³€ìˆ˜ë¥¼ ì¸ì‹í•˜ëŠ” ë²”ìœ„ ( scope )
-    ==> ë¸”ëŸ­(ì¤‘ê´„í˜¸{})
+  3) º¯¼ö¸¦ ÀÎ½ÄÇÏ´Â ¹üÀ§ ( scope )
+    ==> ºí·°(Áß°ýÈ£{})
 
-7. ìƒìˆ˜ ( Constant )
-  - ìƒìˆ˜ëŠ” ê°’ ë³€ê²½ ë¶ˆê°€
-  - final í‚¤ì›Œë“œ ì´ìš©í•¨.
-  - ë³€ìˆ˜ì™€ êµ¬ë³„í•˜ê¸° ìœ„í•´ì„œ ëŒ€ë¬¸ìžë¡œ ì§€ì • ( ê´€ë¡€ )
-  ì˜ˆ> final int NUM=100;
-
-
-8. ë°ì´í„°í˜• ë³€í™˜
-
-  1) ê°œë…
-    - í•œë²ˆ ì„ ì–¸ëœ ë°ì´í„°í˜•ì€ ì–¸ì œë“ ì§€ ë³€ê²½ì´ ê°€ëŠ¥í•˜ë‹¤.
-    - í°ë°•ìŠ¤ì— ìž‘ì€ ë°•ìŠ¤ëŠ” ì €ìž¥ì´ ê°€ëŠ¥í•˜ê³ 
-      ì—­ì€ ì €ìž¥ë¶ˆê°€
-
-  2) í˜•ë³€í™˜ ì¢…ë¥˜
-
-     (1) ìžë™ í˜•ë³€í™˜( ë¬µì‹œì , promotion, up-casting )
-
-         ê°€.  byte(1byte) > short(2byte) > int > long > float > double 
-         ë‚˜.  char(ë¬¸ìží˜•) > int(ì •ìˆ˜í˜• )
-             ì˜ˆ>  int n = 'A';  //ê°€ëŠ¥
-
-	 ë‹¤. ì •ìˆ˜í˜•ì¤‘ì—ì„œ intë³´ë‹¤ ìž‘ì€ íƒ€ìž…ì˜ ì—°ì‚°ê²°ê³¼ëŠ”  ê¸°ë³¸ê°’ì¸ intë¡œ ë°˜í™˜ëœë‹¤.
-         ë¼. ìž‘ì€ ë°ì´í„°í˜•ê³¼ í° ë°ì´í„°ì˜ ì—°ì‚°ê²°ê³¼ëŠ” í° ë°ì´í„°í˜•ìœ¼ë¡œ ë°˜í™˜ëœë‹¤.
-	    ì˜ˆ> ì •ìˆ˜í˜•í•˜ê³  ì‹¤ìˆ˜í˜•í•˜ê³  ì—°ì‚°ê²°ê³¼ëŠ” ì‹¤ìˆ˜í˜•ìœ¼ë¡œ ë°˜í™˜ëœë‹¤.
-
-         ë§ˆ. ë¬¸ìžì—´+ë¹„ë¬¸ìžì—´(ë¬¸ìžì—´)=====> ë¬¸ìžì—´ë¡œ ë°˜í™˜
+7. »ó¼ö ( Constant )
+  - »ó¼ö´Â °ª º¯°æ ºÒ°¡
+  - final Å°¿öµå ÀÌ¿ëÇÔ.
+  - º¯¼ö¿Í ±¸º°ÇÏ±â À§ÇØ¼­ ´ë¹®ÀÚ·Î ÁöÁ¤ ( °ü·Ê )
+  ¿¹> final int NUM=100;
 
 
-     (2) ê°•ì œí˜•ë³€í™˜ ( ëª…ì‹œì , type casting, down-casting, ì¼ë°˜ì ìœ¼ë¡œ ì˜ë¯¸í•˜ëŠ” í˜•ë³€í™˜ )
+8. µ¥ÀÌÅÍÇü º¯È¯
 
-         - ìž‘ì€íƒ€ìž… = í°íƒ€ìž…; //ì—ëŸ¬
+  1) °³³ä
+    - ÇÑ¹ø ¼±¾ðµÈ µ¥ÀÌÅÍÇüÀº ¾ðÁ¦µçÁö º¯°æÀÌ °¡´ÉÇÏ´Ù.
+    - Å«¹Ú½º¿¡ ÀÛÀº ¹Ú½º´Â ÀúÀåÀÌ °¡´ÉÇÏ°í
+      ¿ªÀº ÀúÀåºÒ°¡
 
-	 - ìž‘ì€íƒ€ìž… = (ìž‘ì€íƒ€ìž…)í°íƒ€ìž…;  // í˜•ë³€í™˜ ì—°ì‚°ìž: (íƒ€ìž…)
+  2) Çüº¯È¯ Á¾·ù
 
-  3) í˜„ìž¬ëŠ” ê¸°ë³¸í˜•ë§Œ í˜•ë³€í™˜ ì‹¤ìŠµì„ í–ˆìŒ.
-     í•˜ì§€ë§Œ ì°¸ì¡°í˜•(í´ëž˜ìŠ¤)ë„ í˜•ë³€í™˜ì´ ê°€ëŠ¥í•˜ë‹¤. (*************************)
-     ê²°ë¡ ì€ ìžë°”ì˜ ëª¨ë“  ë°ì´í„°(ê¸°ë³¸í˜•,ì°¸ì¡°í˜•)ëŠ” í˜•ë³€í™˜ì´ ê°€ëŠ¥í•˜ë‹¤.
+     (1) ÀÚµ¿ Çüº¯È¯( ¹¬½ÃÀû, promotion, up-casting )
+
+         °¡.  byte(1byte) > short(2byte) > int > long > float > double 
+         ³ª.  char(¹®ÀÚÇü) > int(Á¤¼öÇü )
+             ¿¹>  int n = 'A';  //°¡´É
+
+	 ´Ù. Á¤¼öÇüÁß¿¡¼­ intº¸´Ù ÀÛÀº Å¸ÀÔÀÇ ¿¬»ê°á°ú´Â  ±âº»°ªÀÎ int·Î ¹ÝÈ¯µÈ´Ù.
+         ¶ó. ÀÛÀº µ¥ÀÌÅÍÇü°ú Å« µ¥ÀÌÅÍÀÇ ¿¬»ê°á°ú´Â Å« µ¥ÀÌÅÍÇüÀ¸·Î ¹ÝÈ¯µÈ´Ù.
+	    ¿¹> Á¤¼öÇüÇÏ°í ½Ç¼öÇüÇÏ°í ¿¬»ê°á°ú´Â ½Ç¼öÇüÀ¸·Î ¹ÝÈ¯µÈ´Ù.
+
+         ¸¶. ¹®ÀÚ¿­+ºñ¹®ÀÚ¿­(¹®ÀÚ¿­)=====> ¹®ÀÚ¿­·Î ¹ÝÈ¯
+
+
+     (2) °­Á¦Çüº¯È¯ ( ¸í½ÃÀû, type casting, down-casting, ÀÏ¹ÝÀûÀ¸·Î ÀÇ¹ÌÇÏ´Â Çüº¯È¯ )
+
+         - ÀÛÀºÅ¸ÀÔ = Å«Å¸ÀÔ; //¿¡·¯
+
+	 - ÀÛÀºÅ¸ÀÔ = (ÀÛÀºÅ¸ÀÔ)Å«Å¸ÀÔ;  // Çüº¯È¯ ¿¬»êÀÚ: (Å¸ÀÔ)
+
+  3) ÇöÀç´Â ±âº»Çü¸¸ Çüº¯È¯ ½Ç½ÀÀ» ÇßÀ½.
+     ÇÏÁö¸¸ ÂüÁ¶Çü(Å¬·¡½º)µµ Çüº¯È¯ÀÌ °¡´ÉÇÏ´Ù. (*************************)
+     °á·ÐÀº ÀÚ¹ÙÀÇ ¸ðµç µ¥ÀÌÅÍ(±âº»Çü,ÂüÁ¶Çü)´Â Çüº¯È¯ÀÌ °¡´ÉÇÏ´Ù.
 
 
 
 
-9. ì½˜ì†”(console)ì— ê°’ì„ ì¶œë ¥í•˜ëŠ” ë°©ë²•
+9. ÄÜ¼Ö(console)¿¡ °ªÀ» Ãâ·ÂÇÏ´Â ¹æ¹ý
   
-   - ì¶œë ¥ ëŒ€ìƒì€ ë‹¤ì–‘í•˜ë‹¤.
-     ëª¨ë‹ˆí„°ì— ì¶œë ¥í•˜ëŠ” ê²½ìš°ë¥¼ í‘œì¤€ì¶œë ¥(standard output) ì´ë¼ê³  í•œë‹¤.
-     ë°˜ëŒ€ ê°œë…ì¸ í‘œì¤€ìž…ë ¥(standard input)ì€ í‚¤ë³´ì—ì„œ ìž…ë ¥ë°›ëŠ”ê²ƒì„ ì˜ë¯¸í•œë‹¤.
+   - Ãâ·Â ´ë»óÀº ´Ù¾çÇÏ´Ù.
+     ¸ð´ÏÅÍ¿¡ Ãâ·ÂÇÏ´Â °æ¿ì¸¦ Ç¥ÁØÃâ·Â(standard output) ÀÌ¶ó°í ÇÑ´Ù.
+     ¹Ý´ë °³³äÀÎ Ç¥ÁØÀÔ·Â(standard input)Àº Å°º¸¿¡¼­ ÀÔ·Â¹Þ´Â°ÍÀ» ÀÇ¹ÌÇÑ´Ù.
 
-  1) System.out.println(ê°’); 
-    - ìƒˆë¡œìš´ ì¤„(new line)ì— ì¶œë ¥í•œë‹¤.
-    - ë°˜ë“œì‹œ í•˜ë‚˜ì˜ ê°’ë§Œ ì§€ì •í•œë‹¤.
+  1) System.out.println(°ª); 
+    - »õ·Î¿î ÁÙ(new line)¿¡ Ãâ·ÂÇÑ´Ù.
+    - ¹Ýµå½Ã ÇÏ³ªÀÇ °ª¸¸ ÁöÁ¤ÇÑ´Ù.
 
-  2) System.out.print(ê°’);
-    - ìƒˆë¡œìš´ ì¤„ ì—†ì´ í˜„ìž¬ì¤„ì— ì¶œë ¥í•œë‹¤.
-    - ë°˜ë“œì‹œ í•˜ë‚˜ì˜ ê°’ë§Œ ì§€ì •í•œë‹¤.
+  2) System.out.print(°ª);
+    - »õ·Î¿î ÁÙ ¾øÀÌ ÇöÀçÁÙ¿¡ Ãâ·ÂÇÑ´Ù.
+    - ¹Ýµå½Ã ÇÏ³ªÀÇ °ª¸¸ ÁöÁ¤ÇÑ´Ù.
 
-  3) System.out.printf("  ", ...);  // ... ëŠ” ê°€ë³€ì¸ìžë¼ê³  í•˜ê³  ê°¯ìˆ˜ëŠ” ì •í•´ì ¸ ìžˆì§€ ì•ŠìŒ
+  3) System.out.printf("  ", ...);  // ... ´Â °¡º¯ÀÎÀÚ¶ó°í ÇÏ°í °¹¼ö´Â Á¤ÇØÁ® ÀÖÁö ¾ÊÀ½
 
-   ì˜ˆ> System.out.printf("  ", ê°’); 
-      System.out.printf("  ", ê°’1, ê°’2);
-      System.out.printf("  ", ê°’1,ê°’2,ê°’3,ê°’4,ê°’5);
+   ¿¹> System.out.printf("  ", °ª); 
+      System.out.printf("  ", °ª1, °ª2);
+      System.out.printf("  ", °ª1,°ª2,°ª3,°ª4,°ª5);
 
-     String name ="í™ê¸¸ë™";
+     String name ="È«±æµ¿";
      int age = 20;
-     System.out.printf("ì´ë¦„:%s, ë‚˜ì´:%d", name, age);
+     System.out.printf("ÀÌ¸§:%s, ³ªÀÌ:%d", name, age);
 ############################################################################
-###### ì°¸ê³ í• ë§Œí•œ ì‚¬ì´íŠ¸ ì†Œê°œ ##############################################
+###### Âü°íÇÒ¸¸ÇÑ »çÀÌÆ® ¼Ò°³ ##############################################
 ############################################################################
-# Java íƒ€ìž… í˜•ë³€í™˜ ì›ë¦¬ & ë°©ë²•
+# Java Å¸ÀÔ Çüº¯È¯ ¿ø¸® & ¹æ¹ý
 https://inpa.tistory.com/entry/JAVA-%E2%98%95-%ED%83%80%EC%9E%85-%ED%98%95%EB%B3%80%ED%99%98-%EC%A2%85%EB%A5%98-%EB%B0%A9%EB%B2%95-%F0%9F%92%AF-%EC%B4%9D%EC%A0%95%EB%A6%AC
 
-# final í‚¤ì›Œë“œ
+# final Å°¿öµå
 https://www.devkuma.com/docs/java/final/
 https://sudo-minz.tistory.com/135
 
-# printf(), ì´ìŠ¤ì¼€ì´í”„ ë¬¸ìž, í˜•ì‹ ì§€ì •ìž
+# printf(), ÀÌ½ºÄÉÀÌÇÁ ¹®ÀÚ, Çü½Ä ÁöÁ¤ÀÚ
 https://damy.tistory.com/3
 
-# ê·¸ë¦¼ìœ¼ë¡œ ë³´ëŠ” ìžë°” ì½”ë“œì˜ ë©”ëª¨ë¦¬ ì˜ì—­ (ìŠ¤íƒ & íž™)
+# ±×¸²À¸·Î º¸´Â ÀÚ¹Ù ÄÚµåÀÇ ¸Þ¸ð¸® ¿µ¿ª (½ºÅÃ & Èü)
 https://inpa.tistory.com/entry/JAVA-%E2%98%95-%EA%B7%B8%EB%A6%BC%EC%9C%BC%EB%A1%9C-%EB%B3%B4%EB%8A%94-%EC%9E%90%EB%B0%94-%EC%BD%94%EB%93%9C%EC%9D%98-%EB%A9%94%EB%AA%A8%EB%A6%AC-%EC%98%81%EC%97%AD%EC%8A%A4%ED%83%9D-%ED%9E%99
 
 ############################################################################
 ############################################################################
-2ì¼ì°¨ ë¦¬ë·°
-1.JDK11 + eclipse2022 ì„¤ì¹˜
-  - JDK11 ì„¤ì¹˜í›„ í™˜ê²½ë³€ìˆ˜ ì„¤ì •
+2ÀÏÂ÷ ¸®ºä
+1.JDK11 + eclipse2022 ¼³Ä¡
+  - JDK11 ¼³Ä¡ÈÄ È¯°æº¯¼ö ¼³Á¤
    JAVA_HOME=~
    PATH=~
 
-2. ìžë°”ì˜ ë°ì´í„° ì¢…ë¥˜
+2. ÀÚ¹ÙÀÇ µ¥ÀÌÅÍ Á¾·ù
 
-  1) ê¸°ë³¸í˜•
-       - ìˆ˜ì¹˜í˜•
-               - ì •ìˆ˜í˜•: byte ( 1byte )
+  1) ±âº»Çü
+       - ¼öÄ¡Çü
+               - Á¤¼öÇü: byte ( 1byte )
 	               short ( 2byte )
-		        int  ( 4byte ): ê¸°ë³¸
+		        int  ( 4byte ): ±âº»
 			long ( 8byte )
-		   ë¦¬í„°ëŸ´ í‘œí˜„: 10ì§„ìˆ˜, 2ì§„ìˆ˜(0bê°’), 8ì§„ìˆ˜(0ê°’), 16ì§„ìˆ˜(0xê°’)
-		             long íƒ€ìž…ìœ¼ë¡œ ì •ìˆ˜ê°’ì„ í‘œí˜„: ê°’L
-	       - ì‹¤ìˆ˜í˜•: float ( 4byte )
-	               double  (8byte ): ê¸°ë³¸
-                   ë¦¬í„°ëŸ´ í‘œí˜„: ì†Œìˆ˜ì  ì´ìš©, ì§€ìˆ˜ í‘œí˜„ ê°€ëŠ¥
-		             3.14 ( 3.14D, 3.14d)==> doubleì²˜ë¦¬
-			     3.14F(3.14f)  ==> float ì²˜ë¦¬
+		   ¸®ÅÍ·² Ç¥Çö: 10Áø¼ö, 2Áø¼ö(0b°ª), 8Áø¼ö(0°ª), 16Áø¼ö(0x°ª)
+		             long Å¸ÀÔÀ¸·Î Á¤¼ö°ªÀ» Ç¥Çö: °ªL
+	       - ½Ç¼öÇü: float ( 4byte )
+	               double  (8byte ): ±âº»
+                   ¸®ÅÍ·² Ç¥Çö: ¼Ò¼öÁ¡ ÀÌ¿ë, Áö¼ö Ç¥Çö °¡´É
+		             3.14 ( 3.14D, 3.14d)==> doubleÃ³¸®
+			     3.14F(3.14f)  ==> float Ã³¸®
 
-       - ë¬¸ìží˜• : char( 2byte )
-                ë¦¬í„°ëŸ´ í‘œí˜„: '' ì´ìš©, ë‹¨ í•˜ë‚˜ì˜ ë¬¸ìž í‘œí˜„ì‹œ ì‚¬ìš©
-		          'A', 'a', 'í™'
-			  escapeë¬¸ìž: \t,\n, \', \", \\
-	      * ìžë°”ì–¸ì–´ëŠ” í•˜ë‚˜ì˜ ë¬¸ìžì™€ ì—¬ëŸ¬ ë¬¸ìžì¸ ë¬¸ìžì—´ì„ êµ¬ë³„í•´ì„œ ê´€ë¦¬í•˜ë‹¤.
-	        ë¬¸ìžì—´ì€ ì°¸ì¡°í˜•ì¸ String í´ëž˜ìŠ¤ë¡œ ê´€ë¦¬ëœë‹¤.
-       - ë…¼ë¦¬í˜• : boolean ( 1btye )
-               ë¦¬í„°ëŸ´ í‘œí˜„: true/false
+       - ¹®ÀÚÇü : char( 2byte )
+                ¸®ÅÍ·² Ç¥Çö: '' ÀÌ¿ë, ´Ü ÇÏ³ªÀÇ ¹®ÀÚ Ç¥Çö½Ã »ç¿ë
+		          'A', 'a', 'È«'
+			  escape¹®ÀÚ: \t,\n, \', \", \\
+	      * ÀÚ¹Ù¾ð¾î´Â ÇÏ³ªÀÇ ¹®ÀÚ¿Í ¿©·¯ ¹®ÀÚÀÎ ¹®ÀÚ¿­À» ±¸º°ÇØ¼­ °ü¸®ÇÏ´Ù.
+	        ¹®ÀÚ¿­Àº ÂüÁ¶ÇüÀÎ String Å¬·¡½º·Î °ü¸®µÈ´Ù.
+       - ³í¸®Çü : boolean ( 1btye )
+               ¸®ÅÍ·² Ç¥Çö: true/false
 
-  2) ì°¸ì¡°í˜•
+  2) ÂüÁ¶Çü
 
-     - ê¸°ë³¸í˜• 8ê°œë¥¼ ì œì™¸í•œ ë‚˜ë¨¸ì§€ ë°ì´í„°
-     - í´ëž˜ìŠ¤, ì¸í„°íŽ˜ì´ìŠ¤, ë°°ì—´
+     - ±âº»Çü 8°³¸¦ Á¦¿ÜÇÑ ³ª¸ÓÁö µ¥ÀÌÅÍ
+     - Å¬·¡½º, ÀÎÅÍÆäÀÌ½º, ¹è¿­
 
 
-3. ë³€ìˆ˜(variable)
+3. º¯¼ö(variable)
  
- 1) ìš©ë„: ë°ì´í„° ì €ìž¥
- 2) íŠ¹ì§•: ë‹¨ í•˜ë‚˜ì˜ ë°ì´í„°ë§Œ ì €ìž¥ ê°€ëŠ¥
-         ë™ì¼í•œ ì´ë¦„ìœ¼ë¡œ ì‚¬ìš©ë¶ˆê°€ ( ì‹ë³„ë¶ˆê°€ )
-	 ë¸”ëŸ­ scopeë¥¼ ë”°ë¥¸ë‹¤. ( ë¸”ëŸ­({})ì•ˆì—ì„œ ì„ ì–¸ëœ ë³€ìˆ˜ëŠ” ë¸”ëŸ­ì•ˆì—ì„œë§Œ ì‚¬ìš© ê°€ëŠ¥ )
-	 * ìžë°”ìŠ¤í¬ë¦½íŠ¸ ì–¸ì–´ëŠ” ë¸”ëŸ­ scopeê°€ ì•„ë‹ˆê³  í•¨ìˆ˜ scopeë¥¼ ë”°ë¥¸ë‹¤.
+ 1) ¿ëµµ: µ¥ÀÌÅÍ ÀúÀå
+ 2) Æ¯Â¡: ´Ü ÇÏ³ªÀÇ µ¥ÀÌÅÍ¸¸ ÀúÀå °¡´É
+         µ¿ÀÏÇÑ ÀÌ¸§À¸·Î »ç¿ëºÒ°¡ ( ½Äº°ºÒ°¡ )
+	 ºí·° scope¸¦ µû¸¥´Ù. ( ºí·°({})¾È¿¡¼­ ¼±¾ðµÈ º¯¼ö´Â ºí·°¾È¿¡¼­¸¸ »ç¿ë °¡´É )
+	 * ÀÚ¹Ù½ºÅ©¸³Æ® ¾ð¾î´Â ºí·° scope°¡ ¾Æ´Ï°í ÇÔ¼ö scope¸¦ µû¸¥´Ù.
 
-  3) ì‚¬ìš©ë°©ë²•
+  3) »ç¿ë¹æ¹ý
 
-     ê°€. ë³€ìˆ˜ì„ ì–¸ ( ë©”ëª¨ë¦¬ì— ë°ì´í„°ë¥¼ ì €ìž¥í•  ì˜ì—­ìƒì„±, ì˜ì—­ì˜ ì´ë¦„ì„ ë³€ìˆ˜ë¡œ ì§€ì¹­)
-     ë‚˜. ì´ˆê¸°í™”
-     ë‹¤. ë³€ìˆ˜ ì‚¬ìš©
+     °¡. º¯¼ö¼±¾ð ( ¸Þ¸ð¸®¿¡ µ¥ÀÌÅÍ¸¦ ÀúÀåÇÒ ¿µ¿ª»ý¼º, ¿µ¿ªÀÇ ÀÌ¸§À» º¯¼ö·Î ÁöÄª)
+     ³ª. ÃÊ±âÈ­
+     ´Ù. º¯¼ö »ç¿ë
 
- 4) ë³€ìˆ˜ ì¢…ë¥˜ 3ê°€ì§€
+ 4) º¯¼ö Á¾·ù 3°¡Áö
 
-    ê°€. ë¡œì»¬ë³€ìˆ˜(local variable)
-       - ë©”ì„œë“œì•ˆì—ì„œ ì„ ì–¸ëœ ë³€ìˆ˜
-       - ìƒì„±~ì†Œë©¸: ë©”ì„œë“œí˜¸ì¶œìƒì„±~ë©”ì„œë“œì¢…ë£Œì‹œì‚­ì œë¨. 
-       - ì‚¬ìš©ë©”ëª¨ë¦¬: stack
-       - ë³€ìˆ˜ì„ ì–¸ë§Œí•˜ê³  ì´ˆê¸°í™” ì•ˆí•˜ë©´ ìžë™ìœ¼ë¡œ ì´ˆê¸°í™”ê°€ ì•ˆë¨.
-         ë”°ë¼ì„œ ë³€ìˆ˜ì‚¬ìš©ì „ì— ë°˜ë“œì‹œ ì´ˆê¸°í™”í•´ì•¼ ëœë‹¤. (*****)
-    ë‚˜. ì¸ìŠ¤í„´ìŠ¤ë³€ìˆ˜(instance variable)
-       - ë©”ì„œë“œë°–ì—ì„œ ì„ ì–¸ëœ ë³€ìˆ˜
-       - ìƒì„±~ì†Œë©¸: í´ëž˜ìŠ¤ ê°ì²´ìƒì„±(newí‚¤ì›Œë“œ)~ ê°ì²´ì†Œë©¸ì‹œ ì‚­ì œë¨.
-       - ì‚¬ìš©ë©”ëª¨ë¦¬: heap
-       - ë³€ìˆ˜ì„ ì–¸ë§Œí•˜ê³  ì´ˆê¸°í™” ì•ˆí•˜ë©´ ìžë™ìœ¼ë¡œ ì´ˆê¸°í™” ( ë°ì´í„°í˜•ì˜ ê¸°ë³¸ê°’ìœ¼ë¡œ ì´ˆê¸°í™”ë¨, ì •ìˆ˜:0, ì‹¤ìˆ˜:0.0 ë…¼ë¦¬:false, ì°¸ì¡°í˜•: null )
-    ë‹¤. í´ëž˜ìŠ¤ ë³€ìˆ˜ ( class variable, static variable)
-      - ë©”ì„œë“œë°–ì—ì„œ ì„ ì–¸ëœ ë³€ìˆ˜ + static í‚¤ì›Œë“œ
-      - ìƒì„±~ì†Œë©¸: í”„ë¡œê·¸ëž¨ì‹¤í–‰ì‹œ ìƒì„± ~  í”„ë¡œê·¸ëž¨ ì¢…ë£Œì‹œ ì‚­ì œë¨.
-      - ì‚¬ìš©ë©”ëª¨ë¦¬: method area
-      - ë³€ìˆ˜ì„ ì–¸ë§Œí•˜ê³  ì´ˆê¸°í™” ì•ˆí•˜ë©´ ìžë™ìœ¼ë¡œ ì´ˆê¸°í™”  ( ë°ì´í„°í˜•ì˜ ê¸°ë³¸ê°’ìœ¼ë¡œ ì´ˆê¸°í™”ë¨, ì •ìˆ˜:0, ì‹¤ìˆ˜:0.0 ë…¼ë¦¬:false, ì°¸ì¡°í˜•: null )
+    °¡. ·ÎÄÃº¯¼ö(local variable)
+       - ¸Þ¼­µå¾È¿¡¼­ ¼±¾ðµÈ º¯¼ö
+       - »ý¼º~¼Ò¸ê: ¸Þ¼­µåÈ£Ãâ»ý¼º~¸Þ¼­µåÁ¾·á½Ã»èÁ¦µÊ. 
+       - »ç¿ë¸Þ¸ð¸®: stack
+       - º¯¼ö¼±¾ð¸¸ÇÏ°í ÃÊ±âÈ­ ¾ÈÇÏ¸é ÀÚµ¿À¸·Î ÃÊ±âÈ­°¡ ¾ÈµÊ.
+         µû¶ó¼­ º¯¼ö»ç¿ëÀü¿¡ ¹Ýµå½Ã ÃÊ±âÈ­ÇØ¾ß µÈ´Ù. (*****)
+    ³ª. ÀÎ½ºÅÏ½ºº¯¼ö(instance variable)
+       - ¸Þ¼­µå¹Û¿¡¼­ ¼±¾ðµÈ º¯¼ö
+       - »ý¼º~¼Ò¸ê: Å¬·¡½º °´Ã¼»ý¼º(newÅ°¿öµå)~ °´Ã¼¼Ò¸ê½Ã »èÁ¦µÊ.
+       - »ç¿ë¸Þ¸ð¸®: heap
+       - º¯¼ö¼±¾ð¸¸ÇÏ°í ÃÊ±âÈ­ ¾ÈÇÏ¸é ÀÚµ¿À¸·Î ÃÊ±âÈ­ ( µ¥ÀÌÅÍÇüÀÇ ±âº»°ªÀ¸·Î ÃÊ±âÈ­µÊ, Á¤¼ö:0, ½Ç¼ö:0.0 ³í¸®:false, ÂüÁ¶Çü: null )
+    ´Ù. Å¬·¡½º º¯¼ö ( class variable, static variable)
+      - ¸Þ¼­µå¹Û¿¡¼­ ¼±¾ðµÈ º¯¼ö + static Å°¿öµå
+      - »ý¼º~¼Ò¸ê: ÇÁ·Î±×·¥½ÇÇà½Ã »ý¼º ~  ÇÁ·Î±×·¥ Á¾·á½Ã »èÁ¦µÊ.
+      - »ç¿ë¸Þ¸ð¸®: method area
+      - º¯¼ö¼±¾ð¸¸ÇÏ°í ÃÊ±âÈ­ ¾ÈÇÏ¸é ÀÚµ¿À¸·Î ÃÊ±âÈ­  ( µ¥ÀÌÅÍÇüÀÇ ±âº»°ªÀ¸·Î ÃÊ±âÈ­µÊ, Á¤¼ö:0, ½Ç¼ö:0.0 ³í¸®:false, ÂüÁ¶Çü: null )
 
  
-4. ë°ì´í„° í˜•ë³€í™˜
+4. µ¥ÀÌÅÍ Çüº¯È¯
  
-  - ê°œë…: í•œ ë²ˆ ì •í•´ì§„ ë°ì´í„°í˜•ì´ ê³„ì† ì¼ì •í•˜ì§€ ì•Šê³  í•„ìš”ì‹œ ì–¸ì œë“ ì§€ ë³€ê²½ë  ìˆ˜ ìžˆë‹¤.
-  - ì¢…ë¥˜
+  - °³³ä: ÇÑ ¹ø Á¤ÇØÁø µ¥ÀÌÅÍÇüÀÌ °è¼Ó ÀÏÁ¤ÇÏÁö ¾Ê°í ÇÊ¿ä½Ã ¾ðÁ¦µçÁö º¯°æµÉ ¼ö ÀÖ´Ù.
+  - Á¾·ù
    
-    ê°€. ë¬µì‹œì  í˜•ë³€í™˜( ìžë™í˜•ë³€í™˜, promotion, up-casting)
+    °¡. ¹¬½ÃÀû Çüº¯È¯( ÀÚµ¿Çüº¯È¯, promotion, up-casting)
         - byte > short > int > long > float > double
         -         char > int
-        - int ë³´ë‹¤ ìž‘ì€ íƒ€ìž…ì˜ ì—°ì‚°ê²°ê³¼ëŠ” intë¡œ ë°˜í™˜ë¨.
-	- ìž‘ì€íƒ€ìž…ê³¼ í°íƒ€ìž…ì˜ ì—°ì‚°ê²°ê³¼ëŠ” í° íƒ€ìž…ìœ¼ë¡œ ë°˜í™˜ë¨.
-	- ë¬¸ìžì—´ê³¼ ë¹„ë¬¸ìžì—´(ë¬¸ìžì—´)ì„ + í•˜ë©´ ì—°ê²°ì´ ë¨.
+        - int º¸´Ù ÀÛÀº Å¸ÀÔÀÇ ¿¬»ê°á°ú´Â int·Î ¹ÝÈ¯µÊ.
+	- ÀÛÀºÅ¸ÀÔ°ú Å«Å¸ÀÔÀÇ ¿¬»ê°á°ú´Â Å« Å¸ÀÔÀ¸·Î ¹ÝÈ¯µÊ.
+	- ¹®ÀÚ¿­°ú ºñ¹®ÀÚ¿­(¹®ÀÚ¿­)À» + ÇÏ¸é ¿¬°áÀÌ µÊ.
 	    
-    ë‚˜. ëª…ì‹œì  í˜•ë³€í™˜( ê°•ì œí˜•ë³€í™˜, type casting, down-casting )
+    ³ª. ¸í½ÃÀû Çüº¯È¯( °­Á¦Çüº¯È¯, type casting, down-casting )
       
-       - (ë°ì´í„°í˜•)ê°’  í˜•ë³€í™˜ ì—°ì‚°ìžë¥¼ ì‚¬ìš©.
-       - ë‹¨ì ì€ ë°ì´í„° ì†ì‹¤ì´ ë°œìƒë  ìˆ˜ ìžˆë‹¤.
+       - (µ¥ÀÌÅÍÇü)°ª  Çüº¯È¯ ¿¬»êÀÚ¸¦ »ç¿ë.
+       - ´ÜÁ¡Àº µ¥ÀÌÅÍ ¼Õ½ÇÀÌ ¹ß»ýµÉ ¼ö ÀÖ´Ù.
 
-5. í‘œì¤€ ì¶œë ¥
+5. Ç¥ÁØ Ãâ·Â
 
-  - ëª¨ë‹ˆí„°ì— ì¶œë ¥
-  - 3ê°€ì§€
-   System.out.println(ê°’);  // ìƒˆë¡œìš´ ë¼ì¸ì— ê°’ì„ ì¶œë ¥
-   System.out.print(ê°’);    // í˜„ìž¬ ë¼ì¸ì— ê°’ì„ ì¶œë ¥
+  - ¸ð´ÏÅÍ¿¡ Ãâ·Â
+  - 3°¡Áö
+   System.out.println(°ª);  // »õ·Î¿î ¶óÀÎ¿¡ °ªÀ» Ãâ·Â
+   System.out.print(°ª);    // ÇöÀç ¶óÀÎ¿¡ °ªÀ» Ãâ·Â
 
-   System.out.printf("í¬ë§·", ê°’,ê°’2.....);  //   ... ê°€ë³€ì¸ìž, í˜„ìž¬ ë¼ì¸ì— ê°’ì„ ì¶œë ¥
+   System.out.printf("Æ÷¸Ë", °ª,°ª2.....);  //   ... °¡º¯ÀÎÀÚ, ÇöÀç ¶óÀÎ¿¡ °ªÀ» Ãâ·Â
 
-6. ìƒìˆ˜( Constant )
+6. »ó¼ö( Constant )
  
-  - final í‚¤ì›Œë“œ ì´ìš©
-  - ìƒìˆ˜ëŠ” ê°’ ë³€ê²½ì´ ë¶ˆê°€ëŠ¥.
+  - final Å°¿öµå ÀÌ¿ë
+  - »ó¼ö´Â °ª º¯°æÀÌ ºÒ°¡´É.
 ############################################################################
-3ì¼ì°¨ ( 3ì›” 12ì¼) 
+3ÀÏÂ÷ ( 3¿ù 12ÀÏ) 
 
-1. í‘œì¤€ ìž…ë ¥ ( standard input )
+1. Ç¥ÁØ ÀÔ·Â ( standard input )
 
-  1) ê°œë…: í‚¤ë³´ë“œë¡œ ë°ì´í„°ë¥¼ ìž…ë ¥ ë°›ìŒì„ ì˜ë¯¸
+  1) °³³ä: Å°º¸µå·Î µ¥ÀÌÅÍ¸¦ ÀÔ·Â ¹ÞÀ½À» ÀÇ¹Ì
 
-  2) ëª¨ë‹ˆí„°: System.out
-     í‚¤ë³´ë“œ: System.in
+  2) ¸ð´ÏÅÍ: System.out
+     Å°º¸µå: System.in
 
-  3) java.util.Scanner í´ëž˜ìŠ¤ ì´ìš©í•´ì„œ í‚¤ë³´ë“œì—ì„œ ìž…ë ¥ëœ ê°’ì„ ì–»ì„ ìˆ˜ ìžˆë‹¤.
+  3) java.util.Scanner Å¬·¡½º ÀÌ¿ëÇØ¼­ Å°º¸µå¿¡¼­ ÀÔ·ÂµÈ °ªÀ» ¾òÀ» ¼ö ÀÖ´Ù.
 
      import java.util.Scanner;
 
      Scanner scn = new Scanner(System.in);
 
-   4) ê°’ì„ ì–»ì„ ìˆ˜ ìžˆëŠ” ë©”ì„œë“œê°€ ì œê³µëœë‹¤.
+   4) °ªÀ» ¾òÀ» ¼ö ÀÖ´Â ¸Þ¼­µå°¡ Á¦°øµÈ´Ù.
 
-      ì •ìˆ˜ê°’: int n = scn.nextInt();
-      í•˜ë‚˜ì˜ ë‹¨ì–´: String s = scn.next();
-       ì˜ˆ> í‚¤ë³´ë“œ ìž…ë ¥: aaa bbb ccc
+      Á¤¼ö°ª: int n = scn.nextInt();
+      ÇÏ³ªÀÇ ´Ü¾î: String s = scn.next();
+       ¿¹> Å°º¸µå ÀÔ·Â: aaa bbb ccc
 
-      í•œ ì¤„ ì½ê¸° : String s = scn.nextLine();
+      ÇÑ ÁÙ ÀÐ±â : String s = scn.nextLine();
 
 
 
-2. ë¬¸ìž¥ ( statements )
+2. ¹®Àå ( statements )
 
-  ê°€. ì‹¤í–‰ë¬¸ :  ìˆœì°¨ë¬¸ : ìœ„ì—ì„œ ì•„ëž˜ë¡œ ìˆœì°¨ì ìœ¼ë¡œ ì‹¤í–‰ë˜ëŠ” ë¬¸ìž¥.
-                     ê±°ì˜ 90% ì´ìƒ ì°¨ì§€.
+  °¡. ½ÇÇà¹® :  ¼øÂ÷¹® : À§¿¡¼­ ¾Æ·¡·Î ¼øÂ÷ÀûÀ¸·Î ½ÇÇàµÇ´Â ¹®Àå.
+                     °ÅÀÇ 90% ÀÌ»ó Â÷Áö.
 
-              ì œì–´ë¬¸ :  ì¡°ê±´ë¬¸(ë¶„ê¸°ë¬¸) : ì¡°ê±´ì— ë”°ë¼ì„œ ì‹¤í–‰ë˜ëŠ” ë¬¸ìž¥ì´ ë‹¬ë¼ì§„ë‹¤.
-                                    ë‹¨ì¼ifë¬¸, if~elseë¬¸, ë‹¤ì¤‘ifë¬¸, switchë¬¸
+              Á¦¾î¹® :  Á¶°Ç¹®(ºÐ±â¹®) : Á¶°Ç¿¡ µû¶ó¼­ ½ÇÇàµÇ´Â ¹®ÀåÀÌ ´Þ¶óÁø´Ù.
+                                    ´ÜÀÏif¹®, if~else¹®, ´ÙÁßif¹®, switch¹®
 
-	               ë°˜ë³µë¬¸ : ì¡°ê±´ì— ë”°ë¼ì„œ í•œë²ˆ ì‹¤í–‰ëœ ë¬¸ìž¥ì´ ì—¬ëŸ¬ë²ˆ ì‹¤í–‰ëœë‹¤.
-		                    forë¬¸,  whileë¬¸, do~whileë¬¸
+	               ¹Ýº¹¹® : Á¶°Ç¿¡ µû¶ó¼­ ÇÑ¹ø ½ÇÇàµÈ ¹®ÀåÀÌ ¿©·¯¹ø ½ÇÇàµÈ´Ù.
+		                    for¹®,  while¹®, do~while¹®
 			   
-  ë‚˜. ë¹„ì‹¤í–‰ë¬¸
-     - ì£¼ì„ë¬¸ : í•œì¤„ ì£¼ì„ë¬¸ : // 
-               ë©€í‹° ì£¼ì„ë¬¸: /*   */
-	      javadoc ì£¼ì„ë¬¸: /**   */  ==> ê°œë°œìžê°€ ë§Œë“  í´ëž˜ìŠ¤ì— ëŒ€í•œ ë©”ë‰´ì–¼ì¸ APIë¬¸ì„œ ë§Œë“¤ë•Œ ì‚¬ìš©ë¨.
+  ³ª. ºñ½ÇÇà¹®
+     - ÁÖ¼®¹® : ÇÑÁÙ ÁÖ¼®¹® : // 
+               ¸ÖÆ¼ ÁÖ¼®¹®: /*   */
+	      javadoc ÁÖ¼®¹®: /**   */  ==> °³¹ßÀÚ°¡ ¸¸µç Å¬·¡½º¿¡ ´ëÇÑ ¸Þ´º¾óÀÎ API¹®¼­ ¸¸µé¶§ »ç¿ëµÊ.
 	                    
 
-  1) ì¡°ê±´ë¬¸ ( ë¶„ê¸°ë¬¸ )
+  1) Á¶°Ç¹® ( ºÐ±â¹® )
 
-    ê°€. ë‹¨ì¼ if ë¬¸
-      -ìš©ë„: ì¡°ê±´ì‹(true/false)ì— ë”°ë¼ì„œ ì‹¤í–‰ì—¬ë¶€ê°€ ê²°ì •ë˜ëŠ” ê²½ìš°.
-      -ë¬¸ë²•: 
-             if(ì¡°ê±´ì‹)ë¬¸ìž¥1;
-	             ë¬¸ìž¥2;  // ì˜í–¥ì´ ì—†ìŒ.
+    °¡. ´ÜÀÏ if ¹®
+      -¿ëµµ: Á¶°Ç½Ä(true/false)¿¡ µû¶ó¼­ ½ÇÇà¿©ºÎ°¡ °áÁ¤µÇ´Â °æ¿ì.
+      -¹®¹ý: 
+             if(Á¶°Ç½Ä)¹®Àå1;
+	             ¹®Àå2;  // ¿µÇâÀÌ ¾øÀ½.
 
-             // {} ì§€ì •ì„ ê¶Œìž¥í•¨.
-             if(ì¡°ê±´ì‹){ë¬¸ìž¥1;}
-	             ë¬¸ìž¥2;
+             // {} ÁöÁ¤À» ±ÇÀåÇÔ.
+             if(Á¶°Ç½Ä){¹®Àå1;}
+	             ¹®Àå2;
 
-             // {} ì—­í• ì€ ê·¸ë£¹í•‘ ì—­í• .
-             if(ì¡°ê±´ì‹){
-	        ë¬¸ìž¥1;
-	        ë¬¸ìž¥2;
+             // {} ¿ªÇÒÀº ±×·ìÇÎ ¿ªÇÒ.
+             if(Á¶°Ç½Ä){
+	        ¹®Àå1;
+	        ¹®Àå2;
 	     }
 	             
 
-    ë‚˜. if~else ë¬¸
-      -ìš©ë„: ì¡°ê±´ì‹(true/false)ì— ë”°ë¼ì„œ ì‹¤í–‰í•˜ëŠ” ë¬¸ìž¥ì´ ë‹¬ë¼ì§€ëŠ” ê²½ìš°.
-      -ë¬¸ë²•:
-             if(ì¡°ê±´ì‹)
-	        ë¬¸ìž¥2;  // ì¡°ê±´ì‹ì´ trueì¸ ê²½ìš°ì— ì‹¤í–‰
+    ³ª. if~else ¹®
+      -¿ëµµ: Á¶°Ç½Ä(true/false)¿¡ µû¶ó¼­ ½ÇÇàÇÏ´Â ¹®ÀåÀÌ ´Þ¶óÁö´Â °æ¿ì.
+      -¹®¹ý:
+             if(Á¶°Ç½Ä)
+	        ¹®Àå2;  // Á¶°Ç½ÄÀÌ trueÀÎ °æ¿ì¿¡ ½ÇÇà
 	     else
-	        ë¬¸ìž¥3;  // ì¡°ê±´ì‹ì´ falseì¸ ê²½ìš°ì— ì‹¤í–‰
+	        ¹®Àå3;  // Á¶°Ç½ÄÀÌ falseÀÎ °æ¿ì¿¡ ½ÇÇà
 
 
-            if(ì¡°ê±´ì‹){
-	        ë¬¸ìž¥2;  // ì¡°ê±´ì‹ì´ trueì¸ ê²½ìš°ì— ì‹¤í–‰
+            if(Á¶°Ç½Ä){
+	        ¹®Àå2;  // Á¶°Ç½ÄÀÌ trueÀÎ °æ¿ì¿¡ ½ÇÇà
 	     }else{
-	        ë¬¸ìž¥3;  // ì¡°ê±´ì‹ì´ falseì¸ ê²½ìš°ì— ì‹¤í–‰
+	        ¹®Àå3;  // Á¶°Ç½ÄÀÌ falseÀÎ °æ¿ì¿¡ ½ÇÇà
 	     }
 
 
-     ë‹¤. ë‹¤ì¤‘ if~else ë¬¸
-      -ìš©ë„: ì—¬ëŸ¬ë²ˆ ë¹„êµí•  ë•Œ  ì‚¬ìš©ëœë‹¤.
-      -ë¬¸ë²•:
+     ´Ù. ´ÙÁß if~else ¹®
+      -¿ëµµ: ¿©·¯¹ø ºñ±³ÇÒ ¶§  »ç¿ëµÈ´Ù.
+      -¹®¹ý:
           
-	    if(ì¡°ê±´ì‹1){
-               ë¬¸ìž¥1;  // ì¡°ê±´? ì¡°ê±´ì‹1ì´ trueì¸ ê²½ìš°
-	    }else if(ì¡°ê±´ì‹2){
-               ë¬¸ìž¥2;  // ì¡°ê±´? ì¡°ê±´ì‹1ì€ false, ì¡°ê±´ì‹2ëŠ” true
-	    }else if(ì¡°ê±´ì‹3){
-               ë¬¸ìž¥3; // ì¡°ê±´?  ì¡°ê±´ì‹1ì€ false, ì¡°ê±´ì‹2ëŠ” false ì¡°ê±´ì‹3ëŠ” true
+	    if(Á¶°Ç½Ä1){
+               ¹®Àå1;  // Á¶°Ç? Á¶°Ç½Ä1ÀÌ trueÀÎ °æ¿ì
+	    }else if(Á¶°Ç½Ä2){
+               ¹®Àå2;  // Á¶°Ç? Á¶°Ç½Ä1Àº false, Á¶°Ç½Ä2´Â true
+	    }else if(Á¶°Ç½Ä3){
+               ¹®Àå3; // Á¶°Ç?  Á¶°Ç½Ä1Àº false, Á¶°Ç½Ä2´Â false Á¶°Ç½Ä3´Â true
 	    }
 
-	     if(ì¡°ê±´ì‹1){
-               ë¬¸ìž¥1;  // ì¡°ê±´?
-	    }else if(ì¡°ê±´ì‹2){
-               ë¬¸ìž¥2;  // ì¡°ê±´? 
-	    }else if(ì¡°ê±´ì‹3){
-               ë¬¸ìž¥3; // ì¡°ê±´?
+	     if(Á¶°Ç½Ä1){
+               ¹®Àå1;  // Á¶°Ç?
+	    }else if(Á¶°Ç½Ä2){
+               ¹®Àå2;  // Á¶°Ç? 
+	    }else if(Á¶°Ç½Ä3){
+               ¹®Àå3; // Á¶°Ç?
 	    }else{
-               ë¬¸ìž¥4; // ì¡°ê±´? ì¡°ê±´ì‹1ì€ false, ì¡°ê±´ì‹2ëŠ” false ì¡°ê±´ì‹3ëŠ” false
+               ¹®Àå4; // Á¶°Ç? Á¶°Ç½Ä1Àº false, Á¶°Ç½Ä2´Â false Á¶°Ç½Ä3´Â false
 	    }
 
 ############################################################################
-###### ì°¸ê³ í• ë§Œí•œ ì‚¬ì´íŠ¸ ì†Œê°œ ##############################################
+###### Âü°íÇÒ¸¸ÇÑ »çÀÌÆ® ¼Ò°³ ##############################################
 ############################################################################
-ì—°ì‚°ìž
+¿¬»êÀÚ
 https://tadaktadak-it.tistory.com/7
 https://hongong.hanbit.co.kr/%EC%9E%90%EB%B0%94-%EA%B8%B0%EC%B4%88-%EC%97%B0%EC%82%B0%EC%9E%90-%EC%97%B0%EC%82%B0%EC%9D%98-%EB%B0%A9%ED%96%A5%EA%B3%BC-%EC%9A%B0%EC%84%A0%EC%88%9C%EC%9C%84/
 
-# ìžë°” ì œì–´ë¬¸
+# ÀÚ¹Ù Á¦¾î¹®
 https://raccoonjy.tistory.com/10
 ############################################################################
 ############################################################################
+    ÂüÁ¶Çü µ¥ÀÌÅÍ
+±³Àç p177 - ¹è¿­
+    p128 - °´Ã¼¿Í Å¬·¡½º
+############################################################################
+3ÀÏÂ÷ ¸®ºä
 
+1. ¿¬»êÀÚ (Operator)
 
+  1) »ê¼ú¿¬»êÀÚ
+     + ( ¼öÄ¡µ¥ÀÌÅÍ ÀÌ¿ëÇÏ¸é ¿¬»êÀº ´õÇÏ±â·Î Ã³¸®µÊ. 
+         ¹®ÀÚ¿­°ú ´Ù¸¥°ª(¹®ÀÚ¿­,ºñ¹®ÀÚ¿­)À» + ÇÏ¸é ¿¬°áµÇ¾î ¹ÝÈ¯µÊ
+	  ¿¹> System.out.println("È«±æµ¿ "+20 );
+	 )
+     -
+     *
+     / (Á¤¼ö°ªÀ¸·Î ³ª´©±âÇÏ¸é °á°ú°ªÀº Á¤¼ö°ªÀ¸·Î ¹ÝÈ¯. 10/3=>3, 10/3.0=3.3333333 )
+     % (³ª¸ÓÁö)
+
+  2) ´ëÀÔ¿¬»êÀÚ
+    ¿ëµµ: º¯¼ö¿¡ ÀÓÀÇÀÇ °ªÀ» ÀúÀå(ÇÒ´ç,´ëÀÔ)ÇÏ´Â ¿ªÇÒ.
+     
+     a=b;  // a¿¡ b¸¦ ÀúÀå(ÇÒ´ç,´ëÀÔ)ÇÔ.
+     a+=b; // Ç®¾î¾²¸é a=a+b; µ¿ÀÏ
+     a-=b; // Ç®¾î¾²¸é a=a-b; µ¿ÀÏ
+     a*=b; // Ç®¾î¾²¸é a=a*b; µ¿ÀÏ
+     a/=b; // Ç®¾î¾²¸é a=a/b; µ¿ÀÏ
+     a%=b; // Ç®¾î¾²¸é a=a%b; µ¿ÀÏ
+
+   ¿¹> »õ·Î¿î º¯¼ö mÀ» ¼±¾ðÇÏ°í n º¯¼ö¿¡ ÀúÀåµÈ °ªÀ» ÀúÀåÇÏ½Ã¿À.
+      int n = 10;
+      int m = n;
+      n=20;
+
+   3) ºñ±³¿¬»êÀÚ
+     ¿ëµµ: °ª(±âº»Çü)À» ºñ±³ÇÏ´Â ±â´É. ½ÇÇà°á°ú´Â ³í¸®°ª(true/false) ¹ÝÈ¯µÊ.
+          ( ÂüÁ¶ÇüÀº Å¬·¡½º,ÀÎÅÍÆäÀÌ½º,¹è¿­Àº ºñ±³¿¬»êÀÚ¸¦ »ç¿ëÇÒ °æ¿ì°¡ °ÅÀÇ ¾ø´Ù. )
+     a==b;  // a¿Í b°¡ °°³Ä?
+     a!=b;  // a¿Í b°¡ °°Áö ¾Ê³Ä?
+     a>b;   // a°¡ bº¸´Ù Å©³Ä?
+     a>=b;  // a°¡ bº¸´Ù Å©°Å³ª °°³Ä?
+     a<b;   // a°¡ bº¸´Ù ÀÛ³Ä?
+     a<=b;  // a°¡ bº¸´Ù ÀÛ°Å³ª °°³Ä?
+      ( ÀÚ¹Ù½ºÅ©¸³Æ®¿¡¼­´Â  ===, !== Ãß°¡µÊ )
+
+    4)³í¸® ¿¬»êÀÚ
+      ¿ëµµ:  ³í¸®°ª(true/false)À» ÀÌ¿ëÇØ¼­ ¿¬»êÇÏ´Â ±â´É.  ½ÇÇà°á°ú´Â ³í¸®°ª(true/false) ¹ÝÈ¯µÊ.
+
+      && : ³í¸®°ª1 && ³í¸®°ª2  ==> ³í¸®°ª1 °ú ³í¸®°ª2 °¡ ¸ðµÎ trueÀÎ °æ¿ì¿¡¸¸ ÃÖÁ¾ÀûÀ¸·Î true°¡ ¹ÝÈ¯µÊ.
+           '±×¸®°í(and)' ·Î ÇØ¼®.
+
+      || : ³í¸®°ª1 || ³í¸®°ª2 ==> ³í¸®°ª1 °ú ³í¸®°ª2 Áß¿¡ ÇÏ³ª¶óµµ trueÀÎ °æ¿ì¿¡ ÃÖÁ¾ÀûÀ¸·Î true°¡ ¹ÝÈ¯µÊ.
+           '¶Ç´Â(or)' ·Î ÇØ¼®.
+
+      !  : !³í¸®°ª  ==> ³í¸®°ªÀÌ true¸é false·Î  false¸é true·Î ¹ÝÈ¯µÊ.
+           ºÎÁ¤¿¬»êÀÚ¶ó°íµµ ºÎ¸¥´Ù.
+
+      * short circuit logical ¿¬»êÀÚ
+        ==> &&¶Ç´Â || ¿¬»êÀÚ ¾ÕÀÇ ³í¸®°ª¸¸ È®ÀÎÇØ¼­ ÃÖÁ¾ÀûÀÎ °á°ú°¡ ¹ÝÈ¯µÇ´Â ¸ÞÄ¿´ÏÁò.
+
+    5) ºñÆ® ¿¬»êÀÚ
+      &
+      |
+      ^
+      ~
+
+    6) Áõ°¨¿¬»êÀÚ ( Áõ°¡ ¿¬»êÀÚ¿Í °¨¼Ò ¿¬»êÀÚ )
+      ¿ëµµ:  ÀÓÀÇÀÇ º¯¼ö°ªÀ» 1¾¿ Áõ°¡ÇÏ°Å³ª 1¾¿ °¨¼ÒÇÏ´Â ±â´É
+
+      ¹®¹ý:  ++º¯¼ö¸í;  // ÀüÄ¡
+            º¯¼ö¸í++;  // ÈÄÄ¡  
+
+	    --º¯¼ö¸í:  // ÀüÄ¡
+	    º¯¼ö¸í--;  // ÈÄÄ¡
+
+	   ==> À§¿Í °°ÀÌ ´Ù¸¥ ¿¬»êÀÚ ¾øÀÌ µ¶ÀÚÀûÀ¸·Î »ç¿ëÇÏ´Â °æ¿ì¿¡´Â
+	      ÀüÄ¡ ¹× ÈÄÄ¡ °á°ú´Â °°´Ù.
+
+	   º¯¼ö¸í2 = ++º¯¼ö¸í1;  // ÀüÄ¡,  ¸ÕÀú Áõ°¡ÇÏ°í ³ªÁß¿¡ ÇÒ´ç
+	   
+	   º¯¼ö¸í2 = º¯¼ö¸í1++;  // ÈÄÄ¡,  ¸ÕÀú ÇÒ´çÇÏ°í ³ªÁß¿¡ Áõ°¡
+
+	  ==> À§¿Í °°ÀÌ ´Ù¸¥ ¿¬»êÀÚ¿Í °°ÀÌ »ç¿ëÇÏ´Â °æ¿ì¿¡´Â
+	      ÀüÄ¡ ¹× ÈÄÄ¡ °á°ú¿¡ µû¶ó¼­ º¯¼ö¸í2ÀÇ °ªÀÌ ´Þ¶óÁú¼ö ÀÖ´Ù.
+
+     7) 3Ç× ¿¬»êÀÚ
+       ¿ëµµ: Á¶°ÇÀ» ÀÌ¿ëÇØ¼­ ÀÓÀÇÀÇ °ªÀ» ¾òÀ» ¶§ »ç¿ë
+       ¹®¹ý:
+            º¯¼ö¸í = (Á¶°Ç½Ä)?Âü¹®Àå:°ÅÁþ¹®Àå;
+
+       Æ¯Â¡: ÁßÃ¸ÀÌ °¡´É.
+            if~else¹®°ú ºñ½ÁÇÑ ±â´É.
+
+  
+2. Ç¥ÁØÀÔ·Â
+ °³³ä: Å°º¸µå·ÎºÎÅÍ ÀÓÀÇÀÇ µ¥ÀÌÅÍ¸¦ ÀÔ·Â ¹ÞÀ½À» ÀÇ¹Ì
+ ¹®¹ý:
+      import java.util.Scanner;
+
+      Scanner scan = new Scanner(System.in);
+
+      int num = scan.nextInt();
+      String s = scan.next();    // ÇÏ³ªÀÇ ´Ü¾î
+      String s = scan.nextLine(); // ÇÑ ÁÙ
+############################################################################
