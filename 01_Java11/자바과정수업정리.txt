@@ -1492,3 +1492,22 @@ https://raccoonjy.tistory.com/10
 3. 문자열 형태의 정수인 "10" 값을 실제 정수로 변경하는 방법
     "10"===> 10
    예> int num = Integer.parseInt("10"); // num에는 정수 10이 저장됨.
+
+
+4. 랜덤값 얻기
+  - java.util.Random 클래스 이용
+
+  - 방법
+   1) Random 클래스 객체 생성
+      
+       import java.util.Random;
+
+       Random r = new Random();
+
+   2) 랜덤값 반환하는 메서드 사용
+
+      int n = r.nextInt();
+      int n2 = r.nextInt(3); // 0, 1, 2 중에서 랜덤하게 반환
+      float f = r.nextFloat(); 
+      double d = r.nextDouble();
+      boolean b = r.nextBoolean(); 
