@@ -4,7 +4,7 @@ public class ArrayTest02_2차원배열 {
 
 	public static void main(String[] args) {
 		
-		// 정방형형 2차원 배열
+		// 정방형 2차원 배열
 		
 		// 1. 2차원 배열 선언
 		 int [][] num;
