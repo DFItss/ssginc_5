@@ -1465,3 +1465,26 @@ https://raccoonjy.tistory.com/10
     다. new + 리터럴 혼합
         데이터타입 [][] 배열명 = new 데이터타입[][] { { 값1 }, { 값1, 값2, 값3}, {값1, 값2} }; 
     
+
+2. 커맨드 라인 아규먼트 배열 ( command line arguments )
+
+   1) public static void main( String [] args ){}
+
+      - 모든 메서드는 기본적으로 파라미터 가질수 있다.
+        파라미터(parameter): 메서드명( 변수, 변수2,... ){ 로컬변수}
+      - 파라미터는 로컬변수에 속함. 따라서 stack 저장됨.
+      - 아큐먼트(arguments, 인자값)는 파라미터(변수)에 저장되는 값을 의미한다.
+
+
+   2) 실행할 때 값을 설정할 수 있다. 
+
+      예> Hello.java
+                   <== c:\> javac Hello.java 
+         Hello.class
+	           <== c:\> java Hello  10 20 
+
+
+   3) 이클립스에서 arguments(인자값) 설정하는  방법
+
+     *.java 선택하고 오른쪽클릭 > Run as > Run configuration > arguments 탭에
+       공백을 구분자로 값을 설정 > Run 선택.
