@@ -1887,3 +1887,104 @@ https://raccoonjy.tistory.com/10
 	  public Cat(String name, int age) {
 	       this(name, age, "암컷") ;
 	  }
+
+
+4. 메서드(method)
+
+  1)클래스 구성요소 역할
+   
+     public class Cat{
+
+          // 인스턴스 변수: 객체의 속성을 저장하는 용도. this.변수 가능.(일반적으로 this생략)
+	                 직접 접근 방지 위해서 private로 지정한다.
+          private  int age;
+
+	  // 생성자 : 인스턴스 변수의 초기화 용도. 오버로딩(overloading 가능 ), this(값,..) 이용해서
+	             다른 생성자도 호출가능.
+          public Cat(int age){
+             this.age = age;
+	  }
+
+	  // 메서드 : 다양한 기능처리 용도.
+	            지금은 age라는 인스턴스 변수를 수정 또는 조회하는 역할로 메서드를 작성할 것이다.
+     }
+
+   2) 메서드 문법
+
+     문법:
+           // 메서드
+           public 리턴타입 메서드명([변수,변수,..]){
+	       문장1;
+	       문장2;
+	       [return 값;] //리턴값
+	   }
+
+	   // 생성자
+	   public 클래스명([변수,변수,...]){
+               문장1;
+	   }
+
+    생성자와 차이점: - 리턴타입을 반드시 지정해야 된다.
+                 - 리턴값을 가질수 있다.
+		 - 메서드명은 임의로 지정 가능 ( 생성자는 반드시 클래스명으로 지정해야 된다. )
+
+    생성자와 공통점: 반드시 호출해야 된다.
+               
+	       가. 생성자 호출 방법
+		  a. 다른 클래스에서 호출
+		     - new 클래스명([값,값...]);
+
+		  b. 자신이 호출
+                     - this([값,값...]);
+
+	       나. 메서드 호출 방법
+                  - 인스턴스 변수와 (인스턴스)메서드는 우선 인스턴스화가 되어야 된다.
+		   따라서 객체생성(new)후 메서드를 호출할 수 있다.
+
+		   Cat c = new Cat(); // heap 메모리에 인스턴스 변수와 인스턴스 메소드가 생성됨.
+
+		   c.메서드([값,값...]); // 객체생성후 참조변수.메서드() 형식 사용.
+
+      * 메서드 특징
+         - 메서드명은 사용자 정의 식별자이기 때문에 임의로 지정 가능 ( 권장은 동사형, 소문자 )
+	 - 반드시 호출해야 된다.
+	 - 호출후 수행이 끝나면 호출한 곳으로 반드시 돌아온다.
+
+   3) 메서드 형태 ( 파라미터가 있거나 없거나 또는 리턴값 있거나 없거나 )
+
+    가.  파라미터가 없고 리터값도 없는 형식
+      문법:
+           public void 메서드명(){
+               문장;
+	   }
+	예> 
+	 public class Util{
+	   public void method1(){
+		System.outprintln("method1");
+	   }
+         }
+      사용방법: 
+	  Util u = new Util();
+	  u.method1();
+
+ 
+   나.  파라미터는 있고 리터값 없는 형식
+      문법:
+           public void 메서드명(변수,...){
+               문장;
+	   }
+
+      예> 
+	 public class Util{
+	   public void method2(int n){
+		System.outprintln("method2" + n);
+	   }
+	   public void method3(int n, int n2){
+		System.outprintln("method2" + n + "\t" + n2);
+	   }
+         }
+
+       사용방법: 
+	  Util u = new Util();
+	  u.method2(10);
+	  u.method3(10,20);
