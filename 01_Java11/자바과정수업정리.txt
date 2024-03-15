@@ -1861,14 +1861,29 @@ https://raccoonjy.tistory.com/10
 
   2) 반드시 명시적으로 this를 지정해야 되는 경우가 있음.
     ==> 인스턴스변수명과 메서드및생성자의 파라미터변수명이 동일한 경우이다.
-
+        문법: this.변수, this.메서드();
       예>  
           public class Cat{
 
               String name; //인스턴스변수
 	    
 	   public Cat( String name ){ // 로컬변수(파라미터)
-                name = name;
-
+                this.name = name;
 	   }
 
+     ==> 생성자에서 다른 생성자를 호출할 때
+        문법: this([값,값2,..]);
+	 예> this(); ==>  Cat() 호출
+	    this("야옹이",2) ==>  Cat(String name, int age) 호출
+            this("야옹이",2, "암컷") ==>  Cat(String name, int age , String gender) 호출 
+        
+	주의: 반드시 생성자 첫라인에서 지정해야 된다.
+
+       예> public Cat(String name, int age, String gender) {
+		this.name = name;
+		this.age = age;
+		this.gender = gender;
+	  }
+	  public Cat(String name, int age) {
+	       this(name, age, "암컷") ;
+	  }
