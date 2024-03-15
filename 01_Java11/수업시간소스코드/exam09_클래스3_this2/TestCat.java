@@ -4,7 +4,7 @@ public class TestCat {
 
 	public static void main(String[] args) {
 
-	   //1 번 고양이 정보: 야옹이 2 암컷
+	   // 변수로 관리	  
 	   Cat c1 = new Cat("야옹이1", 1);
 	   Cat c2 = new Cat("야옹이2", 5);
 	   Cat c3 = new Cat("야옹이3", 3);
