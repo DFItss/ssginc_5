@@ -1830,6 +1830,8 @@ https://raccoonjy.tistory.com/10
         사용자가 모든 인스턴스변수의 값을 알고 있지 못한 경우도 있다.
 	따라서 알고있는 값만 초기화하는 역할의 오버로딩 생성자가 필요하다.
 
+      - 이클립스에서 오버로딩 생성자 코드를 자동으로 추가할수 있게 지원됨.
+
 2. 지정자(modifier)
 
    1) 접근지정자 ( access modifier  )
@@ -1851,3 +1853,22 @@ https://raccoonjy.tistory.com/10
     - final
     - abstract
     - transient,..
+
+3. this 키워드
+
+  1) 개념: heap 메모리에 올라간 인스턴스 자신의 주소를 참조한다.
+       this는 생략할 수 있다.
+
+  2) 반드시 명시적으로 this를 지정해야 되는 경우가 있음.
+    ==> 인스턴스변수명과 메서드및생성자의 파라미터변수명이 동일한 경우이다.
+
+      예>  
+          public class Cat{
+
+              String name; //인스턴스변수
+	    
+	   public Cat( String name ){ // 로컬변수(파라미터)
+                name = name;
+
+	   }
+
