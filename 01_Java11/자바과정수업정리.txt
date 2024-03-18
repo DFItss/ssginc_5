@@ -2341,6 +2341,8 @@ https://raccoonjy.tistory.com/10
    https://wordbe.tistory.com/211
 # 클래스 다이어그램
    https://velog.io/@godkimchichi/Java-13-클래스다이어그램
+# UML
+  https://www.nextree.co.kr/p6753/
 # Static? 그거 왜 붙이는건데?
    https://jooona.tistory.com/164
 # Static
