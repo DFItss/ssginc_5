@@ -7,8 +7,9 @@ public class TestUtil {
 		Util u = new Util();
 		u.method1();
 		
-		u.method2(10);
-		u.method3(10, 20);
-		
+		// 오버로딩 메서드
+		u.method1(10);
+		u.method1("홍길동");
+		u.method1("홍길동", 10);
 	}
 }
