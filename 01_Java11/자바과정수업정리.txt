@@ -2132,4 +2132,19 @@ https://raccoonjy.tistory.com/10
 
     라. 파라미터 있고 리턴값 있는 경우
 
- 
+     문법:
+          public class 클래스명{
+
+	    public 리턴타입 메서드명(변수,변수2,...){
+               문장;
+               return 값;
+	    }
+	  }
+
+	예> public int sum(int n, int n2){
+              return n+n2;
+	   }
+
+     사용:
+           클래스명  참조변수명 = new 클래스명();
+          리턴값저장용변수 =  참조변수명.메서드명(값, 값2);
