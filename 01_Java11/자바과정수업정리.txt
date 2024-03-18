@@ -2207,6 +2207,10 @@ https://raccoonjy.tistory.com/10
 		    생성횟수? 한번만  생성된다.
 		    용도: new 없이 사용할 목적이다.
 		      예> Integer.parseInt("10");
+                    *주의할점
+		     - 인스턴스 변수 및 this 키워드 사용불가 ==> 아직 인스턴스가 생성 안됨.
+		     - 상속관련에서는 오버라이딩(Overriding) 불가
+
 
  3) 일반 클래스 vs static 클래스
    
