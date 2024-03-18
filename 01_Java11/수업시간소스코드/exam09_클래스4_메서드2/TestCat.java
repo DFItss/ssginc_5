@@ -7,10 +7,12 @@ public class TestCat {
 		Cat c1 = new Cat("야옹이", 2, "암컷");
 		
 		// 값 변경 ==> set 메서드, setter 메서드라고 부른다.
+		//           메서드명: set변수명 권장. 카멜표기법(camel)
 		c1.setName("망치");
 		c1.setGender("수컷");
 		
 		// 값 조회 ==> get 메서드, getter 메서드라고 부른다.
+		//           메서드명: get변수명 권장. 카멜표기법(camel)
 		String name = c1.getName();
 		int age = c1.getAge();
 		String gender = c1.getGender();
