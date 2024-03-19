@@ -2540,3 +2540,38 @@ https://raccoonjy.tistory.com/10
 	        ==> 부모 생성자에서 초기화하는 역할.
 		==> 주의할 점은 반드시 첫 라인에서 사용해야된다.
                 ==> 문법: super(), super(10);
+
+     11) 항상 자신보다 부모를 먼저 생성한다.
+        ==> 매커니즘: 자식의 생성자 첫라인에서 자동으로 부모 생성자를 호출하는 코드가 삽입이 된다.
+	            그 코드가 super() 이다.
+        ==> 명시적으로 super() 사용할 수 있다.
+	    반드시 첫라인에서 사용해야된다.
+
+	결국은 Object 클래스가 가장 먼저 생성이 된다.
+  
+     12) 오버라이딩(overriding) 메서드가 가능하다.
+        개념: 부모의 메서드를  자식이 재정의하는 것을 의미한다.
+	규칙: 
+
+	   부모:    접근지정자 리턴타입  메서드명(변수,..) throws 예외클래스{}
+
+                    @Override ==> 어노테이션(annotation)
+	   자식:     X    리턴타입  메서드명(변수,..) Y {} 
+
+	    X 에는 부모에서 지정된 접근지정 레벨과 같거나 덜 엄격한 레벨값을 지정할 수 있다.
+
+	     public 
+	     protected
+	           (default)
+	     private
+
+	    Y 에는 부모에서 지정된 예외클래스와 같거나 자식 예외클래스만 지정할 수 있다.
+
+             Object
+	        |
+	     Exception
+	        |
+             RuntimeException
+	        |
+	     ArrayIndexOutofBoundsException, NullPointerException
+	       
