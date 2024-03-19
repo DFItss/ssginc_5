@@ -2448,3 +2448,62 @@ https://raccoonjy.tistory.com/10
 5. 추상클래스
 6. 인터페이스
 7. 중첩 클래스
+############################################################################
+8일차 강의 ( 3월 19일 )
+
+1. 클래스 관계 ( Class Relationship )
+
+  1) has a (use a) 관계
+    
+     - 예>  트럭 has a 엔진.
+          트럭 has a 라디오.
+          학생 has a 노트북.
+
+    -  has a 관계를 자바표현? (***************)
+
+      public class Truck{
+	  Engine e;  // Truck has a Engine 라고 할 수 있다.
+      }
+      public class Engine{
+
+      }
+
+    - 관계종류 2가지
+       composition: 트럭 has a 엔진. UML: 채워진 마름모
+       aggregation: 트럭 has a 라디오. UML: 빈 마름모
+
+  2) is a 관계 ( 상속관계 , ****************)
+
+     - 예>  고양이 is a 애완동물.
+            중학생 is a 학생.
+	    엔지니어 is a 사원.
+
+    -  is a 관계(상속)를 자바표현?
+       extends 키워드 이용
+
+      // 큰 개념 ( 큰 데이터 타입 )
+      // 정확한 표현: 부모 클래스, super 클래스, parent 클래스
+      class Employee{
+
+      }
+      // 작은 개념 ( 작은 데이터 타입 )
+      // 정확한 표현: 자식 클래스, sub 클래스, child 클래스
+      class Engineer extends Employee{  // Engineer is a Employee 라고 할 수 있다. 이것이 상속관계이다.
+
+      }
+
+   - 상속특징
+     1) 반드시 is a 관계가 성립해야 된다.
+     2) Engineer is a Employee 경우에는
+        Engineer 를 자식클래스, sub 클래스, child 클래스라고 하고
+        Employee 를 부모 클래스, super 클래스, parent 클래스라고 부른다.
+	중요: 부모인 Employee가 자식인 Engineer 보다 더 큰 타입이라고 할 수 있다. (*************)
+     3) extends 부모클래스 형식을 사용한다.
+     4) 단일 상속(single inheritance)만 지원됨.
+       ==> extends 뒤에 명시한 부모클래스는 하나만 지정 가능.
+     5) 명시적으로 extends 가 없는 클래스는 자동으로 extends Object가 지정된다.
+      ==>  class Employee{} 지정하면 자동으로
+           class Employee extends Object{} 가 된다.
+     6) 상속을 UML로 표현할 때는 삼각형+실선으로 표현
+     7) Object클래스는 최상위 클래스이다.
+     
