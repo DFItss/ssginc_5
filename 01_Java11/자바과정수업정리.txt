@@ -2575,3 +2575,77 @@ https://raccoonjy.tistory.com/10
 	        |
 	     ArrayIndexOutofBoundsException, NullPointerException
 	       
+###############################
+ OOP의 3대특징
+ 1. 상속 ( inheritance )
+ 2. 다형성 ( Polymorphism )
+ 3. 은닉화( encapsulation, 캡슐화 )
+###############################
+
+2. 다형성 ( Polymorphism )
+ 
+   1) 개념
+    - 하나의 참조변수가 타입이 다른 여러 인스턴스를 참조하는 능력이다.
+
+   2) 특징
+     - 상속이 전제 ( is a 관계이고 같은 종류 의미를 내포한다. )
+     - 재사용성이 높아짐.
+     - 하나의 변수로 서로 다른 기능을 가진 메서드(변수)를 호출할 수 있다.
+
+   3) 문법:
+     
+      Object
+        |
+      Employee (부모, 큰 타입 )
+         |        |
+   Engineer     Manager (작은타입)
+
+
+      가. 일반적인 방법
+
+            Employee emp = new Employee();
+            Engineer eng = new Engineer();
+	    Manager  m = new Manager();
+	    Secretary s = new Secretary();
+
+      나. 다형성 적용한 방법
+
+            Employee emp = new Employee();
+                     emp = new Engineer();
+	             emp = new Manager();
+	             emp = new Secretary();
+
+	 * 기본형
+	   short s = 10;
+	   int s2 = s;
+  
+   4) 다형성 활용
+
+     가. 배열
+       - 기본적으로 배열은 같은 타입만 저장된다. 
+        다형성을 적용하면 다른 타입도 저장 가능하다.
+	예>
+	   // Employee배열이기 때문에 Employee 또는 자식들만 저장이 가능하다.
+	   Employee [] emp = { new Employee(), new Engineer(),new Manager(),new Secretary() };
+	
+	   // 다형성을 확장해서 Object 배열을 만들면 모든 데이터를 저장할 수 있다.
+	   Object [] obj ={"hello", new Employee(), new Random(), 10, 3.14};
+  
+     나. 메서드 파라미터 타입 (***************)
+          ==>  다형성이 지원 안되면 여러개의 오버로딩 메서드가 필요하다.
+	     하지만 다형성이 지원되어 하나의 메서드만 있으면 된다.
+       예>
+           public void a( Object  x){}
+//오버로딩
+public void a( String  x){}
+public void a( int  x){}
+public void a( boolean  x){}
+
+	   a("hello");
+	   a(10);
+	   a(true);
+        
+	 public String printf( String s, Object ... obj)
+
+	 System.out.printf( "", 10, 20, 30 );
+	 System.out.printf( "", "hello" );
