@@ -2842,10 +2842,11 @@ public void a( boolean  x){}
      자식클래스보다 큰 타입이다. 따라서 다형성을 적용할 수 있다.
       예> 
            AAA x = new  BBB(); //  다형성
-
+  
+   - abstract는 이탤릭체로 표현.
 
  4) 목적: 부모의 추상메서드를 반드시 자식클래스에서 오버라이딩(overriding)해야하는 제약을
-        갖도록 하는 것이다.
+        갖도록 하는 것이다.(메서드 강제) + 부모의 변수/메서드(concrete method)를 자식이 상속받아서 재사용.
 
      예>
       버전1: 일반 클래스 Pet인 경우
@@ -2866,3 +2867,41 @@ eatCat(){s.o.u("쩝쩝");}  eatDog(){s.o.u("냠냠");}    eat(){s.o.u("짹짹");
  @Override             @Override               @Override
 eat(){s.o.u("쩝쩝");}  eat(){s.o.u("냠냠");}    eat(){s.o.u("짹짹");}
 
+
+5. 인터페이스 (interface)
+
+   1) 문법
+           public interface 인터페이스명{
+		int NUM = 20; // public static final int NUM = 20; 동일
+
+		abstract void a(); // default 가 아니고 public
+		void b();   // public abstract void b() 동일
+	   }
+
+           인터페이스명.java 로 저장됨
+
+   2) 구성요소 4가지
+       - 상수:   final int NUM =20;
+              ==>public static final 지정자가 자동으로 지정된다.
+              ==>접근은 인터페이스명.상수명 으로 사용한다. ( 인터페이스.NUM )
+       - default 메서드
+            ==> public default 리턴타입 메서드명([변수,..]){ 실행문;}
+	    ==> 클래스의 인스턴스 메서드처럼 동작된다. 
+	        따라서 default 메서드는 new 한 후에 사용이 가능하다.
+       - static 메서드
+           ==> public static 리턴타입 메서드명([변수,..]){ 실행문;}
+            ==> 클래스의 static 메서드처럼 동작된다.
+	        따라서 new 없이 클래스명.static메서드 로 사용할 수 있다.
+       - 추상 메서드 ( abstract method )
+           ==> public abstract 리턴타입 메서드명([변수,..]); 
+	   ==> public abstract 지정자가 자동으로 지정된다.
+	     따라서 abstract 키워드는 생략할 수 있다. ( 추상클래스의 추상메서드에서는 abstract 필수 )
+          예>
+	      public interface Flyer{
+                   void a();
+		   void b();
+                public abstract void c();
+	      }
+
+   3) 특징
+   4) 목적
