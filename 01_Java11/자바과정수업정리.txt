@@ -2776,3 +2776,15 @@ public void a( boolean  x){}
      3. getter/setter
      4. toString 오버라이딩
      5. 유효성체크 메서드 (옵션)
+
+
+
+3. 접근지정자 ( access modifier )
+
+  1) 용도:  클래스들간의 접근(참조)을 제한하는 방법.
+  2) 4가지 레벨
+                         같은 클래스인 경우  같은패키지의 다른클래스  다른패키지의 상속관계  다른패키지의 다른클래스
+     public               가능              가능                  가능              가능
+     protected            가능              가능                  가능              불가
+          (default)       가능              가능                  불가              불가
+     private              가능              불가                  불가              불가
