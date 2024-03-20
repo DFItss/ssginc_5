@@ -2718,3 +2718,33 @@ public void a( boolean  x){}
        a("hello");
 ################################################################
 9일차 ( 3월 20일 )
+
+1. 다형성
+   
+  - 타입비교하는 방법 :  변수명 instanceof 클래스 : boolean반환
+  - 형변환 :  필요시   작은타입 변수 =( 작은타입  )큰타입;
+
+   예> 
+     Employee [] emp = {new Engineer(), 
+                        new Manager()
+			new Engineer(),
+			new Engineer(),
+                        new Manager()
+			};
+
+    문제1: 배열에서 Manager만 출력하시오.
+
+       for(Employee e: emp){
+          if(e instanceof Manager){
+             System.out.println(e.getEmployee());
+	  }
+       }
+
+    문제2: 배열에서 Manager에 추가된 depart만 출력하시오.
+       	   for(Employee e: empArray) {
+		   if(e instanceof Manager) {
+			   //형변환
+			   Manager m =(Manager)e;
+		      System.out.println(m.getDepart());
+		   }
+	   }
