@@ -2930,8 +2930,33 @@ eat(){s.o.u("쩝쩝");}  eat(){s.o.u("냠냠");}    eat(){s.o.u("짹짹");}
 	   만약에 추상메서드를 오버라이딩하지 않으면 에러가 발생된다.
           }
 
+       - 구현시 implements 키워드 사용
+       - 다중 구현이 가능하다. ( implements 인터페이스, 인터페이스2,.. )
+       - 인터페이스간에도 상속관계이다. ( 인터페이스 extends  인터페이스 )
+       - 인터페이스간에는 다중상속이 지원 (  인터페이스 extends  인터페이스,인터페이스2,.. )
+       - 타입으로 인터페이스가 큰 타입이기 때문에 다형성 적용이 가능하다.
+       - 명시적으로 인터페이스를 만드는 경우는 4가지 구성요소중 
+         추상메서드를 사용하기 위한 것이다. 
 
+   4) 목적1
+      - 추상클래스와 동일하게 인터페이스에서 지정된 추상메서드명으로
+        하위 클래스에서 사용하도록 강제할 수 있다.
+      
+         추상 클래스 Pet인 경우
+           abstract Pet                            interface Flyer{
+               -name, age                              abstract fly();
+	       -abstract eat();                    }
+   
 
+    Cat extends Pet     Dog extends Pet                   
+ @Override             @Override               
+eat(){s.o.u("쩝쩝");}  eat(){s.o.u("냠냠");}    
 
+    Bird extends Pet implments Flyer      Bat extends Pet  implments Flyer                ..   
+ @Override                                @Override   
+eat(){s.o.u("짹짹");}                      eat(){s.o.u("짹짹");}
+@Override                                  @Override 
+fly(){}                                   fly(){}
 
-   4) 목적
+     목적2
+      - 
