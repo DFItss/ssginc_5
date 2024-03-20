@@ -2649,3 +2649,72 @@ public void a( boolean  x){}
 
 	 System.out.printf( "", 10, 20, 30 );
 	 System.out.printf( "", "hello" );
+################################################
+8일차 리뷰
+
+1. OOP 3대 특징
+  - 상속(inheritance)
+  - 다형성 ( polymorphism )
+  - 은닉화 ( encapsulation, 캡슐화)
+
+2. 상속
+  
+ 1) 개념: 클래스들간의 관계가 is a 가 성립됨. ( 같은 종류 )
+ 2) 구현:
+      - UML 표기
+         큰타입 클래스 ( Employee ) ( Pet ) <== 부모클래스, super 클래스, parent 클래스
+             |
+             |  <== extends 부모 클래스
+	 작은타입 클래스 ( Engineer, Manager) ( Dog, Cat ) <== 자식클래스, sub 클래스, child 클래스
+         
+      - 코드 표현
+          public class Employee{}  // public class Employee extends Object{} 동일 
+	  public class Engineer extends Employee{}
+
+ 3) 특징
+       - 재사용성이 증가됨. ( 부모의 변수,메서드를 상속받은 자식들은 그냥 사용가능 )
+       - 상속불가 ( 부모의 생성자, private로 된 변수/메서드 ) 
+       - 항상 자신보다 부모를 먼저 생성한다. ( 자식 생성자 첫라인에서 부모생성자를 호출하는 super() 자동삽입됨)
+       - 모든 클래스의 부모는 Object가 된다. ( 다형성에서 가장 큰 타입으로 Object가 사용됨)
+       - 명시적으로 부모의 변수/메서드   및  생성자를 호출 할 수 있다.
+         부모의 변수/메서드: super.변수, super.메서드() ==> 자식클래스에 부모와 동일한 변수와 메서드가 존재할 때.
+	 부모의 생성자 :  super()  ==> 자식 클래스의 생성자 첫 라인에서만 사용 가능.
+	               super(name,salary) ==> 명시적으로 부모 생성자 호출하는 이유는 부모에서 선언된 변수이기
+		                             때문에 부모에서 초기화할 목적이다.
+
+       - 부모에서 상속받은 메서드를 필요에 의해서 다시 정의할 수 있다. ( Overriding, 재정의 )
+         Overriding 규칙: - 반드시 부모 메서드의 리턴타입과 동일
+	                 - 반드시 부모 메서드명과 동일 ( 재사용성 )
+			 - 반드시 부모 메서드 파라미터와 동일
+			 - 접근지정자는 같거나 덜 제한하는 지정자 사용
+			 - throws 예외클래스는 같거나 자식 예외클래스 사용
+
+         Overriding 불가: private 로 지정된 메서드.
+	                 static 로 지정된 메서드.
+			 final 로 지정된 메서드.
+
+3. 다형성
+ 1) 개념: 상속이 전제. 
+         단 하나의 참조변수(부모타입)가 타입이 다른 여러 인스턴스(자식타입)들을 참조할 수 있는 능력.
+ 2) 문법:
+         큰타입  변수 = 작은타입;
+
+	예> Employee emp = new Engineer();
+	             emp = new Manager();
+
+ 3) 목적: 재사용성
+ 4) 다형성 활용
+    가. 배열
+        Employee [] emp = {new Engineer(), new Manager()};
+  
+        Object [] obj ={"hello", 2, true,... };
+
+    나. 메서드 파라미터 ( Java API가 상당수 다형성을 적용 )
+      => 오버로딩 메서드가 불필요함.
+
+       public void a(Object obj ){}
+
+       a(10);
+       a("hello");
+################################################################
+9일차 ( 3월 20일 )
