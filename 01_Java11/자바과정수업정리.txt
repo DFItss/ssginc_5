@@ -2960,3 +2960,92 @@ fly(){}                                   fly(){}
 
      목적2
       - 
+
+############################################################################
+###### 참고할만한 사이트 소개 ##############################################
+############################################################################
+# 상속
+ https://dev-gorany.tistory.com/147
+# 상속관계와 포함관계
+ https://back-end-developer.tistory.com/entry/JAVA-상속관계와-포함관계
+# 상속의 개념
+ http://www.tcpschool.com/java/java_inheritance_concept
+# 상속/포함 등 클래스 간의 관계
+ https://develaniper-devpage.tistory.com/75
+# 상속 - 메소드 오버로딩과 오버라이딩의 차이…
+ https://butter-shower.tistory.com/85
+# 상속 + 메모리구조
+ https://ksm0207.github.io/posts/increpasDay20/
+ https://sehun-kim.github.io/sehun/extends/
+# 자바 클래스의 상속(Extends) 사용법 & 예제
+ https://coding-factory.tistory.com/865
+# 메소드 재정의
+ https://limesparkling.tistory.com/14
+# 오버로딩과 오버라이딩
+ https://software31.tistory.com/6
+ https://wtg-study.tistory.com/18
+# 자바 오버로딩과 오버라이딩 개념 완벽 정리
+ https://lnsideout.tistory.com/entry/JAVA-자바-오버로딩과-오버라이딩-개념-완벽정리
+# 어노테이션이 뭔데??
+ https://velog.io/@jkijki12/annotation
+# 어노테이션 정리
+ https://steady-coding.tistory.com/614
+# final 키워드
+ https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=kiho0530&logNo=150143859108
+# Java final
+ https://shinny.tistory.com/42
+# final과 static의 다양한 사용 방법
+ https://ojava.tistory.com/50
+# 단일 상속 & Object 클래스
+ https://gyugyu.tistory.com/21
+# 단일 상속
+ https://build-enough.tistory.com/214
+# 자바는 왜 다중 상속을 지원하지 않을까?
+ https://nohriter.tistory.com/158
+# Object 클래스
+ https://dreaming5developer.tistory.com/78
+# this와 this(), super와 super() 차이점
+ https://velog.io/@vgo_dongv/Java-this와-this-super와-super-차이점
+ https://qh5944.tistory.com/176
+# 다형성의 개념
+ http://www.tcpschool.com/java/java_polymorphism_concept
+# 다형성이란?
+ https://dev-cini.tistory.com/60
+# 다형성의 이해 및 예제
+ https://kadosholy.tistory.com/99
+# 자바 다형성 기본 및 활용
+ https://life-with-coding.tistory.com/485#google_vignette
+#자바의 다형성 완벽 이해하기
+ https://inpa.tistory.com/entry/OOP-JAVA의-다형성Polymorphism-완벽-이해
+# instanceOf 연산자
+ https://katfun.tistory.com/169
+# 자바 toString 오버라이딩
+ https://inpa.tistory.com/entry/JAVA-☕-toString-메서드-재정의-완벽-이해하기
+# 추상클래스란?
+ https://dev-cini.tistory.com/64
+# 추상 클래스 용도 완벽 이해하기
+ https://inpa.tistory.com/entry/JAVA-☕-추상-클래스Abstract-용도-완벽-이해하기
+# 인터페이스 문법 & 활용
+ https://inpa.tistory.com/entry/JAVA-☕-인터페이스Interface의-정석-탄탄하게-개념-정리
+# 인터페이스 vs 추상클래스 용도 차이점
+ https://inpa.tistory.com/entry/JAVA-☕-인터페이스-vs-추상클래스-차이점-완벽-이해하기ㄴ
+# 자바 인터페이스 사용법& 예제
+ https://coding-factory.tistory.com/867
+# 클래스와 인터페이스
+ https://brunch.co.kr/@oemilk/134
+# 추상 클래스와 인터페이스 차이?
+ https://velog.io/@mini_mouse_/추상클래스와-인터페이스의-차이
+# 자바 일반 클래스와 추상 클래스의 상속 차이
+ https://velog.io/@mini_mouse_/추상클래스와-인터페이스의-차이
+# implements, extends 란?
+ https://thenicesj.tistory.com/133
+# 자바 다중상속 인터페이스 다루는 방법
+ https://mainia.tistory.com/2139
+# 인터페이스에서의 static 메소드와 default 메소드
+ https://soft-dino.tistory.com/25
+ https://yeon-kr.tistory.com/187
+# 자바 8 인터페이스의 Default 메소드와 Static 메소드
+ https://veneas.tistory.com/entry/Java-자바-8-인터페이스의-Default-메소드와-Static-메소드#google_vignette
+
+############################################################################
+
