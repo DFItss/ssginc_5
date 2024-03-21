@@ -2963,8 +2963,9 @@ fly(){}                                   fly(){}
 
     예>
         main 클래스 -->  서비스 --->  OracleDAO클래스 --->  DB(오라클)
-
-
+                       OracleDAO클래스
+              
+	                           MySQLDAO클래스 --->  DB(MySQL)
 
 
 
@@ -3179,3 +3180,60 @@ fly(){}                                   fly(){}
     대한 강제성이 없음	      추상메서드를 재정의해야됨.           추상메서드를 재정의해야됨.
 			      (강제성)                         (강제성)
 			                                     인터페이스간에는 다중상속이 가능.
+
+###################################################################
+10일차 ( 3월 21 일 )
+
+1. 중첩 클래스 ( nested class, inner class )
+ 
+ 1) 개념:  클래스내에 또 다른 클래스를 지정할 수 있고
+          클래스내에 있는 클래스를 중첩클래스라고 한다.
+
+    형태:
+            public class 클래스{  // Outer 클래스
+	       static int n = 10; //가능
+	     private int n2 = 10;
+               int n3 =20;
+
+		class 클래스{   // 중첩클래스( inner 클래스 )
+                  static int n2 = 20; // 불가능
+		  sysout(n2 + n3)// private으로  된 변수도 사용 가능
+		}
+	 static class 클래스{
+                 static int n2 = 20; // 가능
+                 sysout(n2);// outer클래스의 인스턴스 변수 사용불가
+		 sysout(n3);// outer클래스의 인스턴스 변수 사용불가
+		}
+
+	    }
+       
+	
+ 2) 특징: - static변수 사용 불가.
+           단 static으로 지정한 중첩클래스는 사용 가능
+	   static으로 지정된 중첩클래스는 outer의 인스턴스변수 접근불가
+         - 반드시 Outer 생성후 Inner 생성이 가능하다.
+	  ==> 다른 클래스가 사용할려면 복잡하다. 따라서 다른 클래스는 사용을 안하고
+	      Outer만 일반적으로 사용한다.
+	 - inner 클래스 컴파일된 파일명:  Outer클래스명$Inner클래스명.class 
+
+ 3) 종류 : 중첩클래스가 outer클래스내의 어떤 위치에 정의되었냐?
+
+         class Outer{
+
+             int n; //멤버변수
+	     public void a(){ //멤버메서드
+                int x = 10; //로컬변수
+                class Inner3{ // Local Inner class
+
+		}
+	     }
+	     class Inner{  //  Member Inner class ( 일반적으로 불리우는 중첩클래스 )
+
+	     }
+  
+         static class Inner2{  //  Static Inner class
+
+	    }
+
+             public Outer(){}
+	 }//end Outer
