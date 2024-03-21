@@ -3324,3 +3324,31 @@ fly(){}                                   fly(){}
        Supplier 인터페이스
 
  5. 컬렉션의 스트림 문법.
+
+############################################################################
+###### 참고할만한 사이트 소개 ##############################################
+############################################################################
+
+# 구상 클래스(Concrete class)란?
+ https://kangworld.tistory.com/240
+# 추상클래스, 구상클래스, 인터페이스
+ https://velog.io/@yongseok0419/추상클래스-Abstract-Class-구상클래스-Concrete-Class-인터페이스-Interface
+# Coupling이란? Tight Coupling vs Loose Coupling 정리
+ https://swk3169.tistory.com/185
+# 객체지향 프로그래밍과 설계
+ https://getchan.github.io/cs/oop_interface_2/
+# 익명 클래스
+ https://sgcomputer.tistory.com/82
+# 익명 클래스 사용법 총정리
+ https://inpa.tistory.com/entry/JAVA-☕-익명-클래스Anonymous-Class-사용법-마스터하기
+# 무명 클래스와 익명 구현 객체
+ https://movefast.tistory.com/34
+# 내부 클래스와 익명 클래스
+ https://pridiot.tistory.com/52
+# 익명클래스와 람다
+https://www.codelatte.io/courses/java_programming_basic/O2PZAC2T82LKBXAY
+
+############################################################################
+############################################################################
+
+
