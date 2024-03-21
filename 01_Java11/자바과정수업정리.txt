@@ -3307,3 +3307,20 @@ fly(){}                                   fly(){}
       public interface Flyer{
          public abstract void fly();
       }
+
+ * 순서
+ 1. 인터페이스 정리
+ 2. 익명클래스 정리
+ ==> 함수형 프로그래밍
+ 3. 람다 표현식
+ 4. 함수형 인터페이스
+   ==> 실습에서 만든 파라미터(없고)있고 리턴값(없고)있고 형식의 
+      추상메서드를 가진 인터페이스를 API로 제공된다.
+
+   ==> Function 인터페이스
+       Consumer 인터페이스
+       Predicate 인터페이스
+       Operator 인터페이스
+       Supplier 인터페이스
+
+ 5. 컬렉션의 스트림 문법.
