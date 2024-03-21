@@ -3237,3 +3237,73 @@ fly(){}                                   fly(){}
 
              public Outer(){}
 	 }//end Outer
+
+
+2. 익명 클래스 ( annoymous class, 이름없은 클래스 ) ==> 람다표현식(lambda) 
+
+  1) 중첩클래스 범주에 속함
+  2) 용도: 인터페이스 (interface) 사용할 때 익명클래스를 적용할 수 있다.
+  3) 문법:
+
+       예>   public interface Flyer{
+                public abstract void fly();
+             }
+        // 1. 일반적인 방법 ( 이름있는 클래스 이용 )
+             가. 하위클래스 작성
+	        public class Bird implements Flyer{
+                    @Override
+		    public void fly(){}
+		}
+
+             나. 하위클래스 객체생성
+	        Bird b = new Bird();
+		b.fly();
+		//다형성 적용
+		Flyer b2 = new Bird();
+		b2.fly();
+
+
+	// 2. 익명 클래스 ( 이름없는 클래스 이용 )
+
+	  문법:  인터페이스명   변수명 =  new 인터페이스명(){
+
+			 //추상메서드 재정의
+	        };
+		변수명.메서드();
+	
+	     예>  Flyer f = new Flyer(){
+		    @Override
+		    public void fly(){
+		        
+		    }
+	         };
+		 f.fly();
+	         
+
+3. 람다표현식 (  lambda expression )
+
+ 1) 용도: 익명클래스의 축소된 표현식이다.
+ 2) 등장배경: '기능(메서드의 기능)에만 집중하자' ==> 함수형 프로그래밍(functional programming)
+
+                 Flyer f = new Flyer(){
+		    @Override
+		    public void fly(){
+		        //기능
+		    }
+	         };
+		 f.fly();
+
+ 3) 메서드가 4가지 형식이기 때문에 람다표현식도 4가지 표현식이 가능.
+     가. 파라미터없고 리턴값없는 형태
+     나. 파라미터있고 리턴값없는 형태
+     다. 파라미터없고 리턴값있는 형태
+     라. 파라미터있고 리턴값있는 형태
+
+ 4) 단일책임원칙 개발방법론
+ ==> 개념은 하나의 객체에 하나의 기능만 추가해서 명확한 책임을 부여하자.
+ ==> 람다표현식에서 사용하는 인터페이스가 가진 메서드는 반드시 1개만 가능.
+
+      @FunctionalInterface  ==> 추상메서드가 반드시 1개만 지정하도록 강제
+      public interface Flyer{
+         public abstract void fly();
+      }
