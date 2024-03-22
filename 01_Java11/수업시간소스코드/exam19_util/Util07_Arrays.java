@@ -42,7 +42,8 @@ public class Util07_Arrays {
 		
 		//7. 배열에서 특정값의 위치얻기
 		int [] arr8 = {6,2,1,85,23};
-		System.out.println("7. 배열에서 특정값의 위치얻기" + Arrays.binarySearch(arr8, 85) );  // 3
+		// 만약 값이 존재하지 않으면  -(배열길이)-1  연산된 값을 리턴한다.
+		System.out.println("7. 배열에서 특정값의 위치얻기" + Arrays.binarySearch(arr8, 1) );  // 3
 	
 		
 		//8. 배열복사 및 크기변경
