@@ -3619,4 +3619,28 @@ System.out.println("원본문자열: " + s);  // String 는 한번 생성하면 
 
     추가개념: 오토박싱(auto boxing), 오토언박싱(auto unboxing)
 
-            
+   4) 날짜 데이터
+   
+     가. java.util.Calender
+        - Date 보다 나중에 지원
+	- new 방법으로 생성하지 않고 메서드를 이용해서 인스턴스를 얻는다.
+
+	    Calendar cal = Calendar.getInstance(); // getInstance() 안에서 new 하고 리턴해줌.
+            int year = cal.get(Calendar.YEAR);
+
+     나. java.util.Date
+        - 초창기 지원
+	- 대부분이 deprecated 됨.
+	- 생성방법
+	   Date d = new Date();
+	   sysout(d);  // Fri Mar 22 14:45:08 KST 2024
+
+	- 유틸리티 클래스인 java.text.SimpleDateFormat 이용해서 개별적인 날짜정보를 얻을 수 있음.
+
+	예>  import java.util.Date;
+	    import java.text.SimpleDateFormat;
+
+	    Date d = new Date(); // Fri Mar 22 14:45:08 KST 2024
+
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy");  // "패턴" 지정
+	    String year = sdf.format(d);
