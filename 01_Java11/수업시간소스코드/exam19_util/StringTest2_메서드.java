@@ -1,5 +1,7 @@
 package exam19_util;
 
+import java.util.Arrays;
+
 public class StringTest2_메서드 {
 
 	public static void main(String[] args) {
@@ -41,8 +43,45 @@ System.out.println("원본문자열: " + s);  // String 는 한번 생성하면 
 		System.out.println("10. 공백제거 후 길이:" + x.length()) ;   // 5
 		System.out.println("10. 공백제거 후 길이(메서드체인):" + s2.trim().length()) ;   // 5
 		
+		System.out.println("11. 문자열 연결: " + s.concat("!!!")) ;  // helLO!!!
+		
+		char [] chr = s.toCharArray();
+		System.out.println("12. 문자열을 char [] 반환: " + Arrays.toString(chr)) ;  // [h, e, l, L, O]
+		
+		String x2 = "홍길동/이순신/유관순"; // 홍길동,이순신,유관순
+		String [] x3 = x2.split("/");
+		System.out.println("13. 구분자로 분리해서 배열로 반환: " + Arrays.toString(x3)) ;  // [홍길동, 이순신, 유관순]
 		
 		//3. static 메서드 ( String.메서드 형식 )
-	
+	    // "10" ---> 10
+		 int k = Integer.parseInt("10");
+		 System.out.println(k+20);
+		
+		// 비문자열 ---> 문자열
+		String x4 = String.valueOf(true);
+		String x5 = String.valueOf(100);
+		String x6 = String.valueOf(3.14);
+		String x7 = String.valueOf(new char[] {'A','B','C'});
+		System.out.println(x4); // "true"
+		System.out.println(x5); // "100"
+		System.out.println(x6); // "3.14"
+		System.out.println(x7); // "ABC"
+		
+		
+		// 배열 사용 1
+		char [] y = new char[3];
+		y[0]='A';
+		y[1]='B';
+		y[2]='C';
+		
+		String yy = String.valueOf(y);
+		
+		// 배열 사용 2
+		char [] y2 ={'A','B','C'};
+		String yy2 = String.valueOf(y2);
+		
+		// 배열 사용 3
+		String yy3 = String.valueOf(new char[] {'A','B','C'});
+		
 	}//end main
 }//end class
