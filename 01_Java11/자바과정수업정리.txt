@@ -3593,3 +3593,30 @@ System.out.println("원본문자열: " + s);  // String 는 한번 생성하면 
     다. 특징
      -  StringBuilder 는 한번 생성하면 변경도 가능하다. ( 버퍼 기능 )
         문자열 값을 변경하는 작업이 빈번하다면 StringBuilder 사용을 지향해야 된다.
+
+
+
+  3) wrapper 클래스
+
+    개념: 기본형 8개에 해당하는 참조형인 클래스를 묶어서 부르는 이름이다.
+
+       기본형              참조형(클래스)
+       ----              ----
+       byte		Byte
+       short		Short
+       int		Integer
+       long		Long
+
+       float		Float
+       double		Double
+
+       char		Character
+
+       boolean		Boolean
+
+    제공이유:  wrapper 클래스내의 상수 및 메서드의 도움을 받을 수 있다.
+    특징: 거의 대부분의 멤버가 static로 되어있다. ( new 없이 매우 손쉽게 사용할 수가 있다. )
+
+    추가개념: 오토박싱(auto boxing), 오토언박싱(auto unboxing)
+
+            
