@@ -3888,10 +3888,38 @@ if(name!=null)
 	   sysout(name.length()); // NullPointerException발생
      ArrayIndexOutOfBoundsException (예> 없는배열요소 접근시 )
 
-3. 비 런타임  계열
+3. 비 런타임  계열의 특징
  
  - IOException, SQLException
  - 규칙: 반드시 try~catch 또는 throws 문을 이용해서 예외를 처리해야 된다. (**********)
        예외처리 안하면 컴파일 예외가 발생된다.
 
   결론은 I/O 작업 또는 DB 연동작업시 무조건 예외처리를 해야 된다. (***************)
+
+
+4. 명시적으로 예외를 발생시킬 수 있다. + 사용자정의 예외 클래스 작성
+
+  - 용도: 시스템은 실행문장을 예외로 처리하지 않는 정상적인 코드로 인식하기 때문이다.
+       그런데 사용자는 문제있는 코드로 인식 할 수 있다.
+
+    예> Random 클래스에서 랜덤값이 0일 때
+
+  - 문법:
+
+         if(n == 0) throw new MyException("예외메시지");
+  
+  - throw vs throws
+
+    throw: 명시적으로 예외 발생할 때
+    throws: 위임할때
+
+
+  - 사용자정의 예외 클래스 작성 방법
+   
+    public class MyException extends Exception{
+	// 문자열 하나 저장가능한 생성자만 있으면 됨. 필요시 추가로 변수, 메서드 지정 가능.
+	public MyException(String mesg){
+	   super(mesg);
+	}
+    }
+
