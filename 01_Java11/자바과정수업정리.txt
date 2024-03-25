@@ -3774,3 +3774,64 @@ System.out.println("원본문자열: " + s);  // String 는 한번 생성하면 
 	                                      접근시 )
 
 	      ... 
+
+ 
+    나. 예외클래스 + try~catch~finaly 문
+       - 예외가 발생된 곳에서 처리하는 방법이다.
+       - 문법:
+            try{
+               실행문1; 
+	       실행문2; 
+
+	    }catch(예외클래스1 e){  // 적합한 예외클래스를 지정(권장), 다형성 가능(비권장)
+               예외발생시 처리하는 문장;
+	    }catch(예외클래스2 e){  // Exception 최상위 클래스는 반드시 가장 마지막에 지정한다.
+	                            즉 계층구조의 자식부터 catch 해야 된다. ( 컴파일 에러 발생)
+               예외발생시 처리하는 문장;
+	    }finally{
+               반드시 수행되는 문장; ( 파일 및 DB 연동시 close 작업 )
+	    }
+              문장;
+              문장;
+	}//end main
+
+       - 예외관련 정보 제공
+         e.printStackTrace(); ==> 자체적으로 print 가능, 예외발생메시지, 예외발생 line 정보, 예외클래스 정보등 제공함. 개발시 디버깅용으로 사용됨.
+	 sysout( e.getMessage() ) ==> 예외발생메시지 제공.
+   
+      - try~finally문 가능 ( catch문 없이 사용 가능 )
+        ==> 예외처리 목적이 아닌 반드시 실행해야 되는 문장을 알려주는 용도로 사용된다.
+	  예>
+	      try{
+
+	      }finally{
+
+	      }
+
+    다. 예외클래스 + throws 예외클래스 문 ( 위임처리 )
+       - 예외가 발생된 곳이 아닌 다른 곳에서 위임 받아서 처리하는 방법이다.
+
+       - 위임처리방법
+
+       main(){               a(){                 b(){
+                                                 //예외가 발생된 곳에서 예외처리
+                                                  try{
+         a();                 b();                  int n= 10/0; //ArithmeticException 발생
+                                                  }catch(ArithmeticException e){
+
+						  }
+     sysout("정상종료");
+       }                     }                    }
+     ##########################################################   
+	 
+     main(){               a()throws Arithmet~{   b()throws ArithmeticException{
+                                                 //예외가 발생된 곳에서 예외처리가 아닌 위임방식
+						   ==> 메서드를 호출한 곳으로 위임한다.
+      try{                                            
+         a();                 b();                  int n= 10/0; //ArithmeticException 발생
+      }catch(Ar~  e){
+      
+      }
+						  
+     sysout("정상종료");
+       }                     }                    }
