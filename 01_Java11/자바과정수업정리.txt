@@ -3763,7 +3763,8 @@ System.out.println("원본문자열: " + s);  // String 는 한번 생성하면 
 -개발자가 핸들링 불가                   |
                   
 	     RuntimeException                        IOException,SQLException  
-	     (런타임 계열: 런타임시(실행)발생)                   ( 비런타임 계열: 컴파일시 발생 )
+	     (런타임 계열: 런타임시(실행)발생,)                   ( 비런타임 계열: 컴파일시 발생,
+	      컴파일 unchecked 계열)                            컴파일 checked 계열
 	      |                                           |
 	                                             
 	     ArithmeticException ( 예> 10/0 )         FileNotFoundException
@@ -3808,7 +3809,7 @@ System.out.println("원본문자열: " + s);  // String 는 한번 생성하면 
 
 	      }
 
-    다. 예외클래스 + throws 예외클래스 문 ( 위임처리 )
+    다. 예외클래스 + throws 예외클래스 문 ( 위임처리. ************* )
        - 예외가 발생된 곳이 아닌 다른 곳에서 위임 받아서 처리하는 방법이다.
 
        - 위임처리방법
@@ -3830,8 +3831,67 @@ System.out.println("원본문자열: " + s);  // String 는 한번 생성하면 
       try{                                            
          a();                 b();                  int n= 10/0; //ArithmeticException 발생
       }catch(Ar~  e){
-      
+        e.printStackTrace();
       }
 						  
      sysout("정상종료");
-       }                     }                    }
+     }                     }                    }
+
+   
+    4) Overriding 관련 throws 처리
+
+     부모: 
+           public  void a() throws ArithmeticException{}
+        
+
+     자식: @Override
+          public(확대) void a()  (축소){}  // 가능
+	  @Override
+          public(확대) void a() throws ArithmeticException (축소){}  // 가능
+
+	  @Override
+          public(확대) void a()throws RuntimeException (축소){}  // 불가능
+
+	   @Override
+          public(확대) void a()throws Exception (축소){}  // 불가능
+
+	   @Override
+          public(확대) void a()throws IOException (축소){}  // 불가능
+
+
+
+2. Runtime 계열의 특징
+
+   - try~catch 또는 throws 방식으로 예외처리를 하는 것이 아니다.
+    이유는 실제로는 실행할 때 예외가 발생되면 안되는 코드들이다.
+
+   - 다음 런타임계열은  조건문으로 처리해야 된다.
+
+      ArithmeticException ( 예> 10/0 )   
+         예>
+	     int n = 0;
+if(n!=0)
+	     int result = 10/n;
+
+      ClassCastException ( 예> 클래스 형변환시 )      
+         예>
+	    Employee e = new Manager();
+
+	    Manager m = (Manager)e;
+if( e instanceof Cat)
+	      Cat c = (Cat)e; // ClassCastException 발생
+
+      NullPointerException ( 예> null값을 가진상태로 메서드 호출시 )
+        예>
+	   String name = null;
+if(name!=null)
+	   sysout(name.length()); // NullPointerException발생
+     ArrayIndexOutOfBoundsException (예> 없는배열요소 접근시 )
+
+3. 비 런타임  계열
+ 
+ - IOException, SQLException
+ - 규칙: 반드시 try~catch 또는 throws 문을 이용해서 예외를 처리해야 된다. (**********)
+       예외처리 안하면 컴파일 예외가 발생된다.
+
+  결론은 I/O 작업 또는 DB 연동작업시 무조건 예외처리를 해야 된다. (***************)
