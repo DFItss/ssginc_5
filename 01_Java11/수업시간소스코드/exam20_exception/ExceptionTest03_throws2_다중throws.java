@@ -4,7 +4,7 @@ class Test2{
 	public void a()throws ArithmeticException, NullPointerException {
 		b();
 	}
-	public void b() throws ArithmeticException, NullPointerException{
+	public void b() throws ArithmeticException, NullPointerException{ // 다형성 사용 가능 (권장안함)
 		
 		// 1. ArithmeticException 발생 가능한 코드
 		int n = 2;
