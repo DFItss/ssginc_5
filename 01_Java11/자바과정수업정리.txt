@@ -4166,3 +4166,53 @@ if(name!=null)
 
     구현방법2: 람다 (*************)
     Comparator<Cat> comp2 = (c1 , c2)-> c2.age - c1.age;
+
+
+3. 표준 API 함수적 인터페이스
+
+   1) 개념
+     - 메서드가 파라미터 및 리턴값의 존재여부에 따른 4가지 형태가 존재한다.
+      * 4가지 표현식
+     - 파라미터없고 리턴값 없는 경우
+        예> public void method();
+
+     - 파라미터없고 리턴값 있는 경우
+         예> public int method();
+            public String method();
+
+     - 파라미터있고 리턴값 없는 경우
+        예> public void method(int);
+	   public void method(String);
+	   public void method(int, String);
+
+     - 파라미터있고 리턴값 있는 경우
+       예> public int method(int);
+	   public String method(String);
+	   public int method(int, String);
+
+  ==> 위 4가지 형식의 메서드를 가진 인터페이스를 API로 제공한다.
+    따라서 위 기능이 필요할 때  직접 만들지 말고 API로 제공된 표준적 API 함수적 인터페이스를 사용하자.
+    
+   2) java.util.function 패키지
+     ==> @FunctionalInterface 지정. 따라서 추상 메서드는 반드시 한개 존재함( 람다 표현식 사용 가능 )
+
+     가. Consumer<T>
+        - 추상메서드가 파라미터있고 리턴값은 없음.
+	- void	accept​(T t)
+
+       * BiConsumer<T,​U>: void	accept​(T t, U u)
+         DoubleConsumer : void	accept​(double value)
+         IntConsumer:     void	accept​(int value)
+	 LongConsumer   : void	accept​(long value)
+	 ObjDoubleConsumer<T>: void accept​(T t, double value)
+	 ObjIntConsumer<T> : void	accept​(T t, int value)
+	 ObjLongConsumer<T>: void	accept​(T t, long value)
+ 
+    나. Supplier<T>
+       - 추상메서드가 파라미터 없고 리턴값은 있음.
+       - T get()
+
+       * BooleanSupplier: boolean getAsBoolean()
+         DoubleSupplier:  double getAsDouble()
+	 IntSupplier :  int	getAsInt()
+	 LongSupplier : long	getAsLong()
