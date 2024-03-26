@@ -3946,6 +3946,10 @@ if(name!=null)
      static 사용불가, 객체생성불가, instanceof 사용 불가
    - 클래스 및 인터페이스, 메서드 파라미터로 사용 가능.
 
+ 5) 메서드 파라미터 전달시 사용되는 파라미터 타입 표현식
+    - method(List<?> xxx) ==> 제네릭된 모든 데이터타입 전달 가능
+    - method(List<? extends Person> xxx) ==> 제네릭된 Person 또는 Person의 자식 데이터타입만 전달 가능
+    - method(List<? super Man> xxx) ==> 제네릭된 Man 또는 Man의 부모 데이터타입만 전달 가능
 
 3. 컬렉션 API
 
@@ -3985,3 +3989,102 @@ if(name!=null)
                 ( key/value 쌍으로 저장됨 )
 		저장순서가 없다.
 		key 이용해서 value 얻음.
+
+
+###############################################33
+12일차 리뷰
+1. 예외처리
+  1)예외발생된 경우 상황? 비정상종료
+  2)예외처리? 비정상종료--> 정상종료.
+            예외의 원인인 코드수정은 불가.
+  3)방법?
+    - 예외클래스 계층구조
+               
+	       Object
+	          |
+	       Throwable
+	          |
+	      Exception (예외클래스 최상위 간주)
+	        |
+   RuntimeExcetion                    IOException,SQLException
+   (런타임계열, 컴파일 unchecked계열)       ( 비런타임계열, 컴파일 checked 계열)
+    |                                      |
+   NullPointerException                FileNotFoundException
+   ArithmeticException
+   ArrayIndexOutofBoundsException
+   ..
+  => try~cacth 또는 throws 인          ==> 무조건 try~cacth 또는 throws 해야된다.(*****)
+    예외처리로 문제 해결 안함.                 if 문으로 해결불가.
+    if문 해결함.
+
+   - 발생된 곳에서 처리
+       try{
+          실행문;
+	  실행문;
+       }catch(예외클래스 e){
+         예외처리 코드
+       }catch(예외클래스 e){
+         예외처리 코드
+       }finally{
+         반드시 실행되는 코드
+       }
+
+   - 위임처리 (************)
+     메서드 호출한 곳으로 위임하는 방식으로 main메서드까지 위임하고 마지막으로  main에서 try~catch로 처리한다.
+     throws 예외클래스, 예외클래스{}
+
+  4) 명시적으로 예외 발생시키는 방법
+
+    if(조건식)throw new 예외클래스(메시지); // 메시지값은 e.getMessage()로 얻음.
+
+  5) 명시적으로 예외 발생시킬때 사용하는 예외클래스를 사용자가 직접 만들어야 된다. ( 사용자 정의 예외클래스)
+
+     public class MyException extends Exception{
+         public MyException(String mesg){
+             super(mesg);
+	 }
+     }
+
+2. 제네릭스(generics)
+
+  1) 표현식
+    <T>
+    <E>
+    <K,V>
+    <T,R>
+
+  2) 특징
+     - 관리하는 데이터의 타입을 명시적으로 지정한 타입으로 제한하는 방법
+  3) 장점 2가지
+     - 컴파일시에 잘못된 데이터가 저장된것을 확인이 가능하다.
+     - 형변환 불필요
+
+  4) 주요용도
+    - 컬렉션 API
+    - 함수형 인터페이스 및 stream API
+
+###########################################################
+13 일차
+
+1. 제네릭스 ( generics )
+
+ 1) 개념
+  다양한 타입을 다루는 메서드 및 클래스(컬렉션)에서  
+  컴파일시점(*)에 타입체크를 해서 예외를 미리 알 수 있도록 지원가능.
+
+ 2) 장점 2가지
+   - 저장하는 객체의 타입 안전성 확보 ( 저장하고자 하는 데이터형을 제한 할 수 있다. ) 
+   - 형변환 번거로움을 제거할 수 있다.
+
+ 3) 제네릭스 표현 ( 타입 파라미터 라고 부른다. )
+  <T>: reference Type 의미
+  <E>: Element 의미
+  <K,V>:  Key, Value 의미
+  <T,R>:  Return type 의미
+
+ 4) 특징
+   - <T> 같은 제네릭은 컴파일 시점에 실제 지정된 타입으로 치환됨.
+   예> <T> --> <String>
+   - 타입 파라미터는 인스턴스 멤버로 간주한다.
+     static 사용불가, 객체생성불가, instanceof 사용 불가
+   - 클래스 및 인터페이스, 메서드 파라미터로 사용 가능.
