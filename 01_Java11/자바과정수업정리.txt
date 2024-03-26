@@ -4088,3 +4088,8 @@ if(name!=null)
    - 타입 파라미터는 인스턴스 멤버로 간주한다.
      static 사용불가, 객체생성불가, instanceof 사용 불가
    - 클래스 및 인터페이스, 메서드 파라미터로 사용 가능.
+
+5) 메서드 파라미터 전달시 사용되는 파라미터 타입 표현식
+    - method(List<?> xxx) ==> 제네릭된 모든 데이터타입 전달 가능
+    - method(List<? extends Person> xxx) ==> 제네릭된 Person 또는 Person의 자식 데이터타입만 전달 가능
+    - method(List<? super Man> xxx) ==> 제네릭된 Man 또는 Man의 부모 데이터타입만 전달 가능
