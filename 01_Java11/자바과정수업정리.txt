@@ -4377,7 +4377,7 @@ if(name!=null)
 
 3. 중간처리
 
-  1) 중복제거: distinct()
+  1) 중복제거:  distinct()
   2) 필터링 :  filter(Predicate)
   3) 가공   : map(Function), mapToInt​(ToIntFunction)
             ==> 한개 파라미터 입력되면 한개의 리턴값이 반환
@@ -4385,5 +4385,26 @@ if(name!=null)
 	   : flatMap(Function) : Stream
 	    ==> 한개 파라미터 입력되면 여러개가 하나에 저장되어 반환.
             // 하나의 파라미터로 복수개의 요소들로 구성된 새로운 Stream을 반환한다.
+	    flatMap​(Function<? super T    ,​   ? extends Stream<? extends R>> mapper)
 	     예> 입력: "a/b/c"
 	        리턴: [a,b,c] 형태의 Stream 반환됨.
+
+           : 반환값이 정수라면  flatMapToInt​(Function<? super T,​? extends IntStream> mapper)
+ 
+   4) 정렬 : 
+       a. 배열: Arrays.sort(배열);// 오름차순
+               Arrays.sort(배열, Comparator);// 내림차순
+
+       b. 컬렉션: Collections.sort(컬렉션, Comparator) // 오름차순,내림차순
+
+       c. Stream: sorted()
+                  sorted(Comparator)
+		  sorted(Comparator.comparing(t->t.getEng())  // 권장, 기본은 오름차순
+                  sorted(Comparator.comparing(t->t.getEng(), Comparator.reverseOrder())  // 내림차순
+
+   5) 갯수 제한 및 skip
+       
+       - limit(n)
+       - skip(n)
+
+4. 최종처리
