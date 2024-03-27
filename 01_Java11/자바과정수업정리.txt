@@ -4232,7 +4232,9 @@ if(name!=null)
 	 LongToDoubleFunction : double	applyAsDouble​(long value)
 	 LongToIntFunction : int	applyAsInt​(long value)
 	 ToDoubleBiFunction<T,​U>: double	applyAsDouble​(T t, U u)
-    
+         ToIntFunction<T>     :  int applyAsInt​(T value)
+
+
     라. Operator
       - Function 처럼 파라미터 있고 리턴값은 있음.
       - Function API를 상속받음.
@@ -4372,3 +4374,9 @@ if(name!=null)
      Stream<String> s2 = Arrays.stream(names);	
      Stream<String> s3 = Stream.of(names);
      Stream<String> s4 = Stream.of("홍길동2","이순신2","유관순2");
+
+3. 중간처리
+
+  1) 중복제거: distinct()
+  2) 필터링 :  filter(Predicate)
+  3) 가공   : map(Function), mapToInt​(ToIntFunction)
