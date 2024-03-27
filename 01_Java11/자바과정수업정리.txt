@@ -4425,4 +4425,16 @@ if(name!=null)
     
    ==> Stream이 아니고 IntStream 인 경우에 사용할 수 있다. 단, count() 제외(******)
    ==> 중간처리와 연계해서 작업이 된다.
-    
+   
+ 3) 컬렉션 타입 변환
+    - list로 변경
+    - map로 변경
+    예> .stream().collect(Collectors.toList());
+       .stream().중간처리.collect(Collectors.toList()); // toMap(k,v)
+
+ 4) 컬렉션 대상의 그룹핑 메서드
+    - collect(Collectors.counting());
+    - collect(Collectors.summingInt(t->t.getEng()));
+    - collect(Collectors.averagingDouble(t->t.getEng()));
+    - collect(Collectors.maxBy(Comparator.comparing(Student8::getEng)));
+    - collect(Collectors.minBy(Comparator.comparing(Student8::getEng)))
