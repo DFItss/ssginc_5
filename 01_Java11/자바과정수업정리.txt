@@ -4380,3 +4380,10 @@ if(name!=null)
   1) 중복제거: distinct()
   2) 필터링 :  filter(Predicate)
   3) 가공   : map(Function), mapToInt​(ToIntFunction)
+            ==> 한개 파라미터 입력되면 한개의 리턴값이 반환
+
+	   : flatMap(Function) : Stream
+	    ==> 한개 파라미터 입력되면 여러개가 하나에 저장되어 반환.
+            // 하나의 파라미터로 복수개의 요소들로 구성된 새로운 Stream을 반환한다.
+	     예> 입력: "a/b/c"
+	        리턴: [a,b,c] 형태의 Stream 반환됨.
