@@ -4407,4 +4407,22 @@ if(name!=null)
        - limit(n)
        - skip(n)
 
+  =======> 중간처리는 처리후 거의 대부분이 Stream으로 반환됨.
+
 4. 최종처리
+
+  1) allMatch(Predicate) : 모든 값이 만족하는지 체크
+     anyMatch(Predicate) : 최소 한개 값이 만족하는지 체크
+     noneMatch(Predicate): 모두 만족 안하는지 체크
+
+  2) 그룹핑 메서드
+     - 합계: 	sum():int
+     - 평균:     average():OptionalDouble ( Optional? 값이 있는 경우 반환된 값과 관련된 메서드 호출이 가능.
+                                                     값이 없는 경우에는 기본값을 설정해서 메서드 호출이 가능하도록 처리)
+     - 최대값: 	max(): OptionalInt
+     - 최소값: 	min(): OptionalInt
+     - 갯수: 	count(): long
+    
+   ==> Stream이 아니고 IntStream 인 경우에 사용할 수 있다. 단, count() 제외(******)
+   ==> 중간처리와 연계해서 작업이 된다.
+    
