@@ -4341,7 +4341,7 @@ if(name!=null)
        컬렉션,배열,파일에서 읽어서 출력 및 간단한 작업(컬렉션에 값추가,삭제,수정)
        만약에 정렬기능, 필터기능, 가공기능이 필요하면 따로 구현해야 됨.
 
-    나. Stream API
+    나. Stream API 사용 형태
         컬렉션,배열,파일에서 Stream 타입을 얻으면,
         Stream 정렬기능, 필터기능, 가공기능,.... 내장이 되어있음.
 
@@ -4358,4 +4358,17 @@ if(name!=null)
          - 총합,평균,최대값,최소값, 갯수
 	 - 컬렉션타입변경(List로 변경, Map변경,..)
 	 - 반복출력
+
 	 
+2. 스트림 얻는 방법
+
+  가. 컬렉션
+     List<String> list = Arrays.asList("홍길동","이순신","유관순");
+     Stream<String> s = list.stream();
+
+
+  나. 배열
+     String [] names = {"홍길동1","이순신1","유관순1"};
+     Stream<String> s2 = Arrays.stream(names);	
+     Stream<String> s3 = Stream.of(names);
+     Stream<String> s4 = Stream.of("홍길동2","이순신2","유관순2");
