@@ -1,0 +1,44 @@
+
+MySQL 강좌정리
+
+1. 환경설정
+ 
+  1) MySQL8 다운 및 설치
+    - 커뮤니티 버전 ( 무료 )
+    - https://dev.mysql.com/downloads/installer/
+   
+    - Windows (x86, 32-bit), MSI Installer	8.0.36	285.3M	
+
+
+   
+  2) 접속툴
+    - 자체적으로 설치: workbench ( GUI )
+                   command line client ( CMD )
+
+    - 다운로드 설치: DBeaver.zip
+                 ==> http://dbeaver.io/download
+                  Toad
+		  ...
+
+   3) 프로그램 언어(자바)
+      - JDBC( Java DataBase Connectivity) 기술이용
+      - JDBC 특징: DB 종류와 무관하게 연동 가능.
+                  Java SE 및 Java EE(웹) 무관하게 사용 가능.
+	     단점: SQLException이 발생됨.( 무조건 try~cacth 필요)
+
+
+    4) 실습에서 사용할 Database 생성 및 테이블 생성
+       Database 명: testdb
+       테이블: 
+               - 수업때 사용할 테이블: scott_mysql.sql 이용
+	                          dept 테이블
+				  emp 테이블
+				  salgrade 테이블
+
+	       - 워크샵 진행시 사용할 테이블 :  MySQL용_SQL워크샵스크립트.txt
+	                             tb_class
+				     tb_class_professor
+				     tb_department
+				     tb_grade
+				     tb_professor
+				     tb_student
