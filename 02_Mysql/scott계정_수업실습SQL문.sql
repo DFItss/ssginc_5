@@ -73,4 +73,55 @@ SELECT empno, ename,   sal,  comm,  (sal * 12) + comm as "연봉",
             (sal*12) + ifnull(comm, 0) as "연봉"
  FROM emp;
 
+-- 9. 중복제거 
+--  distinct 키워드 이용
+SELECT distinct job
+FROM emp;
+ 
+-- 10. where 절에 사용하는  연산자
+-- 1) 비교연산자 ( =, !=, >, >= , <, <= )
+ SELECT empno, ename, job, deptno , sal
+ FROM emp
+ WHERE sal <= 1000;
 
+ SELECT empno, ename, job, deptno , sal
+ FROM emp
+ WHERE ename = 'SMITH';
+
+ SELECT empno, ename, job, deptno , sal
+ FROM emp
+ WHERE ename = 'smith';   -- 리터럴값은 oracle에서는 대소문자 구별됨.
+-- 
+ SELECT empno, ename, job, deptno , sal, hiredate
+ FROM emp
+ WHERE hiredate = '1980-12-17';
+ 
+  SELECT empno, ename, job, deptno , sal, hiredate
+ FROM emp
+ WHERE hiredate > '1982-12-17';
+ 
+ -- 2) 비교연산자  : Between A and B 
+  SELECT empno, ename, job, deptno, sal
+ FROM emp
+ WHERE sal BETWEEN 800 AND 2000;
+ 
+ SELECT empno, ename, job, deptno , sal, hiredate
+ FROM emp
+ WHERE hiredate BETWEEN '1980-01-11' AND '1982-12-17';
+ 
+ SELECT empno, ename, job, deptno , sal, hiredate
+ FROM emp
+ WHERE ename BETWEEN 'Adam' AND 'Dartin';
+ 
+-- 3 ) 비교연산자 :      in ( 값, 값2, 값3) 
+ SELECT empno, ename, sal
+ FROM emp
+ WHERE empno IN (7369,7566,7698);
+ 
+ SELECT empno, ename, sal
+ FROM emp
+ WHERE ename IN ( 'SMITH', 'FORD', '홍길동');
+ 
+  SELECT empno, ename, sal, hiredate
+ FROM emp
+ WHERE hiredate IN ( '1980-12-17', '1980-01-11');
