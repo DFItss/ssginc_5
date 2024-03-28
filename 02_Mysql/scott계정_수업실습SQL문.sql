@@ -41,3 +41,36 @@ limit 3;
 SELECT empno, ename, job, hiredate
 FROM emp
 limit  0 , 5;  -- 0 부터 5개 
+
+-- 5. 연산 가능  ( +, - , *, /, %(나머지))
+-- % : mysql 에서 지원, 대신  mod( ) 함수 추천
+SELECT empno, ename,   sal,  sal * 1.1,  ROUND(sal * 1.1),  ROUND(sal * 1.1, 2) 
+ FROM emp;
+
+SELECT empno, ename,   sal,  sal + 10, sal-10, sal*1.1 , sal / 3,  sal % 3,  mod(sal, 3)
+ FROM emp;
+ 
+ -- 6. 별칭
+ -- 컬럼헤더값을 별칭으로 출력
+ -- 문법:  표현식 as  별칭,    as 생략 가능(권장안함)
+ -- 필요시  "별칭" 사용. (권장),   '별칭' (홑따옴표 가능하지만 사용 안하는 것으로)
+SELECT empno AS 사번, ename AS 성명,  sal 급여 , sal * 12  as 연봉
+FROM emp;
+
+SELECT empno AS "사 번", ename AS "성명",  sal "급여" , sal * 12  as "연봉"
+FROM emp;
+
+-- 7. 리터럴 (literal)
+-- 문자(열)값, 날짜값:  반드시 '' (홑따옴표) 사용
+-- 수치값:    10   3.14
+SELECT empno , 10, 3.15 , 'hello', '2024-03-23'
+FROM emp;
+
+-- 8.  null 값
+-- null 값의 연산결과는 null 값이 반환된다. (******)
+-- ifnull (컬럼명, 기본값) 사용하여 null 값인 경우 기본값으로 처리 가능.
+SELECT empno, ename,   sal,  comm,  (sal * 12) + comm as "연봉", 
+            (sal*12) + ifnull(comm, 0) as "연봉"
+ FROM emp;
+
+
