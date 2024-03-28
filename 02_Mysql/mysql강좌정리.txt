@@ -72,7 +72,7 @@ MySQL 강좌정리
    
   나. 종류
     - Oracle
-    - MySQL
+    - MySQL ( MariaDB 는 MySQL 문법이 거의 99% 비슷)
     - MSSQL
     - DB2
     ...
@@ -119,3 +119,26 @@ MySQL 강좌정리
 
    마. etc
       - 사용자생성/권한부여/권한취소 ...
+
+
+4. select 문
+
+  1) 기능 3가지
+   
+   - selection: 행 선택
+   - projection: 열 선택
+   - join:     : 2 개 이상의 테이블 연결해서 selection 및 projection 처리.
+
+  2) 문법
+    
+    select 절
+    from 절; ( mysql 생략 가능, Oracle 생략  불가 )
+
+    - select 절: * (모든컬럼,all)
+                컬럼명,컬럼명2,...
+		컬럼명+10  ==> 연산가능
+		컬럼명 as 별칭 ==> 가독성
+		함수명(컬럼명)  ==> 함수가능
+		distinct 컬럼명 ==> 중복 제거
+    
+    - from 절;  테이블 명
