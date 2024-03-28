@@ -42,3 +42,80 @@ MySQL 강좌정리
 				     tb_grade
 				     tb_professor
 				     tb_student
+
+2. 데이터베이스 vs 데이터베이스 관리 시스템
+
+ 1) 데이터베이스(DataBase : DB)
+   - 개인,회사,관공서등에서 업무적으로 필요한 데이터 의미.
+ 
+ 2) 데이터베이스 관리 시스템 ( DataBase Management System : DBMS )
+   - DataBase(데이터)를 전문적으로 관리해주는 S/W 의미.
+   - 관리 방법? 보안
+              CRUD ( Create: 데이터 생성
+	             Read  : 데이터 조회
+		     Update: 데이터 수정
+		     Delete: 데이터 삭제 )
+	     사용자 생성
+	     Role 부여
+	     ...
+
+    - 데이터 저장 방법? 계층형 데이터베이스
+                    망형   데이터베이스
+		    객체지향 데이터베이스
+		    관계형 데이터베이스 (*): 행(레코드)과 열(컬럼)로 구성된 2차원 테이블형식으로 관리
+		    ..
+      
+3) 관계형 데이터베이스 (Relational DataBase : RDB )
+
+  가. 개념
+    행(레코드)과 열(컬럼)로 구성된 2차원 테이블형식으로 관리
+   
+  나. 종류
+    - Oracle
+    - MySQL
+    - MSSQL
+    - DB2
+    ...
+
+3. SQL (Structured Query Language )
+
+ 1) 개요
+  - RDB 에서 사용하는 프로그램 언어이다.
+  - 대소문 구별 안함.
+  - 연산자
+  - 조건문
+  - 함수 ( 자바의 메서드 역할 )
+
+ 2) 종류 1
+
+    가. ANSI SQL
+      - 표준화된 SQL 의미.
+      - DBMS에 독립적 ==> 모든 DBMS에서 사용 가능(Oracle, MySQL, ... )
+
+
+    나. 비 ANSI SQL
+      - 표준화되지 않은 SQL 의미.
+      - DBMS에 의존적 ==> MySQL에서만 사용가능한 문법이 있다는 의미.
+
+ 3) 종류 2 ( 역할 )
+
+   가. 조회 ==> query 라고 부름.
+     - select 문 이용
+
+   나. 레코드-생성/수정/삭제 ==> DML(Data Manipulation Language) 라고 부른다.
+     - 레코드 생성: insert 문
+     - 레코드 수정: update 문
+     - 레코드 삭제: delete 문
+
+   다. 테이블-생성/수정/삭제 ==> DDL ( Data Definition Language ) 라고 부른다.
+     - 테이블 생성: create 문
+     - 테이블 수정: alter  문
+     - 테이블 삭제: drop 문
+
+   라. 트랜잭션 명령어   ==> TCL( Transaction Control Language ) 라고 부른다.
+      - DML과 매우 밀접한 관련있음.
+      - commit 문
+      - rollback 문
+
+   마. etc
+      - 사용자생성/권한부여/권한취소 ...
