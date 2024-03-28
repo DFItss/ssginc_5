@@ -125,3 +125,19 @@ FROM emp;
   SELECT empno, ename, sal, hiredate
  FROM emp
  WHERE hiredate IN ( '1980-12-17', '1980-01-11');
+ 
+ 
+ -- 4) like 연산자 :   % ,  _  패턴문자(와일드 카드문자)와 같이 사용
+ SELECT empno, ename, sal
+ FROM emp
+ WHERE ename LIKE'A%';
+ 
+ SELECT empno, ename, sal
+ FROM emp
+ WHERE ename LIKE '%T%';
+
+SELECT empno, ename, sal
+ FROM emp
+ WHERE ename LIKE '_L%';
+ 
+ 
