@@ -254,3 +254,23 @@ MySQL 강좌정리
         ==> ename LIKE '%$_%' ESCAPE '$'; // 임의의 문자 뒤에 오는 와일드카드 문자를 그냥 일반문자로 처리함.
 	                                     ( oracle 가능 )
  
+
+   마. null 조회
+    
+     - IS NULL 사용
+
+
+
+   바. 정렬
+      
+     - 정렬방법
+       오름차순(기본) :  asc|ASC
+       내림차순      :  desc|DESC
+
+     - 문법
+
+        select 컬럼명 as A, 컬럼명2 as B
+	from 테이블명
+	where 조건식(연산자)
+	order by 표현식(컬럼명|별칭|select절지정된위치1부터)  ASC|DESC   ;
+    

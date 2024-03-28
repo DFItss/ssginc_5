@@ -140,4 +140,44 @@ SELECT empno, ename, sal
  FROM emp
  WHERE ename LIKE '_L%';
  
+-- 5)  is null 연산자:   null 값 조회
+SELECT empno, ename, sal, comm
+ FROM emp
+ where comm IS NULL;
+ 
+ SELECT empno, ename, sal, comm, mgr
+ FROM emp
+ where mgr IS NULL;
+ 
+ 
+-- 6) 논리 연산자;   and  , or  , not 
+SELECT empno, ename, job, deptno, hiredate, sal
+ FROM emp
+ WHERE job = 'salesman'AND sal >= 1500;
+
+SELECT empno, ename, job, deptno, hiredate, sal
+ FROM emp
+ WHERE job = 'salesman' or  sal >= 1500;
+ 
+ 
+  SELECT empno, ename, sal, comm, job
+ FROM emp
+ WHERE comm IS NOT NULL;
+ 
+  SELECT empno, ename, job, deptno , sal
+ FROM emp
+ WHERE NOT ename = 'SMITH';
+ 
+   SELECT empno, ename, job, deptno, sal
+ FROM emp
+ WHERE sal NOT BETWEEN 800 AND 2000;
+ 
+  SELECT empno, ename, sal
+ FROM emp
+ WHERE ename NOT IN ( 'SMITH', 'FORD', '홍길동');
+ 
+  SELECT empno, ename, sal
+ FROM emp
+ WHERE ename NOT LIKE'A%';
+ 
  
