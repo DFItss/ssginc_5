@@ -269,4 +269,50 @@ SELECT empno, ename, job, deptno, hiredate, sal
   SELECT FORMAT(9876543.2145, 2), FORMAT(9876543.2145, 2, 'en_US'),
              FORMAT(9876543.2145, 2, 'ko_KR');
   
+  --  삽입 :  INSERT(str,pos,len,newstr) ==> 지정된 위치에 len만큼  newstr로 치환된다.
+  SELECT  INSERT('abcdefg', 1, 4, '####');
   
+  -- 왼쪽부분열 : LEFT(str,len) , 오른쪽 부분열: RIGHT(str,len)
+  SELECT LEFT('foobarbar', 5);
+  SELECT RIGHT('foobarbar', 4);
+  
+  -- 문자열 반복: REPEAT(str,count)
+  SELECT REPEAT('MySQL', 3);
+#############################################################
+   -- 2. 단일행함수 - 숫자 데이터
+   -- https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/numeric-functions.html
+SELECT ROUND(45.678), ROUND(45.678, 2) , ROUND(45.678,-1) ;
+   
+SELECT ROUND(45.678), ROUND(45.678, 2) , ROUND(45.678,-1) FROM DUAL;
+   
+-- oracle : trunc(값 [, 자릿수])   
+SELECT TRUNCATE(45.678, 0), TRUNCATE(45.678, 2) , TRUNCATE(45.678,-1)
+FROM DUAL;
+
+ SELECT CEIL(45.178), CEIL(-45.178);
+ SELECT FLOOR(45.178), FLOOR(-45.178);
+ 
+ -- oracle :  % 지원안됨.  mod()만 지원
+  SELECT MOD(10, 3), 10%3 , 10 MOD 3 FROM DUAL;
+  
+   SELECT SIGN(-1.200), SIGN(34.3), SIGN(0) FROM DUAL;
+  
+  #############################################################
+   -- 3. 단일행함수 - 날짜 데이터
+  
+ -- 1) 현재 날짜 출력,  포맷: YYYY-MM-DD
+  SELECT CURDATE(), CURRENT_DATE(), CURRENT_DATE 
+  FROM DUAL;
+
+-- 2) 현재 시간 출력, 포맷:  hh:mm:ss
+ SELECT CURTIME(), CURRENT_TIME(), CURRENT_TIME
+ FROM DUAL;
+ 
+ -- 3) 현재날짜와 시간 출력, 포맷: YYYY-MM-DD hh:mm:ss
+ -- oracle:  sysdate  소괄호 없음
+  SELECT SYSDATE(), NOW() FROM DUAL;
+ 
+  -- SYSDATE()  vs  NOW()
+   --  SYSDATE():  함수가 실행되는 시간을 반환
+  --  NOW():  sql 명령문이 실행되는 시간을 반환
+ 
