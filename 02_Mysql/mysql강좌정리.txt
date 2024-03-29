@@ -331,3 +331,55 @@ MySQL 강좌정리
 	 
 2. 단일행 함수: 문자데이터
 https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/string-functions.html
+   - upper()
+   - lower()
+   - length()
+   - substr(), substring(), left(), right()
+   - lpad(), rpad()
+   - ltrim(), rtrim(), trim()
+   - concat(n,n2,..)
+   - concat_ws(구분자,n,n2,.)
+   - format()
+   - instr()
+   - replace()
+   - space(n)
+   - repeat()
+   - reverse()
+
+3. 단일행 함수: 수치데이터
+https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/numeric-functions.html
+   - round
+   - truncate
+   - ceil
+   - floor
+   - sign
+   - mod
+   - abs
+ 
+4. 단일행 함수: 날짜데이터
+https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/date-and-time-functions.html
+   
+    - curdate() : 'yyyy-MM-DD'
+    - curtime() : 'hh:mm:ss'
+    - now(), sysdate()
+
+    - adddate()
+    - date_date()
+      date_sub()
+
+    - datediff() 
+    - TIMESTAMPDIFF()
+    - last_day()
+    - extract()
+    - date_format() : 날짜를 문자열로 변환
+    - str_to_date():  문자를 날짜로 변환
+
+5. 단일행 함수: 조건처리
+    - case ~ end ( ANSI )
+    - if()
+
+6. 형변환 함수
+https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/cast-functions.html
+
+   - cast()
+   - convert()

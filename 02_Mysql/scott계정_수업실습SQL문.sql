@@ -270,11 +270,11 @@ SELECT empno, ename, job, deptno, hiredate, sal
              FORMAT(9876543.2145, 2, 'ko_KR');
   
   --  삽입 :  INSERT(str,pos,len,newstr) ==> 지정된 위치에 len만큼  newstr로 치환된다.
-  SELECT  INSERT('abcdefg', 1, 4, '####');
+   SELECT  INSERT('abcdefg', 1, 4, '####');
   
   -- 왼쪽부분열 : LEFT(str,len) , 오른쪽 부분열: RIGHT(str,len)
-  SELECT LEFT('foobarbar', 5);
-  SELECT RIGHT('foobarbar', 4);
+     SELECT LEFT('foobarbar', 5);
+     SELECT RIGHT('foobarbar', 4);
   
   -- 문자열 반복: REPEAT(str,count)
   SELECT REPEAT('MySQL', 3);
@@ -315,4 +315,121 @@ FROM DUAL;
   -- SYSDATE()  vs  NOW()
    --  SYSDATE():  함수가 실행되는 시간을 반환
   --  NOW():  sql 명령문이 실행되는 시간을 반환
+   SELECT NOW(), sleep(2), NOW() FROM DUAL;
+   SELECT SYSDATE(), sleep(2), SYSDATE() FROM DUAL;
+  
+  -- 4) ADDDATE(date,days), 날짜에 일(day) 더하거나 빼기
+   SELECT ADDDATE('2008-01-02', 30),  ADDDATE('2008-01-02', -30);
+  SELECT ADDDATE(now(), 30),  ADDDATE(now(), -30);
+  
+-- 4) ADDDATE(date , interval 값  unit )
+  SELECT ADDDATE(now(),  INTERVAL 1 DAY),
+             ADDDATE(now(),  INTERVAL 1 MONTH),
+             ADDDATE(now(),  INTERVAL 1 YEAR),
+             now(),
+             ADDDATE(now(),  INTERVAL 2 HOUR),
+             ADDDATE(now(),  INTERVAL 3 MINUTE)
+ FROM dual;
+  
+  
+SELECT DATE_ADD('2008-01-02', INTERVAL 1 DAY) as A1,
+ DATE_ADD('2008-01-02', INTERVAL 1 MONTH) as A2,
+ DATE_ADD('2008-01-02', INTERVAL 1 YEAR) as A3,
+ NOW() as A4,
+ DATE_ADD(NOW(), INTERVAL 10 MINUTE) as A5,
+ DATE_ADD(NOW(), INTERVAL 2 HOUR) as A6;
  
+  SELECT DATE_SUB('2008-01-02', INTERVAL 1 DAY) as B1,
+ DATE_SUB('2008-01-02', INTERVAL 1 MONTH) as B2,
+ DATE_SUB('2008-01-02', INTERVAL 1 YEAR) as B3,
+ NOW() as B4,
+ DATE_SUB(NOW(), INTERVAL 10 MINUTE) as B5,
+ DATE_SUB(NOW(), INTERVAL 2 HOUR) as B6;
+ 
+ 
+ 
+ --  5)  두 날짜간의 일(day) 수 계산
+  SELECT DATEDIFF('2023-01-04', '2022-01-04');
+  
+  -- 6) 날짜에 지정된 단위(unit)만큼 차이를 반환한다
+   SELECT TIMESTAMPDIFF(HOUR, '2020-3-1', '2020-3-3') AS C1,
+			 TIMESTAMPDIFF(DAY, '2020-3-1', '2020-3-3') AS C2,
+			 TIMESTAMPDIFF(MONTH, '2020-2-1', '2020-6-3') AS C3,
+			 TIMESTAMPDIFF(YEAR, '2020-3-1', '2022-3-3') AS C4;
+  
+  -- 7) 월의 마지막 날짜 반환 
+  -- oracle 지원
+  SELECT LAST_DAY('2003-02-05'), LAST_DAY(NOW());
+
+  -- 8) 날짜에서 특정 unit에 해당하는 정보 반환
+  -- oracle 지원
+   SELECT NOW(),
+			 EXTRACT(SECOND FROM NOW()),
+			 EXTRACT(MINUTE FROM NOW()),
+			 EXTRACT(HOUR FROM NOW()),
+			 EXTRACT(DAY FROM NOW()),
+			 EXTRACT(MONTH FROM NOW()),
+			 EXTRACT(YEAR FROM NOW()),
+			 EXTRACT(YEAR_MONTH FROM NOW());
+             
+--  9) 날짜데이터를 문자열로 특정 포맷지정해서 반환  : DATE_FORMAT(date,format)           
+-- oracle:  TO_CHAR (datetime, fmt)
+SELECT NOW(),
+			 DATE_FORMAT(NOW(),'%Y%m%d'),
+			 DATE_FORMAT(NOW(),'%Y/%m/%d'),
+			 DATE_FORMAT(NOW(),'%Y년%m월 %d일'),
+			 DATE_FORMAT(NOW(),'%H:%i:%S'),
+			 DATE_FORMAT(NOW(),'%Y');
+
+-- 10)  문자데이터를 날짜로 반환:  STR_TO_DATE(str,format)
+-- oracle:  TO_DATE( str, fmt )
+ SELECT STR_TO_DATE('2020-03-04','%Y-%m-%d'),
+			 STR_TO_DATE('01,5,2013','%d,%m,%Y'),
+			 STR_TO_DATE('2020년03월05일','%Y년%m월%d일'),
+			 STR_TO_DATE('2020-03-04 12:23:32','%Y-%m-%d %H:%i:%S');
+
+
+-- 11) 조건문 :  case 문
+-- ANSI 
+ --  가. 동등비교하는 case 문
+
+  SELECT empno, ename, sal, job,
+				 CASE job   WHEN 'ANALYST' THEN sal * 1.1
+								 WHEN 'CLERK' THEN sal * 1.2
+								 WHEN 'MANAGER' THEN sal * 1.3
+								 WHEN 'PRESIDENT' THEN sal * 1.4
+								 WHEN 'SALESMAN' THEN sal * 1.5
+				                ELSE sal
+				 END AS 실수령
+FROM emp;
+ 
+ --  나. 부등 비교하는 case 문 
+ -- when 절에는 모든 연산자 사용가능( between A and B, in, like, and, or, not )
+  SELECT empno, ename, sal,
+			 CASE WHEN sal > 3500  THEN '이사급'
+					 WHEN sal > 2500 THEN '과장급'
+					 ELSE '사원급' 
+				END AS 직급
+FROM emp;
+ 
+
+ SELECT sal, IF(sal > 2500 , '과장이상급', '사원급')
+ FROM emp;
+
+--  12) 형변환 함수
+select '10',
+        cast('10' as SIGNED ),
+        cast('10' as SIGNED  INTEGER ),
+        cast(100 as char ),
+        cast(100 as float ),
+        cast('24-03-29' as DATE ),
+        cast('240329' as DATE ),
+        cast('24-03-29 03:23:34' as DATETIME )
+from dual;
+
+select '10',
+        convert('10' , SIGNED ),
+        convert(100 , char ),
+        convert('24-03-29' , DATE )
+from dual;
+
