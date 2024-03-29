@@ -210,3 +210,63 @@ SELECT empno, ename, job, deptno, hiredate, sal
    SELECT empno, ename, sal * 12 AS Annual
  FROM emp
  ORDER BY Annual, empno asc;
+ 
+ -- 2 일차 함수
+ -- 1. 단일행함수 - 문자 데이터
+ 
+ SELECT empno, ename, lower(ename), LOWER('HeLLO')
+ FROM emp;
+ 
+ SELECT empno, ename, UPPER(ename), UPPER('HeLLO')
+ FROM emp;
+ 
+  SELECT empno, CONCAT(ename, ' ', sal) as "ename_sal"
+ FROM emp;
+ 
+  SELECT empno, CONCAT_WS('/', ename, sal)
+ FROM emp;
+ 
+ SELECT empno, LPAD(ename,10, '*'), LPAD(sal, 10, '*')
+ FROM emp;
+ 
+ SELECT empno, RPAD(ename,10, '*'), RPAD(sal, 10, '*')
+ FROM emp;
+ 
+ SELECT empno, ename, SUBSTR(ename,1,2), SUBSTR(ename,3), SUBSTR(ename,-1)
+ FROM emp;
+ 
+  SELECT empno, ename, SUBSTRING(ename,1,2), SUBSTRING(ename,3), SUBSTRING(ename,-1)
+ FROM emp;
+ 
+ SELECT empno, ename, LENGTH(ename)
+ FROM emp;
+ 
+  SELECT empno, ename, sal, REPLACE(sal, '0','o')
+ FROM emp;
+ 
+  --  자바의 indexOf 역할. 차이점은 자바는 없으면 -1,   MySQL 0 반환
+  SELECT INSTR('foobarbar', 'bar'), INSTR('foobarbar', 'xbar');
+  
+  
+  -- oracle: 공백 및 특정문자 삭제 가능.
+  -- mysql: 공백만 삭제 가능
+  SELECT LTRIM('     bar     '), LENGTH(LTRIM('     bar     '));
+   SELECT RTRIM('     bar     '), LENGTH(RTRIM('     bar     '));
+   
+    SELECT TRIM('     bar     '),
+ TRIM(BOTH FROM '     bar     '),
+ TRIM(LEADING FROM '     bar     '),
+ TRIM(TRAILING FROM '     bar     ');
+   
+    SELECT TRIM('xxxbarxxx'),
+ TRIM(BOTH 'x' FROM 'xxxbarxxx'),
+ TRIM(LEADING 'x' FROM 'xxxbarxxx'),
+ TRIM(TRAILING 'x' FROM 'xxxbarxxx');	
+ 
+  SELECT ename, REVERSE(ename)
+ FROM emp;
+ 
+  SELECT FORMAT(9876543.2145, 2), FORMAT(9876543.2145, 2, 'en_US'),
+             FORMAT(9876543.2145, 2, 'ko_KR');
+  
+  
