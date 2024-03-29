@@ -277,8 +277,8 @@ SELECT empno, ename, job, deptno, hiredate, sal
      SELECT RIGHT('foobarbar', 4);
   
   -- 문자열 반복: REPEAT(str,count)
-  SELECT REPEAT('MySQL', 3);
-#############################################################
+  SELECT REPEAT('MySQL', 3) end;
+-- #############################################################
    -- 2. 단일행함수 - 숫자 데이터
    -- https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/numeric-functions.html
 SELECT ROUND(45.678), ROUND(45.678, 2) , ROUND(45.678,-1) ;
@@ -433,3 +433,37 @@ select '10',
         convert('24-03-29' , DATE )
 from dual;
 
+--  4. 그룹 함수
+SELECT AVG(sal), MAX(sal), MIN(sal), SUM(sal), count(sal)
+ FROM emp
+ WHERE job = 'SALESMAN';
+ 
+ 
+ SELECT COUNT(*), COUNT(comm),
+			AVG(comm), AVG(IFNULL(comm,0)),
+            avg(sal), avg(DISTINCT sal),
+			COUNT(deptno), COUNT(DISTINCT deptno)
+ FROM emp;
+ 
+ SELECT deptno, AVG(sal), MAX(sal), MIN(sal), SUM(sal), count(sal)
+ FROM emp
+ group by deptno;
+
+  SELECT deptno, sal, AVG(sal), MAX(sal), MIN(sal), SUM(sal), count(*)
+ FROM emp
+ group by deptno, sal
+ having avg(sal) > 2000
+ order by 1, 2;
+ 
+  SELECT deptno as no, AVG(sal), MAX(sal), MIN(sal), SUM(sal), count(sal)
+ FROM emp
+ group by 1;
+ 
+ 
+ SELECT deptno, sal, AVG(sal), MAX(sal), MIN(sal), SUM(sal), count(*)
+ FROM emp
+ where sal > 1500
+ group by deptno, sal
+ having avg(sal) > 2000
+ order by 1, 2;
+ 
