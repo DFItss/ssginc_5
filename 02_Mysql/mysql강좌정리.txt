@@ -1,6 +1,12 @@
 
 MySQL 강좌정리
 
+0. 참조할 문서
+
+  오라클: https://docs.oracle.com/en/database/oracle/oracle-database/23/sqlrf/index.html#Oracle%C2%AE-Database
+
+  mysql:  https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/
+
 1. 환경설정
  
   1) MySQL8 다운 및 설치
@@ -65,8 +71,9 @@ MySQL 강좌정리
 		    관계형 데이터베이스 (*): 행(레코드)과 열(컬럼)로 구성된 2차원 테이블형식으로 관리
 		    ..
       
-3) 관계형 데이터베이스 (Relational DataBase : RDB )
-
+3) 관계형 데이터베이스 (Relational DataBase : RDB) 
+          <=====> NoSQL ( Not only SQL ):{key:value}, 비정형 예> MongoDB, Casandra,....
+       
   가. 개념
     행(레코드)과 열(컬럼)로 구성된 2차원 테이블형식으로 관리
    
@@ -81,7 +88,7 @@ MySQL 강좌정리
 
  1) 개요
   - RDB 에서 사용하는 프로그램 언어이다.
-  - 대소문 구별 안함. ( 식별자 의미 )
+  - 대소문 구별 안함. ( 식별자 의미 ) ==> mysql에서는 리터럴(값)도 대소문자 구별안함. oracle은 대소문자 구별함.
   - 연산자
   - 조건문
   - 함수 ( 자바의 메서드 역할 )
@@ -102,12 +109,12 @@ MySQL 강좌정리
    가. 조회 ==> query 라고 부름.
      - select 문 이용
 
-   나. 레코드-생성/수정/삭제 ==> DML(Data Manipulation Language) 라고 부른다.
+   나. 레코드-생성/수정/삭제 ==> DML(Data Manipulation Language: 데이터 조작어) 라고 부른다.
      - 레코드 생성: insert 문
      - 레코드 수정: update 문
      - 레코드 삭제: delete 문
 
-   다. 테이블-생성/수정/삭제 ==> DDL ( Data Definition Language ) 라고 부른다.
+   다. 테이블(객체:인덱스,뷰,프로시저,사용자)-생성/수정/삭제 ==> DDL ( Data Definition Language: 데이터 정의어 ) 라고 부른다.
      - 테이블 생성: create 문
      - 테이블 수정: alter  문
      - 테이블 삭제: drop 문
@@ -127,7 +134,7 @@ MySQL 강좌정리
    
    - selection: 행 선택
    - projection: 열 선택
-   - join:     : 2 개 이상의 테이블 연결해서 selection 및 projection 처리.
+   - join(연결): 2 개 이상의 테이블 연결해서 selection 및 projection 처리.
 
   2) 문법
     
@@ -139,7 +146,7 @@ MySQL 강좌정리
     - select 절: * (모든컬럼,all)
                 컬럼명,컬럼명2,...
 		컬럼명+10  ==> 연산가능
-		컬럼명 as 별칭 ==> 가독성
+		컬럼명 as 별칭 ==> 가독성, "별칭"
 		리터럴(값)
 		함수명(컬럼명)  ==> 함수가능
 		distinct 컬럼명 ==> 중복 제거
@@ -164,7 +171,7 @@ MySQL 강좌정리
        - 기본적으로 테이블의 모든 컬럼은 null 값을 가질 수 있다.
          강제적으로 null이 아닌 값을 가지도록 할 수 있다. ( not null 제약조건  이용 )
 
-       - null 값 조회는  is null 연산자를 사용해야 된다.
+       - null 값 조회는  is null 연산자를 사용해야 된다. ( 부정: is not null )
        - null 값의 연산결과는 null 값이 반환된다. (******)
 
          예> 사원의 연봉 ?
@@ -177,7 +184,7 @@ MySQL 강좌정리
 
         - null 값은 가장 작은 값으로 처리한다. ( Oracle에서는 가장 큰 값으로 처리 )
 
-	- 기본인 null 허용 ---------------> not null 제약조건으로 허용 불가 ( 변경 )
+	- 기본인 null 허용 ---------------> not null 제약조건으로 허용 불가 ( 변경작업 )
 
 	 
 5. select 문 + 조건지정
@@ -262,6 +269,7 @@ MySQL 강좌정리
 
 
    바. 정렬
+     => 기본적으로 테이블내에 저장되는 데이터는 정렬이 안된 상태이다.
       
      - 정렬방법
        오름차순(기본) :  asc|ASC
@@ -274,3 +282,52 @@ MySQL 강좌정리
 	where 조건식(연산자)
 	order by 표현식(컬럼명|별칭|select절지정된위치1부터)  ASC|DESC   ;
     
+     - 다중정렬
+
+        order by 표현식1,  표현식2;
+
+      예> order by sal desc, empono; ==> sal로 정렬하고 같은 sal들만 뽑아서 다시 empno로 재정렬함.
+         order by 별칭 desc, 별칭;
+	 order by 1 desc, 3;
+
+   정리
+        select     3번: 지정된 컬럼만 선택
+	from       1번 : 14개의 레코드
+	where      2번 : 조건에 의한 필터링, 10개 추출됨
+	order by   4번: 지정된 정렬로 출력됨.
+
+####################################################################
+2일차 ( 3월 29 일 )
+
+1. 함수(function)
+
+  1) 역할: 데이터 가공처리
+  2) 종류:
+
+      가. 단일행 함수 ( single row function )
+         - 테이블의 행(레코드) 단위로 적용되는 함수 의미.
+         - 데이터별 종류
+	   a. 문자데이터
+	      - 길이,부분열,대문자,소문자,공백제거,...
+	   b. 수치데이터
+	      - 반올림, 절삭, 부호식별,절대값,...
+	   c. 날짜 ( Oracle 함수와 완전히 다르다.)
+	      - 현재날짜,시간, 연산, 특정날짜추출(년도,월,시간,...)
+           
+	   d. 변환함수
+	      - 숫자==> 문자, 문자==> 숫자
+	        날짜==>문자 , 문자==>날짜
+
+		 숫자 <----> 문자 <----->날짜
+
+	   e. etc
+	      - ifnull, case, if
+
+      나. 그룹 함수 ( group function)
+         - 테이블의 그룹 단위로 적용되는 함수 의미
+	  예> 부서별, 성별
+         - 총합,평균,최대,최소,갯수
+	   sum(), avg(), max(), min(), count()
+	 
+2. 단일행 함수: 문자데이터
+https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/string-functions.html

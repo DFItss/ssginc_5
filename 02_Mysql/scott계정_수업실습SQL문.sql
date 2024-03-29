@@ -180,4 +180,33 @@ SELECT empno, ename, job, deptno, hiredate, sal
  FROM emp
  WHERE ename NOT LIKE'A%';
  
+ -- 11. 정렬
+ use testdb;
+ SELECT empno, ename, hiredate
+ FROM emp
+ ORDER BY hiredate;
  
+  SELECT empno, ename, hiredate
+ FROM emp
+ ORDER BY hiredate desc;
+ 
+  SELECT empno, ename, sal * 12 AS Annual
+ FROM emp
+ ORDER BY Annual;
+ 
+   SELECT empno, ename, sal * 12 AS Annual
+ FROM emp
+ ORDER BY sal * 12;
+ 
+  SELECT empno, ename, sal * 12 AS Annual
+ FROM emp
+ ORDER BY 3;
+ 
+ -- 다중 정렬
+  SELECT empno, ename, sal * 12 AS Annual
+ FROM emp
+ ORDER BY 3, 1 asc;
+ 
+   SELECT empno, ename, sal * 12 AS Annual
+ FROM emp
+ ORDER BY Annual, empno asc;
