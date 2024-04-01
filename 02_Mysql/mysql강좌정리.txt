@@ -620,7 +620,7 @@ https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/aggregate-functions.html
 
  1) 문법2:
 
-    select
+    select 별칭.컬럼명, ,,,,    별칭.공통컬럼      // oracle에서는 공통컬럼에 별칭사용불가 
     from 테이블1 별칭 natural join 테이블2 별칭;   // as 사용불가
  
  2) 동작
