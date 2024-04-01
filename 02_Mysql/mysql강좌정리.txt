@@ -630,4 +630,5 @@ https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/aggregate-functions.html
  3) 특징
     - 반드시 공통컬럼이 존재해야 된다.
     - 단점은 어떤 컬럼으로 조인했는지를 추가로 확인하는 작업이 필요하다. ( 가독성 떨어짐)
-    - inner 조인
+    - inner 조인. 
+      따라서 실습에서는 dept 테이블의 deptno가 40 인 레코드는 반환이 안됨.
