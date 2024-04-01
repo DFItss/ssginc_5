@@ -620,15 +620,40 @@ https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/aggregate-functions.html
 
  1) 문법2:
 
-    select 별칭.컬럼명, ,,,,    별칭.공통컬럼      // oracle에서는 공통컬럼에 별칭사용불가 
+    select 별칭.컬럼명, ,,,,    별칭.공통컬럼      // oracle에서는 공통컬럼에 별칭사용 불가 
     from 테이블1 별칭 natural join 테이블2 별칭;   // as 사용불가
  
  2) 동작
-   - 테이블1 과 테이블2에서 공통컬럼을 찾아서 조인한다.
+   - 테이블1 과 테이블2에서 공통컬럼을 찾아서 조인한다. ( 조인조건 )
    - 만약 공통컬럼이 2개라면 쌍으로 비교한다.
 
  3) 특징
     - 반드시 공통컬럼이 존재해야 된다.
-    - 단점은 어떤 컬럼으로 조인했는지를 추가로 확인하는 작업이 필요하다. ( 가독성 떨어짐)
+    - 단점은 어떤 컬럼으로 조인했는지를 추가로 확인하는 작업이 필요하다. (가독성 떨어짐)
     - inner 조인. 
       따라서 실습에서는 dept 테이블의 deptno가 40 인 레코드는 반환이 안됨.
+
+ 4) 검색조건
+    - where 절 이용
+   
+    - 문법
+
+    select                            // 3번 
+    from 테이블1  natural join 테이블2   // 1번 
+    where 조건식;                      // 2번
+
+ ==> ANSI 조인 특징
+     조인조건은 from 절에서 지정하고
+     검색조건은 where 절에서 지정한다.
+
+     Oracle 조인은 where 절에서 조인조건과 검색조건을 같이 지정한다.
+     예>
+         select 
+	 from emp e , dept d
+	 where e.deptno = d.deptno;   //조인 조건
+
+
+          select 
+	 from emp e , dept d
+	 where e.deptno = d.deptno   //조인 조건
+	       and e.deptno = 30;    //검색 조건
