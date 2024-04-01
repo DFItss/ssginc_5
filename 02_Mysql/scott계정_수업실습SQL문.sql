@@ -467,3 +467,137 @@ SELECT AVG(sal), MAX(sal), MIN(sal), SUM(sal), count(sal)
  having avg(sal) > 2000
  order by 1, 2;
  
+ select deptno, sal, AVG(sal), MAX(sal), MIN(sal), SUM(sal), count(*)
+ from emp
+ where sal > 1500
+ group by deptno, sal
+ having avg(sal) > 2000
+ order by avg(sal), 2;
+
+-- 조인1 - inner 조인
+
+-- 1) cross join
+SELECT empno, ename, dname
+FROM emp CROSS JOIN dept;
+ 
+ -- 2 ) natural join
+ SELECT empno, ename, sal, dname, loc, deptno
+ FROM emp NATURAL JOIN dept;
+ 
+
+
+SELECT empno, ename, sal, dname, loc, deptno
+ FROM emp e NATURAL JOIN dept d;
+ 
+ -- oracle 에서는 공통컬럼에 별칭사용불가 
+ SELECT e.empno, e.ename, e.sal, d.dname, d.loc, deptno
+ FROM emp e NATURAL JOIN dept d;
+ 
+  -- 검색조건
+ SELECT empno, ename, sal, dname, loc, deptno
+ FROM emp NATURAL JOIN dept
+ where deptno = 30;
+ 
+ -- 3) using 절
+  SELECT empno, ename, dname
+ FROM emp INNER JOIN dept USING(deptno);
+ 
+SELECT e.empno, e.ename, d.dname, e.deptno
+ FROM emp e JOIN dept d USING(deptno);
+ 
+ -- 4) on 절
+ -- 공통컬럼인 deptno는 반드시 별칭사용해야 된다.
+  SELECT e.empno, e.ename, d.dname, loc , e.deptno, sal
+ FROM emp e JOIN dept d ON e.deptno = d.deptno;
+ 
+ 
+ 
+ 
+ 
+ SELECT empno, ename, dname, loc , sal, e.deptno
+ FROM emp e JOIN dept d ON e.deptno = d.deptno
+ WHERE sal > 2500;
+ 
+ -- sal 등급 구하기 ( 부등 조인: non-equi 조인 )
+ select empno, ename, sal , grade
+ from  emp e join  salgrade s  on e.sal  BETWEEN s.losal AND  s.hisal;
+ 
+  select empno, ename, sal , grade, dname
+ from  emp e JOIN dept d ON e.deptno = d.deptno
+                  join  salgrade s  on e.sal  BETWEEN s.losal AND  s.hisal;
+ 
+ 
+ -- self 조인 ( 사원의 관리자명 출력)
+  SELECT e.ename as 사원, m.ename as 관리자
+FROM emp e JOIN emp m ON e.mgr = m.empno;
+
+
+-- 조인 2 - outer 조인
+
+SELECT empno, ename, dname, d.deptno
+ FROM emp e RIGHT OUTER JOIN dept d ON e.deptno = d.deptno;
+
+SELECT empno, ename, dname, d.deptno
+ FROM emp e LEFT OUTER JOIN dept d ON e.deptno = d.deptno;
+ 
+INSERT INTO emp VALUES ( 9000, 'TEST','SALESMAN', 7499,
+ '90/01/01', 600, NULL, NULL );
+ COMMIT;
+ 
+ -- 신입사원 과  부서번호 40 같이 출력하자.
+ SELECT empno, ename, dname, d.deptno
+ FROM emp e RIGHT OUTER JOIN dept d ON e.deptno = d.deptno
+ union
+SELECT empno, ename, dname, d.deptno
+ FROM emp e LEFT OUTER JOIN dept d ON e.deptno = d.deptno;
+ 
+   select sal
+	from emp
+	where ename = 'scott';
+    
+           select *
+	from emp
+	where sal >= 3000;
+    
+    
+    
+     SELECT MIN(sal)
+ FROM emp
+ GROUP BY job;
+ 
+ 
+ SELECT empno, ename, job, hiredate, sal, deptno
+ FROM emp
+ WHERE sal IN ( SELECT MIN(sal)
+ FROM emp
+ GROUP BY job );
+ 
+  SELECT empno, ename, job, hiredate, sal, deptno
+ FROM emp
+ WHERE EXISTS ( SELECT empno
+                         FROM emp
+                         WHERE sal >  10000 );
+SELECT empno
+                         FROM emp
+                         WHERE sal >  10000;
+                         
+-- 다중컬럼 서브쿼리
+SELECT deptno, empno, ename, sal
+ FROM emp
+ WHERE (deptno, sal ) IN ( SELECT deptno, MAX(sal)
+ FROM emp
+ GROUP BY deptno);
+
+--  emp 와 dept 테이블에서 부서별 sal총합과 평균을 출력?
+select  e.deptno, sum(sal), ROUND(avg(sal)), count(*)
+from emp e join dept d on e.deptno = d.deptno  -- emp: 15개와 dept: 4개가 조인에 참여함
+group by deptno;
+
+ SELECT e.deptno, total_sum, total_avg, cnt
+ FROM ( SELECT deptno, SUM(sal) total_sum, ROUND(AVG(sal)) total_avg,COUNT(*) cnt
+            FROM emp
+            GROUP BY deptno) e JOIN dept d ON e.deptno = d.deptno;  -- 4개의 서브쿼리 dept: 4개가 조인에 참여함
+
+SELECT deptno, SUM(sal) total_sum, ROUND(AVG(sal)) total_avg,COUNT(*) cnt
+            FROM emp
+            GROUP BY deptno;
