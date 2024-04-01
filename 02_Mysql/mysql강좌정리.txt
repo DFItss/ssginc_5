@@ -842,3 +842,127 @@ https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/aggregate-functions.html
     나.  복수행 연산자
        - subquery 실행결과가 여러 행 반환되는 경우에 사용되는 연산자 의미
        - IN, > any, > all,  < any, < all, exists 
+
+
+ 5) 복수행 연산자
+
+   가. > all  :  서브쿼리의 최대값 보다 큰 값을 반환함.
+              :  max(sal) 로도 구현 가능
+      예>
+           select
+	  from 
+	  where sal > all ( select sal  
+	                    from emp );
+          
+          select
+	  from 
+	  where sal > ( select max(sal)  
+	                    from emp );
+
+          select
+	  from 
+	  where sal > all ( 100
+	                    200
+	                    300      );
+	                     
+  나. < all :   서브쿼리의 최소값 보다 작은 값을 반환함.
+            :   min(sal) 으로도 구현 가능
+
+     예>
+
+          select
+	  from 
+	  where sal < all ( select sal  
+	                    from emp );
+          
+          select
+	  from 
+	  where sal < ( select min(sal)  
+	                    from emp );
+
+
+          select
+	  from 
+	  where sal < all ( 100
+	                    200
+	                    300      );
+
+
+  다.  > any  : 서브쿼리의 최소값 보다 큰 값을 반환함.
+              :  min(sal)
+
+
+        예>
+
+           select
+	  from 
+	  where sal > any ( select sal  
+	                    from emp );
+          
+          select
+	  from 
+	  where sal > ( select min(sal)  
+	                    from emp );
+
+	  select
+	  from 
+	  where sal > any ( 100
+	                    200
+	                    300 );
+
+ 라.   < any:  서브쿼리의 최대값 보다 작은 값을 반환함.
+              :  man(sal)
+
+  
+     예>
+
+          select
+	  from 
+	  where sal < any ( 100
+	                    200
+	                    300 );
+ 
+    > all:  최대값보다 큰 값 반환    ( > (select max(sal) )
+    < all:  최소값보다 작은 값 반환  ( < (select min(sal) )
+    > any:  최소값보다 큰 값 반환    ( > (select min(sal) )
+    < any:  최대값보다 작은 값 반환   ( > (select max(sal) )
+
+
+ 마. exists
+
+   문법: 
+        select
+	from 
+	where exist ( 서브쿼리 )
+
+    서브쿼리가 실행후 결과가 있으면 mainquery를 실행하고
+    서브쿼리가 실행후 결과가 없으면 mainquery를 실행안함.
+
+
+10. 인라인 뷰( inline view )
+
+ 1) 개념
+    메인쿼리에서 from 절에 오는 서브쿼리를 의미한다.
+
+ 2) 문법
+
+    select
+    from (subquery) 별칭
+    where ~ ;
+
+ 3) 용도
+    - 성능이슈
+
+  예>
+   --  emp 와 dept 테이블에서 부서별 sal총합과 평균을 출력?
+	select  e.deptno, sum(sal), ROUND(avg(sal)), count(*)
+	from emp e join dept d on e.deptno = d.deptno  -- emp: 15개와 dept: 4개가 조인에 참여함
+	group by deptno;
+
+	 SELECT e.deptno, total_sum, total_avg, cnt
+	 FROM (  SELECT deptno, SUM(sal) total_sum, ROUND(AVG(sal)) total_avg,COUNT(*) cnt
+                 FROM emp
+                 GROUP BY deptno) 
+	     e JOIN dept d ON e.deptno = d.deptno;  -- 4개의 서브쿼리 dept: 4개가 조인에 참여함
+
+################################################################################
