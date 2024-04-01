@@ -440,3 +440,53 @@ https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/aggregate-functions.html
      group by deptno // 3번 부서별
      having 조건식     // 4번: 3번에 대한 필터링
      order by        ;  // 6번
+
+
+####################################################################
+3일차 ( 4월 01 일 )
+
+1. 조인(join)
+ https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/join.html
+
+  1) query 작업 ( select 문)
+
+     - selection: 행 선택, where 절 이용
+     - projection: 컬럼 선택, select 절 이용
+     - join  :  여러 테이블 연결
+
+  2) 개념
+     - select해서 출력하고자 하는 데이터가 하나의 테이블이 아닌
+       여러 테이블에 분산되어 있는 경우에 테이블을 연결해서 원하는 
+       데이터를 출력할 수 있다.
+
+  3) 조인 방법 종류1
+  
+     가. inner 조인
+        - 2 개의 테이블 연결시 반드시 일치되는 데이터만 반환.
+	  즉 일치하지 않으면 누락됨.
+
+     나. outer  조인
+        - inner 조인 + 일치되지 않아서 누락된 데이터 포함 반환.
+
+  4) 조인 방법 종류 2
+
+     가. ANSI 조인 (*)
+        - DBMS 독립적
+
+     나. 비 ANSI 조인 
+        - DBMS 의존적
+        예> 오라클 조인 
+
+  4) 조인 방법 종류 3 ( ANSI 문법 )
+
+     # inner 조인방법
+     - cross join
+     - natural join
+     - join~ on
+     - joion~ using
+
+     # outer 조인방법
+     - left outer join ~ on|using
+     - right outer join ~ on|using
+
+     - full outer join ~ on|using ( MySQL 지원안됨. Oracle 지원됨 )
