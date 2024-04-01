@@ -709,3 +709,73 @@ https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/aggregate-functions.html
     select                                                    // 3번
     from 테이블1 [inner] join 테이블2 on 테이블1.컬럼 = 테이블2.컬럼  // 1번, 조인 조건
     where 조건식;                                              // 2번, 검색조건
+
+
+7. self 조인
+
+  1) 개념
+    - 자신이 자신을 조인하는 개념
+
+  2) 샘플 예
+
+   - 사원명과 관리자명 출력하기
+   
+  3) 구현방법
+    - 별칭 이용
+
+                       원본  emp
+               empno ename job mgr hiredate sal comm deptno
+  		-------------------------------------------
+	       7369  SMITH     7902 
+
+	       ..
+
+	       7902  FORD
+
+
+
+ 가상 테이블  emp e                                        가상테이블  emp m
+
+ empno ename  mgr                                       empno ename
+ ----------------                                     ---------------
+ 7369  SMITH  7902                                      7369  SMITH
+                                                        7902  FORD
+
+	   select *
+	   from emp e join emp m ON e.mgr = m.empno;
+
+
+ ========> 조인조건이 일치한 행만 반환하는 INNER 조인이다.
+           일치하지 않은 행은 누락됨.
+
+
+8. outer 조인
+ 
+ 1) 개념:
+   조인조건이 일치한 행만 반환하는 INNER 조인이다.
+   일치하지 않은 행은 누락됨.
+   이때 누락된 행까지 포함해서 반환받을 수 있는 방법이다.
+
+ 2) 문법:
+
+      select 
+      from  테이블1  LEFT OUTER JOIN  테이블2  using(공통컬럼)|on 절;
+      
+      ==> 테이블1 의 모든 행이 반환됨. (일치하지 않아도 )
+
+      select 
+      from  테이블1  RIGHT OUTER JOIN  테이블2  using(공통컬럼)|on 절;
+      
+      ==> 테이블2 의 모든 행이 반환됨. (일치하지 않아도 )
+
+
+    * 테이블1 과 테이블2 양쪽 모두 누락된 데이터를 한번에 반환은 불가.
+     ( Oracle 에서는 Full OUTER JOIN 지원됨 )
+
+      단, union(합집합) 이용하면 반환 가능함.
+
+      select 
+      from  테이블1  LEFT OUTER JOIN  테이블2  using(공통컬럼)|on 절
+      union
+      select 
+      from  테이블1  RIGHT OUTER JOIN  테이블2  using(공통컬럼)|on 절;
