@@ -788,3 +788,57 @@ https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/aggregate-functions.html
       where 조건식;                                               // 2번 검색조건
  
 #####################################################################################
+
+9. 서브쿼리 ( subquery )
+
+ 1) 개념(목적)
+   - 한 번의 select문으로는 원하는 결과를 못 얻을 때,
+     여러 개의 select문을 사용해서 원하는 결과를 얻을 수 있음.
+
+2) 문법
+
+
+ 예> emp 테이블에서 SCOTT 사원보다 많은 급여를 받는 사원의 이름을 검색 하시오. 
+
+    가. scott 의 sal ?   3000
+
+        select sal
+	from emp
+	where ename = 'scott';
+
+
+    나. 3000 보다 많은 급여 사원 ?
+       
+        select *
+	from emp
+	where sal > 3000;
+
+
+ ==> 문법은 3000 위치에 select 문으로 치환하자.
+ 
+        # main query
+        select *
+	from emp   
+	where sal >  # sub query
+	            (select sal  
+	            from emp
+	            where ename = 'scott');
+        order by ;
+  3) 특징
+    - 소괄호를 사용
+    - 일반적으로 소괄호를 감싼 subquery가 먼저 실행되고 실행된 
+      결과를 가지고 mainquery 사용됨. (mainquery가 먼저 실행될 수도 있음)
+    - main query의 where 절에 사용가능.
+      하지만 거의 모든 sql에 사용이 가능하다. 
+      from,having,select, insert,delete,update, create 모두 사용 가능.
+    - main query에서만 order by 사용 가능
+
+  4) 주의할 점은 사용되는 연산자가 2가지가 있음
+
+    가.  단일행 연산자
+        - subquery 실행결과가 하나의 행만 반환되는 경우에 사용되는 연산자 의미
+        - 비교 연산자 ( =, >, >=, <, <= )
+
+    나.  복수행 연산자
+       - subquery 실행결과가 여러 행 반환되는 경우에 사용되는 연산자 의미
+       - IN, > any, > all,  < any, < all, exists 
