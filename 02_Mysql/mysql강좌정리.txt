@@ -496,16 +496,18 @@ https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/aggregate-functions.html
 2.  2개의 테이블 연결하는 방법 알기전 선수과정 
 
   가. 5가지 제약조건 타입 ( constraints ) - ************
+    용도: 테이블에 저장되는 데이터 검증용. ( 무결성 데이터 보장 )
+
     ==> 테이블의 컬럼단위로 지정.
     ==> 제약조건 정보보기
     select  *
     from information_schema.table_constraints
     where table_name = 'emp';
 
-   - primary key (pk 라고 부름)
+   - primary key (pk 라고 부름) => not null 제약조건 + unqiue 제약조건
      목적: 레코드 식별용
-     특징: -값이 존재 ( null 값 불가 )
-          -중복 불가
+     특징: -값이 존재 ( null 값 불가 , not null 제약조건)
+          -중복 불가 ( unqiue 제약조건 )
 	  -테이블당 하나만 설정 가능
 	  -복합컬럼 가능 예> 수강테이블에서 (학번,과목)
           -제약조건을 추가(*)하는 기능
@@ -520,6 +522,8 @@ https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/aggregate-functions.html
 	   - 복합컬럼 가능
            - 제약조건을 추가(*)하는 기능
            -자동으로 인덱스(색인표 역할) 추가됨. 
+
+
    - check  ( ck 라고 부른다. )
       목적: 비즈니스 로직 검증 역할로서
            저장되는 데이터의 범위를 제한.
@@ -555,26 +559,10 @@ https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/aggregate-functions.html
 
 
    - not null
-
-
-
-
- * 복합컬럼
-
-  학생테이블          과목 테이블
-
-  학번 이름          과목번호  과목명
-  a01 홍길동         s01     java
-  a02 이순신         s02     sql
-
-
-
-  수강테이블
-
-  번호 학번 이름   과목명
-   1  a01 홍길동  java
-   2   a02 이순신  java
-   3  a01 홍길동  sql
-   4 a02 이순신  sql
-
-
+      목적:  null 허용 불가 ( 반드시 값을 가져야 됨. 중복 가능 )
+      특징: - 기본적으로 모든 테이블의 컬럼은 null 허용한다.
+             null ----------> not null
+	            변경
+		  
+           - 제약조건을 변경(*)하는 기능
+          
