@@ -456,7 +456,7 @@ https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/aggregate-functions.html
 
   2) 개념
      - select해서 출력하고자 하는 데이터가 하나의 테이블이 아닌
-       여러 테이블에 분산되어 있는 경우에 테이블을 연결해서 원하는 
+       여러 테이블(2개 이상)에 분산되어 있는 경우에 테이블을 연결해서 원하는 
        데이터를 출력할 수 있다.
 
   3) 조인 방법 종류1
@@ -477,16 +477,104 @@ https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/aggregate-functions.html
         - DBMS 의존적
         예> 오라클 조인 
 
-  4) 조인 방법 종류 3 ( ANSI 문법 )
+  5) 조인 방법 종류 3 ( ANSI 문법 )
 
      # inner 조인방법
      - cross join
      - natural join
      - join~ on
      - joion~ using
+     - self join ==> 자신이 자신을 조인하는  방법.
 
      # outer 조인방법
      - left outer join ~ on|using
      - right outer join ~ on|using
 
      - full outer join ~ on|using ( MySQL 지원안됨. Oracle 지원됨 )
+
+
+2.  2개의 테이블 연결하는 방법 알기전 선수과정 
+
+  가. 5가지 제약조건 타입 ( constraints ) - ************
+    ==> 테이블의 컬럼단위로 지정.
+    ==> 제약조건 정보보기
+    select  *
+    from information_schema.table_constraints
+    where table_name = 'emp';
+
+   - primary key (pk 라고 부름)
+     목적: 레코드 식별용
+     특징: -값이 존재 ( null 값 불가 )
+          -중복 불가
+	  -테이블당 하나만 설정 가능
+	  -복합컬럼 가능 예> 수강테이블에서 (학번,과목)
+          -제약조건을 추가(*)하는 기능
+	  -자동으로 인덱스(색인표 역할) 추가됨.
+
+      emp테이블의 pk는 empno,
+      dept테이블의 pk는 deptno
+   - unique ( uk 라고 부른다. )
+      목적: 중복값 저장 불가
+      특징: - 값이 없어도 된다. (null 값 허용)
+           - 테이블당 여러개 설정 가능
+	   - 복합컬럼 가능
+           - 제약조건을 추가(*)하는 기능
+           -자동으로 인덱스(색인표 역할) 추가됨. 
+   - check  ( ck 라고 부른다. )
+      목적: 비즈니스 로직 검증 역할로서
+           저장되는 데이터의 범위를 제한.
+          예> 성별
+	     ----
+	     남/여 (*)
+	     남자/여자
+	     M/F
+	     0/1
+        
+           gender check ( gender in ('남','여'))
+           age     check ( age < 100 )
+
+   - foreign key ( fk, 참조키, 외래키 라고 부른다. )
+      목적: 다른 테이블을 참조하는 역할. ( 2개 테이블의 연결고리 )
+
+         예>
+	 emp 테이블 ( slave, child 테이블 )         dept 테이블 ( master, parent 테이블 )
+	 empno(pk) ename  ....  deptno(fk)        deptno(pk)   dname   loc
+	 --------------------------             ----------------------
+	 7459  SMITH          20                     10
+                                                     20     RESERCH  DALLS
+						     30
+                              50(저장불가)             40
+			      null(가능)              
+
+      특징: - 반드시 fk는 master의 PK로 된 컬럼 또는 UK로 된 컬럼만 참조할 수 있다.
+           - fk가 가질수 있는 값은  master의 PK로 된 컬럼의 값 또는 UK로 된 컬럼의 값만 저장할 수 있다.
+	     추가로 null 값 저장 가능
+	     결론은 fk가 가질수 있는 값은 3가지 ( master의 pk + uk + null )
+	   - 테이블당 여러개 설정 가능   
+           - 제약조건을 추가(*)하는 기능
+
+
+   - not null
+
+
+
+
+ * 복합컬럼
+
+  학생테이블          과목 테이블
+
+  학번 이름          과목번호  과목명
+  a01 홍길동         s01     java
+  a02 이순신         s02     sql
+
+
+
+  수강테이블
+
+  번호 학번 이름   과목명
+   1  a01 홍길동  java
+   2   a02 이순신  java
+   3  a01 홍길동  sql
+   4 a02 이순신  sql
+
+
