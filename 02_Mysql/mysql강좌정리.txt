@@ -657,3 +657,55 @@ https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/aggregate-functions.html
 	 from emp e , dept d
 	 where e.deptno = d.deptno   //조인 조건
 	       and e.deptno = 30;    //검색 조건
+
+
+5. using 절
+
+   1) 문법1:
+    select
+    from 테이블1 [inner] join 테이블2 using(공통컬럼);
+
+   1) 문법2:
+    select 별칭.컬럼명,,........, 별칭.공통컬럼
+    from 테이블1 별칭 join 테이블2 별칭 using(공통컬럼);
+
+   2) 동작
+   - 테이블1 과 테이블2에서 using절에 지정한 공통컬럼을 찾아서 조인한다. ( 조인조건 )
+   
+   3) 특징
+      - using절 지정하는 공통컬럼에는 별칭사용 불가.
+        예> using(별칭.공통컬럼); // 에러
+      - inner 조인
+
+   4) 검색조건 지정 가능
+       select                                  //3번
+       from 테이블1  join 테이블2 using(공통컬럼)   //1번 조인조건
+       where 조건식;                            //2번 검색조건
+
+
+====> natural join 또는 using(공통컬럼) 모두 공통컬럼이 반드시  존재해야 됨.
+
+6. on 절 ( 가장 범용적으로 사용됨 )
+
+   1) 문법1:
+    select
+    from 테이블1 [inner] join 테이블2 on 테이블1.컬럼 = 테이블2.컬럼;
+
+  1) 문법2:
+    select
+    from 테이블1 별칭1 [inner] join 테이블2 별칭2 on 별칭1.컬럼 = 별칭2.컬럼;
+
+  
+  2) 동작
+   - 테이블1 과 테이블2에서 on절에 지정한 조건으로 조인한다. ( 조인조건 )
+   - 조건은 동등(=)이거나 부등( between A and B , in 등 )도 가능하다.
+
+   3) 특징
+      - 공통컬럼은 반드시 별칭사용 해야 됨. ( using 절과 반대 )
+
+   
+  4) 검색조건 지정 가능
+
+    select                                                    // 3번
+    from 테이블1 [inner] join 테이블2 on 테이블1.컬럼 = 테이블2.컬럼  // 1번, 조인 조건
+    where 조건식;                                              // 2번, 검색조건
