@@ -779,3 +779,12 @@ https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/aggregate-functions.html
       union
       select 
       from  테이블1  RIGHT OUTER JOIN  테이블2  using(공통컬럼)|on 절;
+
+  
+  3) 검색조건 
+
+      select                                                    // 3번  
+      from  테이블1  LEFT OUTER JOIN  테이블2  using(공통컬럼)|on절   // 1번 조인조건
+      where 조건식;                                               // 2번 검색조건
+ 
+#####################################################################################
