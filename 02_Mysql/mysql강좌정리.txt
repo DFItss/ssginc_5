@@ -1304,3 +1304,33 @@ https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/data-types.html
        나. 제약조건을 나중에 설정한다.
 
           - Alter table add 제약조건설정문법 (테이블 레벨과 문법이 똑같다.)
+
+
+
+8. primary, unique, not null, check 4가지 제약조건 설정방법
+
+   1) 컬럼 레벨
+       CREATE TABLE student
+	 ( no INT PRIMARY KEY,
+	  name VARCHAR(10) UNIQUE ,
+	  address VARCHAR(10) NOT NULL, # 컬럼레벨만 가능
+	  age INT CHECK( age IN ( 10,20,30 )));
+
+   2) 테이블 레벨
+     
+       CREATE TABLE student2
+	 ( no INT,
+	   name VARCHAR(10),
+	   address VARCHAR(10) NOT NULL,   -- Not null 반드시 컬럼레벨만 지원
+	   age INT ,
+	 CONSTRAINT PRIMARY KEY(NO),
+	 CONSTRAINT UNIQUE(NAME),
+	 CONSTRAINT CHECK(age IN( 10,20,30 )));
+
+
+9. foreign key
+
+  1) 컬럼 레벨
+
+
+  2) 테이블 레벨

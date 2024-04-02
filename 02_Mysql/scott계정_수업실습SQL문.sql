@@ -755,4 +755,57 @@ values ( 1, '관리');   -- loc 에 기본값인 서울  저장
  insert into board ( author, title, content )
  values('aa','bb','cc');
  
+ -- 제약조건 설정
+ CREATE TABLE student
+ ( no INT PRIMARY KEY,
+  name VARCHAR(10) UNIQUE ,
+  address VARCHAR(10) NOT NULL, # 컬럼레벨만 가능
+  age INT CHECK( age IN ( 10,20,30 )));
+ 
+ insert into student ( no, name, address , age )
+ values ( 1, 'aa','bb', 10);
+ 
+  insert into student ( no, name, address , age )
+ values ( 2, 'aa','bb', 10);
+ 
+  insert into student ( no, name, address , age )
+ values ( 3, 'aa2','bb', 40);
+ 
+ CREATE TABLE student2
+ ( no INT,
+   name VARCHAR(10),
+   address VARCHAR(10) NOT NULL,   -- Not null 반드시 컬럼레벨만 지원
+   age INT ,
+ CONSTRAINT PRIMARY KEY(NO),
+ CONSTRAINT UNIQUE(NAME),
+ CONSTRAINT CHECK(age IN( 10,20,30 )));
+ 
+ 
+ -- fk 실습
+ -- master 테이블 작성
+ create table master1
+ ( num int primary key,
+  name varchar(10) not null );
+  
+insert into master1 ( num, name ) values ( 1, 'aa');
+insert into master1 ( num, name ) values ( 2, 'bb');
+insert into master1 ( num, name ) values ( 3, 'cc');
+insert into master1 ( num, name ) values ( 4, 'dd');
+commit;
+ 
+ -- slave 테이블 작성: 컬럼 레벨 ( fk 설정이 안됨. 확인 필요 )
+ create table slave1
+ (  n int primary key,
+   num int   REFERENCES master1(num) );  -- master의 pk 또는 uk 컬럼만 참조 가능하다.
+   
+insert into slave1 (n, num) values ( 10, 1 );
+insert into slave1 (n, num) values ( 20, 2 );
+insert into slave1 (n, num) values ( 30, 5 );  
+insert into slave1 (n, num) values ( 40, null );
+
+select *
+from information_schema.table_constraints
+where table_name =  'slave1';
+  
+ 
  
