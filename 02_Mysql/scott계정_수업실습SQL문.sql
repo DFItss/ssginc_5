@@ -794,18 +794,28 @@ insert into master1 ( num, name ) values ( 4, 'dd');
 commit;
  
  -- slave 테이블 작성: 컬럼 레벨 ( fk 설정이 안됨. 확인 필요 )
+ drop table slave2;
+ create table slave2
+ (  n int primary key,
+   num int  REFERENCES master1(num) );  -- master의 pk 또는 uk 컬럼만 참조 가능하다.
+  
+   -- slave 테이블 작성:  테이블 레벨
+ drop table slave1;
  create table slave1
  (  n int primary key,
-   num int   REFERENCES master1(num) );  -- master의 pk 또는 uk 컬럼만 참조 가능하다.
+   num int,
+   CONSTRAINT FOREIGN KEY(num)  REFERENCES master1(num) );  
    
 insert into slave1 (n, num) values ( 10, 1 );
 insert into slave1 (n, num) values ( 20, 2 );
-insert into slave1 (n, num) values ( 30, 5 );  
+insert into slave1 (n, num) values ( 30, 5 );   -- 에러발생
 insert into slave1 (n, num) values ( 40, null );
 
 select *
 from information_schema.table_constraints
 where table_name =  'slave1';
+  
+  
   
  
  

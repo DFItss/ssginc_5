@@ -1330,7 +1330,40 @@ https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/data-types.html
 
 9. foreign key
 
-  1) 컬럼 레벨
+     -- master 테이블 작성
+	 create table master1
+	 ( num int primary key,
+	  name varchar(10) not null );
+	  
+	insert into master1 ( num, name ) values ( 1, 'aa');
+	insert into master1 ( num, name ) values ( 2, 'bb');
+	insert into master1 ( num, name ) values ( 3, 'cc');
+	insert into master1 ( num, name ) values ( 4, 'dd');
+	commit;
 
+  1) 컬럼 레벨
+ 
+       create table slave1
+	 (  n int primary key,
+	   num int   REFERENCES master1(num) ); 
+
+       ==> fk 제약조건이 생성이 안됨. 
+       https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/create-table.html
 
   2) 테이블 레벨
+
+         -- slave 테이블 작성:  테이블 레벨
+	 drop table slave1;
+	 create table slave1
+	 (  n int primary key,
+	   num int,
+	   CONSTRAINT FOREIGN KEY(num)  REFERENCES master1(num) );  
+	   
+	insert into slave1 (n, num) values ( 10, 1 );
+	insert into slave1 (n, num) values ( 20, 2 );
+	insert into slave1 (n, num) values ( 30, 5 );   -- 에러발생
+	insert into slave1 (n, num) values ( 40, null );
+
+	select *
+	from information_schema.table_constraints
+	where table_name =  'slave1';
