@@ -687,8 +687,7 @@ commit;
  DELETE FROM emp;
  rollback;
  
-  select *
-from emp;
+
 
 -- limit 실습
 
@@ -702,3 +701,15 @@ order by empno desc
 limit  1;
 
 rollback;
+
+
+
+-- upsert 문
+  select *
+from dept;
+
+ INSERT INTO dept (deptno, dname, loc )
+ VALUES (90, '인사과','서울');
+
+ INSERT INTO dept (deptno, dname, loc )
+ VALUES (92, '인사과','서울') ON DUPLICATE KEY UPDATE loc='제주';
