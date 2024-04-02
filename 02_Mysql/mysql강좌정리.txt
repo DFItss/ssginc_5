@@ -1188,4 +1188,47 @@ https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/aggregate-functions.html
       limit n;
 ######################################################################
 
- 
+ 6. DDL ( Data Definition Language : 데이터 정의어 )
+
+   1) 용도
+     - 객체(테이블,인덱스,프로시저,사용자,..) 생성, 수정, 삭제할 때 사용하는 SQL문
+
+   2) 테이블 생성
+
+     문법1: 
+           create table 테이블명
+	   ( 컬럼명  데이터타입,
+	     컬럼명  데이터타입,
+	     ..
+	   );
+
+   3) 데이터타입
+https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/data-types.html
+     가. 수치형
+         
+	    - 정수: INTEGER(INT: 4byte), SMALLINT(2byte), MEDIUMINT(3byte), BIGINT(8byte)
+
+	    - 실수: 부동소수점: FLOAT, DOUBLE
+
+	           고정소수점: DECIMAL, NUMERIC
+
+     나. 문자형
+
+          -고정길이: char(n) : n byte , 0~255
+                 예> 성별, 학년
+
+	  -가변길이: varchar(n) : n btye, 0 ~ 65535
+                 ( Oralce: varchar2(n) 제공됨 )
+
+                   TEXT  : 길이 제한 없음.
+          - enum('값','값2')  : 지정된 값만 허용.
+           
+          - BLOB ( Binary Large Object ? ) : 이미지, 소리등 바이너리 데이터 저장용.
+
+
+     다. 날짜형
+
+          - DATE     :  0000-00-00,  curdate() 이용해서 insert
+	  - TIME     :  00:00:00  ,  curtime()  이용해서 insert
+	  - DATETIME :  0000-00-00 00:00:00 , now()  이용해서 insert
+	  - YEAR     :  0000
