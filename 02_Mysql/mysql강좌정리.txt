@@ -1207,6 +1207,9 @@ https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/aggregate-functions.html
       ==> 잘못된 데이터가 저장될 수 있다.
       ==> IF NOT EXISTS ( oracle 지원 안됨 )
       ==> INSERT 할때 컬럼명을 지정하지 않으면 null 값이 저장된다.
+         예> insert into 테이블명 ( 컬럼명1 )
+	    values ( 값1 );
+	   컬럼명2 에는 null 값이 저장된다.
 
    3) 데이터타입
 https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/data-types.html
@@ -1242,7 +1245,7 @@ https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/data-types.html
 
 
     2) 테이블 생성 2
-     ==> default 키워드 이용하여 null 값 저장 방지
+     ==> default 키워드 이용하여 null 값 저장 방지.
      문법2: 
            create table  IF NOT EXISTS 테이블명
 	   ( 컬럼명1  데이터타입,
@@ -1259,6 +1262,45 @@ https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/data-types.html
 	   컬럼명2 에는 null 값이 아닌 기본값으로 저장된다.
 
       용도:
-          -정해져 있는 값 (고정값) 예>성별값,  게시판의 조회수
+          -정해져 있는 값 (고정값) 예> 성별값,  게시판의 조회수
 	  -날짜
 
+
+7. 제약조건 설정하기
+
+  1) 테이블을 생성하면서 제약조건을  설정
+
+       가.  컬럼 레벨
+          create table  IF NOT EXISTS 테이블명
+	   ( 컬럼명1  데이터타입  제약조건설정1,
+	     컬럼명2  데이터타입  제약조건설정2,
+	     컬럼명3  데이터타입 DEFAULT 기본값,
+	     ..
+	   );
+         ==> 5개의 제약조건 모두 사용이 가능하다.
+
+       나.  테이블 레벨
+            create table  IF NOT EXISTS 테이블명
+	   ( 컬럼명1  데이터타입,
+	     컬럼명2  데이터타입 DEFAULT 기본값,
+	     컬럼명n  데이터타입,
+	     제약조건설정1,
+	     제약조건설정2
+	   );
+          ==> 4개의 제약조건 모두 사용이 가능하다.
+	      not null 제외( not null은 컬럼레벨만 지원)
+
+  2) 테이블을 먼저 생성하고 이후에 제약조건을 설정 (************)
+
+       가. 다음과 같이 컬럼명과 데이터타입
+
+          create table  IF NOT EXISTS 테이블명
+	   ( 컬럼명1  데이터타입,
+	     컬럼명2  데이터타입 DEFAULT 기본값,
+	     ..
+	   );
+
+	
+       나. 제약조건을 나중에 설정한다.
+
+          - Alter table add 제약조건설정문법 (테이블 레벨과 문법이 똑같다.)

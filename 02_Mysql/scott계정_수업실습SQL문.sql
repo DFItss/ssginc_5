@@ -713,3 +713,46 @@ from dept;
 
  INSERT INTO dept (deptno, dname, loc )
  VALUES (92, '인사과','서울') ON DUPLICATE KEY UPDATE loc='제주';
+ 
+ 
+ -- DDL
+ 
+-- 1)  컬럼명과 데이터타입만 지정한 경우
+CREATE TABLE IF NOT EXISTS dept_2
+ ( deptno INT,
+ dname VARCHAR(10),
+ loc VARCHAR(10) );
+ 
+ insert into dept_2 ( deptno, dname)
+values ( 1, '관리');   -- loc 에 null 값 저장
+
+ -- 2)  default 추가
+ CREATE TABLE IF NOT EXISTS dept_3
+ ( deptno INT,
+  dname VARCHAR(10),
+  loc VARCHAR(10) DEFAULT '서울' );
+  
+insert into dept_3 ( deptno, dname)
+values ( 1, '관리');   -- loc 에 기본값인 서울  저장
+
+ CREATE TABLE IF NOT EXISTS board
+ ( num INT PRIMARY KEY AUTO_INCREMENT,
+ author VARCHAR(10) NOT NULL,
+ title VARCHAR(20) NOT NULL,
+ content VARCHAR(100) NOT NULL,
+ writeday DATE DEFAULT (CURRENT_DATE),
+ readcnt INT DEFAULT 0 );
+ 
+  CREATE TABLE IF NOT EXISTS board2
+ ( num INT PRIMARY KEY AUTO_INCREMENT,
+ author VARCHAR(10) NOT NULL,
+ title VARCHAR(20) NOT NULL,
+ content VARCHAR(100) NOT NULL,
+ writeday DATETIME DEFAULT NOW(),
+ readcnt INT DEFAULT 0 );
+ 
+ 
+ insert into board ( author, title, content )
+ values('aa','bb','cc');
+ 
+ 
