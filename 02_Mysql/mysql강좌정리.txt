@@ -1154,3 +1154,38 @@ https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/aggregate-functions.html
       SET dept.dname = X.dname,    
 	  dept.loc =   X2.loc
       WHERE deptno = 90;
+
+ 
+ 5. delete 문
+
+ 1) 용도
+   - 레코드 삭제.
+
+ 2) 문법
+
+   가. 조건식이 없는 형태
+
+      ==> 모든 레코드 대상임. 따라서 모든 레코드가 삭제됨
+
+        delete from 테이블명;
+
+
+   나. 조건식 있는 형태
+    
+     ==> 조건에 일치하는 레코드만 삭제.
+
+       delete from 테이블명
+       where 조건식;
+
+ 3) subquery는 지원 안됨.
+   ==> Oracle은 지원됨.
+
+  4) limit 지원.
+
+      delete from 테이블명
+      where 조건식
+      order by 표현식
+      limit n;
+
+
+ 

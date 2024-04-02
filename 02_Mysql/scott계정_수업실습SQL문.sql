@@ -662,8 +662,7 @@ commit;
  SET dname='경리과', loc='부산';
  rollback;
  
- select *
-from dept;
+
 
 -- subquery 이용한 update
       UPDATE  dept , (SELECT dname              
@@ -676,3 +675,30 @@ from dept;
 	  dept.loc =   X2.loc
       WHERE deptno = 90;
       
+
+-- 3) delete 문
+
+ DELETE FROM dept
+ WHERE deptno = 90;
+ commit;
+ 
+  DELETE FROM dept; -- 에러발생. 이유는 emp에서 fk로 참조하고 있기 때문에.
+  
+ DELETE FROM emp;
+ rollback;
+ 
+  select *
+from emp;
+
+-- limit 실습
+
+select *
+from copy_emp2
+order by sal desc;
+
+delete from copy_emp2
+where sal = 3000
+order by empno desc
+limit  1;
+
+rollback;
