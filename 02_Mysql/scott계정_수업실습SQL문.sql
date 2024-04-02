@@ -605,4 +605,50 @@ SELECT deptno, SUM(sal) total_sum, ROUND(AVG(sal)) total_avg,COUNT(*) cnt
 -- DML
 -- auto commit 확인
 show variables like 'autocommit%';
-            
+ show variables like 'autocommit';
+ 
+-- auto commit 비활성화
+set autocommit=false;         
+
+use testdb;
+DESC dept;   
+
+INSERT INTO dept (deptno, dname, loc )
+ VALUES (90, '인사과','서울');
+ INSERT INTO dept (deptno, dname ) # loc 컬럼에 null 저장
+VALUES (91, '인사과');
+ INSERT INTO dept (loc, dname, deptno )
+ VALUES ('서울', '인사과', 80);
+  INSERT INTO dept
+ VALUES (70, '인사과','서울');
+ 
+  --  INSERT INTO dept
+ -- VALUES (71, '인사과');  에러발생
+commit;
+
+
+select *
+from dept;
+
+
+-- 다중행 생성
+ CREATE TABLE copy_emp
+ AS
+ SELECT empno, ename, sal FROM emp
+ WHERE 1=2;
+
+ CREATE TABLE copy_emp2
+ AS
+ SELECT empno, ename, sal FROM emp;
+
+-- 서브쿼리 이용
+ INSERT INTO copy_emp (empno, ename, sal)
+ SELECT empno, ename, sal
+ FROM emp;
+ rollback;
+ 
+ -- value_list 이용 ( *************** )
+  INSERT INTO copy_emp (empno, ename, sal)
+ VALUES (71, '홍길동',800), (72, '이순신',900), (73, '유관순',950);
+ commit;
+

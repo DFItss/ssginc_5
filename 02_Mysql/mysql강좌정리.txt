@@ -1055,11 +1055,11 @@ https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/aggregate-functions.html
    -새로운 레코드 생성.
    -단일행 생성(*) 또는 멀티행 생성 모두 가능
 
- 2) 문법
+ 2) 문법 1 - 단일행 생성하는 방법
  
     가. 컬럼명 지정한 경우 ( 권장 )
           insert into 테이블명 (컬럼명, 컬럼명1 )
-	  values ( 값, 값1 );
+	  values ( 값, 값1 );  # 문자와 날짜는 반드시 ''  로 지정해야 된다.
           commit;
      ==> 선택적으로 값을 저장이 가능.
          나머지는 null로 저장됨.
@@ -1067,9 +1067,46 @@ https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/aggregate-functions.html
 
     나. 컬럼명 생략한 경우 ( 권장안함)
           insert into 테이블명 
-	  values ( 값, 값1, ..., 값6 );
+	  values ( 값, 값1, ..., 값6 ); # 문자와 날짜는 반드시 ''  로 지정해야 된다.
 	  commit;
       ==> 선택적으로 값 저장이 불가.
           반드시 테이블의 모든 컬럼에 값을 저장해야 된다.
       ==> 지정된 값 순서대로 실제 테이블의 컬럼에 맵핑된다.
       ==> 가독성이 떨어진다.
+
+ 3) 주의할점
+
+    - pk 컬럼에는 중복값이 저장 안되고 null 값 저장 불가
+    - not null 제약조건을 추가한 컬럼에는 반드시 값을 지정해야 된다.
+
+
+4) 문법 2 - 다중행 생성하는 방법
+
+   # 실습전에 새로운 테이블 생성하자.
+      CTAS 방법 : 제약조건은 복사가 안됨.
+
+     Create Table 테이블명
+     As
+     Select 문;
+         # 구조만 복사해서 새로운 테이블 생성
+         CREATE TABLE copy_emp
+	 AS
+	 SELECT empno, ename, sal FROM emp
+	 WHERE 1=2;
+ 
+   가. subquery 이용
+
+      문법:
+           insert into 테이블명 (컬럼명, 컬럼명1 )
+	   select 컬럼명, 컬럼명2
+	   from 테이블명;
+	
+   나. value_list 이용 (**********)
+
+     문법:
+           insert into 테이블명 (컬럼명, 컬럼명1 )
+	   values ( 값, 값1 ),( 값, 값1 ),( 값, 값1 );
+
+
+
+
