@@ -601,3 +601,8 @@ group by deptno;
 SELECT deptno, SUM(sal) total_sum, ROUND(AVG(sal)) total_avg,COUNT(*) cnt
             FROM emp
             GROUP BY deptno;
+            
+-- DML
+-- auto commit 확인
+show variables like 'autocommit%';
+            

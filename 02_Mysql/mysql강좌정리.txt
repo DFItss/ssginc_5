@@ -482,16 +482,19 @@ https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/aggregate-functions.html
      # inner 조인방법
      - cross join
      - natural join
-     - join~ on
-     - joion~ using
+     - join~ using(공통컬럼)
+
+     - join~ on : 범용적
      - self join ==> 자신이 자신을 조인하는  방법.
+                     예> 사원의 관리자명 조회
 
      # outer 조인방법
      - left outer join ~ on|using
      - right outer join ~ on|using
+      ==> 양쪽 테이블에 누락된 레코드 조회는 union(합집합)으로 가능하다.
 
      - full outer join ~ on|using ( MySQL 지원안됨. Oracle 지원됨 )
-
+      
 
 2.  2개의 테이블 연결하는 방법 알기전 선수과정 
 
@@ -515,13 +518,14 @@ https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/aggregate-functions.html
 
       emp테이블의 pk는 empno,
       dept테이블의 pk는 deptno
+
    - unique ( uk 라고 부른다. )
       목적: 중복값 저장 불가
       특징: - 값이 없어도 된다. (null 값 허용)
            - 테이블당 여러개 설정 가능
 	   - 복합컬럼 가능
            - 제약조건을 추가(*)하는 기능
-           -자동으로 인덱스(색인표 역할) 추가됨. 
+           - 자동으로 인덱스(색인표 역할) 추가됨. 
 
 
    - check  ( ck 라고 부른다. )
@@ -534,7 +538,7 @@ https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/aggregate-functions.html
 	     M/F
 	     0/1
         
-           gender check ( gender in ('남','여'))
+           gender  check ( gender in ('남','여'))
            age     check ( age < 100 )
 
    - foreign key ( fk, 참조키, 외래키 라고 부른다. )
@@ -550,7 +554,7 @@ https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/aggregate-functions.html
                               50(저장불가)             40
 			      null(가능)              
 
-      특징: - 반드시 fk는 master의 PK로 된 컬럼 또는 UK로 된 컬럼만 참조할 수 있다.
+      특징: - 반드시 fk는 master의 PK로 된 컬럼 또는 UK로 된 컬럼만 참조할 수 있다.(*****)
            - fk가 가질수 있는 값은  master의 PK로 된 컬럼의 값 또는 UK로 된 컬럼의 값만 저장할 수 있다.
 	     추가로 null 값 저장 가능
 	     결론은 fk가 가질수 있는 값은 3가지 ( master의 pk + uk + null )
@@ -560,7 +564,7 @@ https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/aggregate-functions.html
 
    - not null
       목적:  null 허용 불가 ( 반드시 값을 가져야 됨. 중복 가능 )
-      특징: - 기본적으로 모든 테이블의 컬럼은 null 허용한다.
+      특징: - 기본적으로 모든 테이블의 컬럼은 null 허용한다. (******)
              null ----------> not null
 	            변경
 		  
@@ -824,6 +828,7 @@ https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/aggregate-functions.html
 	            from emp
 	            where ename = 'scott');
         order by ;
+
   3) 특징
     - 소괄호를 사용
     - 일반적으로 소괄호를 감싼 subquery가 먼저 실행되고 실행된 
@@ -842,7 +847,11 @@ https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/aggregate-functions.html
     나.  복수행 연산자
        - subquery 실행결과가 여러 행 반환되는 경우에 사용되는 연산자 의미
        - IN, > any, > all,  < any, < all, exists 
-
+       
+    > all:  최대값보다 큰 값 반환    ( > (select max(sal) )
+    < all:  최소값보다 작은 값 반환  ( < (select min(sal) )
+    > any:  최소값보다 큰 값 반환    ( > (select min(sal) )
+    < any:  최대값보다 작은 값 반환   ( > (select max(sal) )
 
  5) 복수행 연산자
 
@@ -960,9 +969,79 @@ https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/aggregate-functions.html
 	group by deptno;
 
 	 SELECT e.deptno, total_sum, total_avg, cnt
-	 FROM (  SELECT deptno, SUM(sal) total_sum, ROUND(AVG(sal)) total_avg,COUNT(*) cnt
+	 FROM (SELECT deptno, SUM(sal) total_sum, ROUND(AVG(sal)) total_avg,COUNT(*) cnt
                  FROM emp
                  GROUP BY deptno) 
 	     e JOIN dept d ON e.deptno = d.deptno;  -- 4개의 서브쿼리 dept: 4개가 조인에 참여함
 
-################################################################################
+####################################################################
+4일차 ( 4월 02 일 )
+
+
+1. DML ( Data Manipulation Language: 데이터 조작어 )
+
+  1) 종류
+    - insert 문
+       테이블의 레코드 생성
+       upsert(update+insert)
+        ==> 값이 존재하면 update되고 없으면 insert.
+
+    - delete 문
+       테이블의 레코드 삭제
+
+    - update 문
+       테이블의 컬럼 수정
+
+  2) 특징
+    
+     - 트랜잭션(transaction) 관련됨.
+
+
+2. 트랜잭션(transaction)
+
+ 1)개념
+  여러개의 DML 작업들을 하나의 작업으로 묶어서 처리하는 개념으로 
+  묶음을 의미한다. 묶음의 갯수 ( 1개 이상 )
+
+ 2)명령어
+  
+    - commit
+      트랜잭션이 모두 실행했을때 성공해서 실제로 DB에 반영하는 명령어.
+      즉 모든 DML은 실행되었을 때 실제 DB에 반영안됨. (***********)
+
+    - rollback
+
+  3) 트랜잭션 용도
+
+   예>  계좌이체 ( update + insert )
+
+      A               B
+     1000
+
+   # 성공시 - commit 으로 실제 DB에 반영
+     A                B 
+    500             500
+
+   # 실패시 - rollback 으로 모두 취소.
+    A               B
+   1000
+
+  4) 트랜잭션시작 ~ 트랜잭션 종료
+
+    트랜잭션시작: DML 사용시 자동으로 시작됨.
+
+     예> 
+                 <-- 트랜잭션시작
+           insert 
+	   delete
+	   update
+           commit(rollback); <--트랜잭션 종료
+
+   트랜잭션 종료: 명시적으로 종료해야 된다.
+              commit은 실제 DB에 반영하는 방식으로 종료.
+	      rollback은 취소하는 방식을 종료
+
+  5) DBMS 종류에 따라서 auto commit 될 수 있다.
+    ==> DML하면 자동으로 commit 되는 것을 의미한다. 비활성 가능
+    ==> Oralce: 명시적으로 commit 해야 됨
+        MySQL : auto commit
