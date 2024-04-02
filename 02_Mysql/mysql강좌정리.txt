@@ -1375,7 +1375,8 @@ https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/data-types.html
 
 10. master 테이블의 레코드 삭제
 
-   # 삭제안됨. fk가 참조하기 때문이다.
+   # 삭제안됨. 
+   # fk가 참조하기 때문이다.
    delete from master1
    where num = 1;     
 
@@ -1414,3 +1415,48 @@ insert into slave1 (n, num) values ( 20, 2 );
 -- insert into slave1 (n, num) values ( 30, 5 );   -- 에러발생
 insert into slave1 (n, num) values ( 40, null );
 commit;
+
+
+
+11. 테이블 삭제
+
+  1) 문법
+
+    drop table IF NOT EXISTS 테이블명, 테이블명;
+
+  2) fk 가 참조하는 master 는 삭제 안됨.
+
+   예> drop table master1;  // 에러
+
+   해결: 
+
+      mysql:  CASCADE 지원안됨.
+      https://mariadb.com/kb/en/drop-table/
+             1) slave 먼저 삭제
+	     2) master 삭제
+
+
+      oracle:  drop table master1 CASCADE; 
+            ==> slave에 있는 fk 제약조건이 삭제됨.
+
+
+
+12. 테이블 절삭
+  
+   문법:
+        truncate table 테이블명;
+
+   동작:
+       모든 레코드가 삭제됨.
+       delete from 테이블명; 유사함.
+
+  * delete  vs truncate
+
+    delete:  - DML
+             - rollback 가능 (복구 가능)
+	     - 백업본 만들고 저장영역 유지
+
+    truncate: - DDL
+              - 복구 안됨
+	      - 백업본 필요없음. 최소한의 저장영역만 유지
+	      - delete 보다 삭제성능이 우수하다.

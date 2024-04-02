@@ -852,6 +852,17 @@ commit;
    delete from master1
    where num = 2;
    
+   -- 테이블 삭제
+   drop table if exists copy_emp, copy_emp2;
+   
+   drop table master1; 
+   
+-- truncate 
+create table
+as
+select * from emp;
+
+   
    
    
  
