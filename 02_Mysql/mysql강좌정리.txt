@@ -1110,3 +1110,47 @@ https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/aggregate-functions.html
 
 
 
+4. update 문
+ 1) 용도
+   - 컬럼 수정.
+
+ 2) 문법
+
+   가. 조건없는 update
+     ==> 모든 레코드 대상.
+    
+       update 테이블
+       set 컬럼명1=값 , 컬럼명2=값 ;
+       commit;
+
+   나. 조건있는 update (********)
+     ==> 조건에 일치하는 레코드 대상.
+
+       update 테이블
+       set 컬럼명1=값 , 컬럼명2=값
+       where 조건식;
+       commit;
+
+  3) subquery 이용한 update
+
+    -- MySQL 에러 ( Oracle 가능 )
+     https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/update.html 참조
+    UPDATE dept
+    SET dname =(SELECT dname
+		     FROM dept
+	             WHERE deptno = 20 ) as X,
+       loc = ( SELECT loc
+	       FROM dept
+	       WHERE deptno = 30 ) as X2
+       WHERE deptno = 90;
+
+     -- MySQL 해결
+      UPDATE  dept , (SELECT dname              
+		      FROM dept             
+		      WHERE deptno = 20 ) as X,             
+		      (SELECT loc             
+		       FROM dept             
+		       WHERE deptno = 30 ) as X2
+      SET dept.dname = X.dname,    
+	  dept.loc =   X2.loc
+      WHERE deptno = 90;

@@ -612,7 +612,7 @@ set autocommit=false;
 
 use testdb;
 DESC dept;   
-
+-- 1) insert 문
 INSERT INTO dept (deptno, dname, loc )
  VALUES (90, '인사과','서울');
  INSERT INTO dept (deptno, dname ) # loc 컬럼에 null 저장
@@ -627,8 +627,7 @@ VALUES (91, '인사과');
 commit;
 
 
-select *
-from dept;
+
 
 
 -- 다중행 생성
@@ -652,3 +651,28 @@ from dept;
  VALUES (71, '홍길동',800), (72, '이순신',900), (73, '유관순',950);
  commit;
 
+-- 2) update 문
+
+ UPDATE dept
+ SET dname='경리과', loc='부산'
+ WHERE deptno=90;
+ commit;
+ 
+ UPDATE dept
+ SET dname='경리과', loc='부산';
+ rollback;
+ 
+ select *
+from dept;
+
+-- subquery 이용한 update
+      UPDATE  dept , (SELECT dname              
+		      FROM dept             
+		      WHERE deptno = 20 ) as X,             
+		      (SELECT loc             
+		       FROM dept             
+		       WHERE deptno = 30 ) as X2
+      SET dept.dname = X.dname,    
+	  dept.loc =   X2.loc
+      WHERE deptno = 90;
+      
