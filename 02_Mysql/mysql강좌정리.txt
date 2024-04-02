@@ -1242,8 +1242,8 @@ https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/data-types.html
 
 
     2) 테이블 생성 2
-
-     문법1: 
+     ==> default 키워드 이용하여 null 값 저장 방지
+     문법2: 
            create table  IF NOT EXISTS 테이블명
 	   ( 컬럼명1  데이터타입,
 	     컬럼명2  데이터타입 DEFAULT 기본값,
