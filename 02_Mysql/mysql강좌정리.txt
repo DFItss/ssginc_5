@@ -1192,15 +1192,21 @@ https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/aggregate-functions.html
 
    1) 용도
      - 객체(테이블,인덱스,프로시저,사용자,..) 생성, 수정, 삭제할 때 사용하는 SQL문
+     - 무조건 auto commit 이다.(*****) ( 즉 commit/rollback 적용안됨 ) 
 
-   2) 테이블 생성
+   2) 테이블 생성 1
 
      문법1: 
-           create table 테이블명
-	   ( 컬럼명  데이터타입,
-	     컬럼명  데이터타입,
+           create table  IF NOT EXISTS 테이블명
+	   ( 컬럼명1  데이터타입,
+	     컬럼명2  데이터타입,
 	     ..
 	   );
+
+      ==> 컬럼에 중복데이터 저장이 가능해짐.
+      ==> 잘못된 데이터가 저장될 수 있다.
+      ==> IF NOT EXISTS ( oracle 지원 안됨 )
+      ==> INSERT 할때 컬럼명을 지정하지 않으면 null 값이 저장된다.
 
    3) 데이터타입
 https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/data-types.html
@@ -1214,10 +1220,11 @@ https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/data-types.html
 
      나. 문자형
 
-          -고정길이: char(n) : n byte , 0~255
+          -고정길이: char(n) : n byte ( n byte크기의 영문자및한글저장가능) , 0~255
                  예> 성별, 학년
-
-	  -가변길이: varchar(n) : n btye, 0 ~ 65535
+                   char(2): 영문자 2글자, 한글 2글자 저장 가능
+	  
+	  -가변길이: varchar(n) : n btye( n byte크기의 영문자및한글저장가능)  , 0 ~ 65535
                  ( Oralce: varchar2(n) 제공됨 )
 
                    TEXT  : 길이 제한 없음.
@@ -1232,3 +1239,26 @@ https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/data-types.html
 	  - TIME     :  00:00:00  ,  curtime()  이용해서 insert
 	  - DATETIME :  0000-00-00 00:00:00 , now()  이용해서 insert
 	  - YEAR     :  0000
+
+
+    2) 테이블 생성 2
+
+     문법1: 
+           create table  IF NOT EXISTS 테이블명
+	   ( 컬럼명1  데이터타입,
+	     컬럼명2  데이터타입 DEFAULT 기본값,
+	     ..
+	   );
+	
+      ==> 컬럼에 중복데이터 저장이 가능해짐.
+      ==> 잘못된 데이터가 저장될 수 있다.
+      ==> IF NOT EXISTS ( oracle 지원 안됨 )
+      ==> INSERT 할때 컬럼명2을 지정하지 않으면 null 값이 아닌 기본값으로 저장된다.
+        예> insert into 테이블명 ( 컬럼명1 )
+	   values ( 값1 );
+	   컬럼명2 에는 null 값이 아닌 기본값으로 저장된다.
+
+      용도:
+          -정해져 있는 값 (고정값) 예>성별값,  게시판의 조회수
+	  -날짜
+
