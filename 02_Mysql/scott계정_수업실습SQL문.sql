@@ -810,12 +810,49 @@ insert into slave1 (n, num) values ( 10, 1 );
 insert into slave1 (n, num) values ( 20, 2 );
 insert into slave1 (n, num) values ( 30, 5 );   -- 에러발생
 insert into slave1 (n, num) values ( 40, null );
+commit;
 
 select *
 from information_schema.table_constraints
 where table_name =  'slave1';
   
   
-  
+-- master의 레코드 삭제
+   delete from master1
+   where num = 1;
+   
+      -- slave 테이블 작성:  테이블 레벨 ON DELETE CASCADE
+ drop table slave1;
+ create table slave1
+ (  n int primary key,
+   num int,
+   CONSTRAINT FOREIGN KEY(num)  REFERENCES master1(num)  ON DELETE CASCADE );  
+   
+insert into slave1 (n, num) values ( 10, 1 );
+insert into slave1 (n, num) values ( 20, 2 );
+-- insert into slave1 (n, num) values ( 30, 5 );   -- 에러발생
+insert into slave1 (n, num) values ( 40, null );
+commit;
+   
+      -- slave 테이블 작성:  테이블 레벨 ON DELETE SET NULL
+ drop table slave1;
+ create table slave1
+ (  n int primary key,
+   num int,
+   CONSTRAINT FOREIGN KEY(num)  REFERENCES master1(num)  ON DELETE SET NULL );  
+   
+-- insert into slave1 (n, num) values ( 10, 1 );
+insert into slave1 (n, num) values ( 20, 2 );
+-- insert into slave1 (n, num) values ( 30, 5 );   -- 에러발생
+insert into slave1 (n, num) values ( 40, null );
+commit;
+   
+     
+-- master의 레코드 삭제
+   delete from master1
+   where num = 2;
+   
+   
+   
  
  

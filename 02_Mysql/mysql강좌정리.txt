@@ -1347,7 +1347,7 @@ https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/data-types.html
 	 (  n int primary key,
 	   num int   REFERENCES master1(num) ); 
 
-       ==> fk 제약조건이 생성이 안됨. 
+       ==> fk 제약조건이 생성이 안됨. (확인 필요)
        https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/create-table.html
 
   2) 테이블 레벨
@@ -1367,3 +1367,50 @@ https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/data-types.html
 	select *
 	from information_schema.table_constraints
 	where table_name =  'slave1';
+
+ ==> MySQL 제약조건 추가시 not null은 컬럼레벨로 하고
+    나머지는 테이블 레벨로 설정하자. (*************)
+
+
+
+10. master 테이블의 레코드 삭제
+
+   # 삭제안됨. fk가 참조하기 때문이다.
+   delete from master1
+   where num = 1;     
+
+   # 해결방법2가지
+
+     1) master와 slave 레코드를 같이 삭제
+
+         - ON DELETE CASCADE 
+
+      -- slave 테이블 작성:  테이블 레벨 ON DELETE CASCADE
+ drop table slave1;
+ create table slave1
+ (  n int primary key,
+   num int,
+   CONSTRAINT FOREIGN KEY(num)  REFERENCES master1(num)  ON DELETE CASCADE );  
+   
+insert into slave1 (n, num) values ( 10, 1 );
+insert into slave1 (n, num) values ( 20, 2 );
+-- insert into slave1 (n, num) values ( 30, 5 );   -- 에러발생
+insert into slave1 (n, num) values ( 40, null );
+commit;
+
+
+     2) slave 의 fk 값을 null 로 설정
+
+         - ON DELETE SET NULL
+
+ drop table slave1;
+ create table slave1
+ (  n int primary key,
+   num int,
+   CONSTRAINT FOREIGN KEY(num)  REFERENCES master1(num)  ON DELETE SET NULL );  
+   
+-- insert into slave1 (n, num) values ( 10, 1 );
+insert into slave1 (n, num) values ( 20, 2 );
+-- insert into slave1 (n, num) values ( 30, 5 );   -- 에러발생
+insert into slave1 (n, num) values ( 40, null );
+commit;
