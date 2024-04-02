@@ -1457,6 +1457,6 @@ commit;
 	     - 백업본 만들고 저장영역 유지
 
     truncate: - DDL
-              - 복구 안됨
+              - 복구 안됨 ( DDL은 auto commit )
 	      - 백업본 필요없음. 최소한의 저장영역만 유지
 	      - delete 보다 삭제성능이 우수하다.
