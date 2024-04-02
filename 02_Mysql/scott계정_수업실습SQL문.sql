@@ -858,12 +858,76 @@ commit;
    drop table master1; 
    
 -- truncate 
-create table
+create table copy_emp
 as
 select * from emp;
 
+  truncate table  copy_emp;
    
-   
-   
+ -- 테이블 수정
  
+   -- 1) 컬럼 추가, 삭제
+    CREATE TABLE scott_t
+ ( num INT,
+ NAME VARCHAR(10) );
+   
+
+  
+   ALTER TABLE scott_t
+ ADD ( address VARCHAR(30));
+ 
+ALTER TABLE scott_t
+ ADD ( email VARCHAR(30),  phone varchar(10));
+ 
+ -- address 컬럼 삭제
+ ALTER TABLE scott_t
+ DROP address;
+ -- 한번에 하나씩 삭제가능
+  -- ALTER TABLE scott_t
+ -- DROP (email, phone);
+
+   -- 2) 컬럼 데이터 크기 변경, 타입 변경, 하나씩만 가능.
+   ALTER TABLE scott_t
+ MODIFY email VARCHAR(2);
+   
+     ALTER TABLE scott_t
+ MODIFY email INT; 
+ 
+ -- 3) 컬럼이름 변경
+  ALTER TABLE scott_t
+ RENAME COLUMN name  TO usename;
+ 
+    DESC scott_t;
+    
+   -- 3) 제약조건 설정 (************)  
+  CREATE TABLE scott_t2
+ ( num INT,
+   NAME VARCHAR(10),
+ age INT,
+ address VARCHAR(20) );
+ 
+  -- num 컬럼에 primary key 제약조건 추가
+ ALTER TABLE scott_t2
+ ADD CONSTRAINT PRIMARY KEY(num);
+ 
+ -- NAME 컬럼에 UNIQUE 제약조건 추가
+  ALTER TABLE scott_t2
+ ADD CONSTRAINT UNIQUE(NAME);
+ 
+  -- age 컬럼에 CHECK 제약조건 추가
+  ALTER TABLE scott_t2
+ ADD CONSTRAINT CHECK(age>20);
+ 
+  -- address 컬럼에 null 허용상태를  허용하지 않는 not null 상태로 제약조건 변경(****)
+  ALTER TABLE scott_t2
+ MODIFY address VARCHAR(20) NOT NULL;
+ 
+ -- slave 테이블 작성
+  CREATE TABLE IF NOT EXISTS scott_t2_child
+ ( no INT PRIMARY KEY,
+  num INT );
+ 
+   ALTER TABLE scott_t2_child
+   ADD CONSTRAINT FOREIGN KEY(num) REFERENCES scott_t2(num);
+
  
