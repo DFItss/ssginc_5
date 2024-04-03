@@ -26,8 +26,8 @@ public class DeptServiceImpl implements DeptService {
 	      // 메서드
 	      @Override
 public List<DeptDTO> select() {
-	    	  Connection con = null;
 List<DeptDTO> list = null;
+	    	  Connection con = null;
 	    	  try {
 				  con =  DriverManager.getConnection(url, userid, passwd);
 				  //DeptDAO 연동
@@ -44,11 +44,26 @@ List<DeptDTO> list = null;
 	  		  }//end finally
 return list;
 	      }//end select
-	      
-	      
-	      
-	      
-	      
-	      
-	      
+
+		@Override
+		public int insert(DeptDTO dto) {
+int n = 0;
+			  Connection con = null;
+	    	  try {
+				  con =  DriverManager.getConnection(url, userid, passwd);
+				  //DeptDAO 연동
+				  DeptDAO dao = new  DeptDAO();
+n = dao.insert(con, dto);
+	    	  }catch (SQLException e) {
+	  			e.printStackTrace();
+	  		  }finally {
+	  			   try {
+	  				if(con!=null)con.close();
+	  			} catch (SQLException e) {
+	  				e.printStackTrace();
+	  			}
+	  		  }//end finally
+return n;
+		}
+
 }

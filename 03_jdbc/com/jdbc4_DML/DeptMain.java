@@ -15,7 +15,7 @@ public class DeptMain {
 			System.out.println("2. 부서저장");
 			System.out.println("0. 종료");
 			System.out.println("-------------------");
-			String num = scan.nextLine();
+			String num = scan.next();
 			if("0".equals(num)) {
 				System.out.println("프로그램 종료됨.");
 				System.exit(0);
@@ -37,8 +37,10 @@ public class DeptMain {
 				//DTO 저장해서 DAO로 전달
 				DeptDTO dto = new DeptDTO(Integer.parseInt(deptno), dname, loc);
 						
-						
-				
+				// DeptService 연동
+DeptService service = new DeptServiceImpl();						
+int n = service.insert(dto);
+System.out.println(n+" 개가 저장됨.");
 				
 			}else {
 				System.out.println("번호를 잘못 입력했습니다.");

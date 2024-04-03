@@ -13,8 +13,8 @@ public class DeptDAO {
 
 	//부서 저장
 	public int insert(Connection con, DeptDTO dto) {
+int n = 0;
 		 PreparedStatement pstmt = null;
-	     ResultSet rs = null;
 	     try {
 	    	  String sql = "insert into dept ( deptno, dname, loc ) "
 		  		       + " values (?,?,?)";
@@ -22,18 +22,15 @@ public class DeptDAO {
       pstmt.setInt(1, dto.getDeptno());
       pstmt.setString(2, dto.getDname());
       pstmt.setString(3, dto.getLoc());
-      int n = pstmt.executeUpdate();
+n = pstmt.executeUpdate();
 		  }catch (SQLException e) {
 			e.printStackTrace();
 		  }finally {
 			   try {
-				if(rs!=null)rs.close();
 				if(pstmt!=null)pstmt.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
+			} catch (SQLException e) {e.printStackTrace();}
 		  }//end finally
-	     
+return n;
 	}//end insert
 	
 	
