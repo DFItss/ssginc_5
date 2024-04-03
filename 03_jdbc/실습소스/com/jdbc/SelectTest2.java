@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class SelectTest {
+public class SelectTest2 {
 
 	public static void main(String[] args) {
 
@@ -30,13 +30,18 @@ public class SelectTest {
 	      ResultSet rs = null;
 	      try {
 			  con =  DriverManager.getConnection(url, userid, passwd);
-			  // 4) sql문 작성 ==> 문장끝의 ; 반드시 제외.
-		      String sql = "select deptno as no, dname, loc from dept"; 
-		      // 5) PreparedStatement 얻기 (sql문 전송 담당 객체)
+		      String sql = "select deptno as no, dname, loc"
+		      		       + " from dept"
+		      		       + " where deptno = ? or dname = ?"; 
 		      pstmt = con.prepareStatement(sql);
-		      // 6) sql 문 전송. ==> ResultSet 은 select한 결과값이고 테이블로 생각하자.
+		      
+		      // ? 대신에 실제값 설정
+		      
+		      pstmt.setString(2, "인사과");
+		      pstmt.setInt(1, 10);
+		      
 		      rs  = pstmt.executeQuery();
-		      // 7) ResultSet 에서 컬럼값 얻기
+		      
 		      while(rs.next()) {
 		    	  int deptno = rs.getInt("no"); // 컬럼헤더값
 		    	  String dname = rs.getString(2); // 컬럼헤더 위치값
