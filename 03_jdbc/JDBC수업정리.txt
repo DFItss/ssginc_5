@@ -2,25 +2,26 @@
  JDBC ( Java DataBase Connectivity )
 
 
- 1. °³¿ä
-   - ÀÚ¹Ù¿Í DB ¿¬µ¿ÇÏ´Â ÀÚ¹Ù±â¼ú.
+ 1. ê°œìš”
+   - ìë°”ì™€ DB ì—°ë™í•˜ëŠ” ìë°”ê¸°ìˆ .
 
- 2. Æ¯Â¡
-   - DBMS Á¾·ù¿Í µ¶¸³ÀûÀÌ´Ù.
-     ´Ü DBMS º¥´õ°¡ JDBC¸¦ Áö¿øÇØ¾ß µÈ´Ù. (*********)
-   - DBMS º¥´õ´Â »ç¿ëÀÚ°¡ ¸¸µç ÀÚ¹Ù¾îÇÃ¸®ÄÉÀÌ¼Ç°ú 
-     DBMS °£ÀÇ ¿¬µ¿À» À§ÇØ¼­ Å¬·¡½ºÆÄÀÏ(*.jar ¾ĞÃà) Á¦°øÇÑ´Ù.
-   - DBMS º¥´õ¿¡¼­ Á¦°øÇØÁØ jar ÆÄÀÏÀ» 'µå¶óÀÌ¹ö(driver)'¶ó°í ºÎ¸¥´Ù.
+ 2. íŠ¹ì§•
+   - JDBCëŠ” DBMS ì¢…ë¥˜ì™€ ë¬´ê´€í•˜ê²Œ ì¼ê´€ëœ ë°©ë²•ìœ¼ë¡œ ì ‘ê·¼ì´ ê°€ëŠ¥í•˜ë‹¤. ( ì¸í„°í˜ì´ìŠ¤ + ë‹¤í˜•ì„± )
+   - DBMS ì¢…ë¥˜ì™€ ë…ë¦½ì ì´ë‹¤.
+     ë‹¨ DBMS ë²¤ë”ê°€ JDBCë¥¼ ì§€ì›í•´ì•¼ ëœë‹¤. (*********)
+   - DBMS ë²¤ë”ëŠ” ì‚¬ìš©ìê°€ ë§Œë“  ìë°”ì–´í”Œë¦¬ì¼€ì´ì…˜ê³¼ 
+     DBMS ê°„ì˜ ì—°ë™ì„ ìœ„í•´ì„œ í´ë˜ìŠ¤íŒŒì¼(*.jar ì••ì¶•) ì œê³µí•œë‹¤.
+   - DBMS ë²¤ë”ì—ì„œ ì œê³µí•´ì¤€ jar íŒŒì¼ì„ 'ë“œë¼ì´ë²„(driver)'ë¼ê³  ë¶€ë¥¸ë‹¤.
 
       (*.class )                             (*.class )
-     ÀÚ¹Ù¾îÇÃ¸®ÄÉÀÌ¼Ç  -------------------------- MySQL  ( mysql-connector-j-8.jar )
+     ìë°”ì–´í”Œë¦¬ì¼€ì´ì…˜  -------------------------- MySQL  ( mysql-connector-j-8.jar )
                    -------------------------- Oracle ( ojdbc6-g.jar )
 		   -------------------------- MS-SQL ( *.jar)
 
-         ÀÚ¹Ù                                      º¥´õ
-	1)ÀÎÅÍÆäÀÌ½º                                MySQL
+         ìë°”                                      ë²¤ë”
+	1)ì¸í„°í˜ì´ìŠ¤                                MySQL
 	                        
-	Connection ÀÎÅÍÆäÀÌ½º                  public class MYSQL_CONNECT implements Connection{
+	Connection ì¸í„°í˜ì´ìŠ¤                  public class MYSQL_CONNECT implements Connection{
 	   abstract connect();                    public void connect(){}
 
                                                  Oracle
@@ -30,15 +31,57 @@
                   con = new ORACLE_CONNECT();
                 con.connect()
 
-3. mysql ¿¬µ¿ÇÏ±â À§ÇÑ È¯°æ¼³Á¤
+3. mysql ì—°ë™í•˜ê¸° ìœ„í•œ í™˜ê²½ì„¤ì •
 
-   1) MySQL µå¶óÀÌ¹ö ´Ù¿î·Îµå
+   1) MySQL ë“œë¼ì´ë²„ ë‹¤ìš´ë¡œë“œ
   
-   http://dev.mysql.com/downloads/connector/j > platform independent > 4.8M zip ´Ù¿î >
-   ¾ĞÃà ÇØÃ¼ > mysql-connector-j-8.3.0.jar ( mysql µå¶óÀÌ¹ö )
+   http://dev.mysql.com/downloads/connector/j > platform independent > 4.8M zip ë‹¤ìš´ >
+   ì••ì¶• í•´ì²´ > mysql-connector-j-8.3.0.jar ( mysql ë“œë¼ì´ë²„ )
 
-   2) ÀÌÅ¬¸³½º¿¡¼­ MySQL µå¶óÀÌ¹ö(jar)¸¦ ÀÎ½ÄÇÏµµ·Ï ¼³Á¤
-     - build path ÇÑ´Ù°í ºÎ¸¥´Ù.
+   2) ì´í´ë¦½ìŠ¤ì—ì„œ MySQL ë“œë¼ì´ë²„(jar)ë¥¼ ì¸ì‹í•˜ë„ë¡ ì„¤ì •
+     - build path í•œë‹¤ê³  ë¶€ë¥¸ë‹¤.
     
-     - ÀÚ¹ÙÇÁ·ÎÁ§Æ® ¼±ÅÃ > ¿À¸¥ÂÊ Å¬¸¯ > build path > configure build path > 3¹øÂ° ÅÇ libraries > 
-       classpath ¼±ÅÃÇÏ°í ¿À¸¥ÂÊ Ç×¸ñ¿¡¼­  Add External jars.. Å¬¸¯ > mysql-connector-j-8.3.0.jar ¼±ÅÃ
+     - ìë°”í”„ë¡œì íŠ¸ ì„ íƒ > ì˜¤ë¥¸ìª½ í´ë¦­ > build path > configure build path > 3ë²ˆì§¸ íƒ­ libraries > 
+       classpath ì„ íƒí•˜ê³  ì˜¤ë¥¸ìª½ í•­ëª©ì—ì„œ  Add External jars.. í´ë¦­ > mysql-connector-j-8.3.0.jar ì„ íƒ
+
+
+4. JDBC ìë°” ì½”ë“œ
+  
+   ==> compile checed exception ê³„ì—´ (ë¹„ëŸ°íƒ€ì„ ê³„ì—´)ì´ë‹¤.
+       ì¦‰ ë¬´ì¡°ê±´ ì˜ˆì™¸ì²˜ë¦¬í•´ì•¼ëœë‹¤. (try~catch í•„ìˆ˜ )
+ 
+   ==> java.sql íŒ¨í‚¤ì§€ ì‚¬ìš©ë¨
+
+    1) mysql ì ‘ì† ì •ë³´
+
+      String driver ="com.mysql.cj.jdbc.Driver";
+      String url = "jdbc:mysql://localhost:3306/testdb";
+      String userid ="root";
+      String passwd = "1234";
+ 
+     * oracle ì ‘ì† ì •ë³´
+      String driver ="oracle.jdbc.driver.OracleDriver";
+      String url = "jdbc:oracle:thin:@localhost:1521:ì„œë¹„ìŠ¤ëª…";
+      String userid ="system|sys";
+      String passwd = "1234";
+
+    2) ë“œë¼ì´ë²„ ë¡œë”© ( com.mysql.cj.jdbc.Driver í´ë˜ìŠ¤ë¥¼ ê°ì²´ìƒì„±í•˜ëŠ” ì‘ì—… ì˜ë¯¸ )
+      => ì´ì „ ì²˜ëŸ¼ new ì‚¬ìš©ì•ˆí•¨.
+         ëŒ€ì‹  Class.forName(ë¬¸ìì—´);
+
+          Class.forName(driver); 
+
+    3) Connection ì—°ê²°
+
+       Connection con =  DriverManager.getConnection(url, userid, passwd);
+
+     
+    4) sqlë¬¸ ì‘ì„±
+     ==> ë¬¸ì¥ëì˜ ; ë°˜ë“œì‹œ ì œì™¸.
+
+      String sql = "select deptno as no, dname, loc from dept";
+
+    
+    5) PreparedStatement ì–»ê¸° (sqlë¬¸ ì „ì†¡ ë‹´ë‹¹ ê°ì²´) 
+
+       PreparedStatement pstmt = con.prepareStatementâ€‹(String sql);
