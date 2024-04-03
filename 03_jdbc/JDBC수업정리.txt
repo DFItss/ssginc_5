@@ -180,7 +180,24 @@
                            DeptService(인터페이스)
                                 |
 				|
-   DeptMain     <---->      DeptServiceImpl       <---->     DeptDAO     <----> MySQL
+   DeptMain     <---->      DeptServiceImpl       <---->     DeptDAO     <----> MySQL(파일)
     main()  
-    화면처리코드                -비즈니즈로직코드(가공)          - DB연동코드
+    화면처리코드                -비즈니즈로직코드(가공)             - DB연동코드
                              -트랜잭션처리(*****)
+
+  - DeptDAO에서 얻은 결과값을 DeptMain에 전달하는 작업을 추가하자.
+    하나의 행을 저장하는 클래스를 작성한다. 
+    ==> DeptDTO.java
+
+  * 패턴
+  DAO 패턴: - Data Access Object 패턴
+           - 데이터(DB,파일등)에 접근시 전담하는 클래스
+
+  DTO 패턴: - Data Transfer Object 패턴
+           - 일반적으로 테이블당 하나씩 작성해서
+	     테이블의 하나의 레코드를 저장하는 용도로 사용됨.
+	     예> dept테이블: DeptDTO.java
+	        emp테이블: EmpDTO.java
+
+6. 중복 deptno 값 입력시 예외처리
+  => 개인적으로 정리하기.
