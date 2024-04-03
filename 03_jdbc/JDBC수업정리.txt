@@ -84,4 +84,44 @@
     
     5) PreparedStatement 얻기 (sql문 전송 담당 객체) 
 
-       PreparedStatement pstmt = con.prepareStatement​(String sql);
+       PreparedStatement pstmt = con.prepareStatement​( sql);
+
+    
+    6) sql 문 전송.
+
+
+       가. select문 ==> 결과를 테이블 형태로 받음.
+                       테이블 객체화: ResultSet
+
+           ResultSet rs  = pstmt.executeQuery();
+
+       나. DML문    ==> 결과를 정수(영향받은 행갯수) 받음.
+
+          int n = pstmt.executeUpdate(); // update,insert,delete
+
+
+    7) ResultSet 에서 컬럼값 얻기
+
+      while( rs.next() ){ // 행선택
+
+          //열 선택
+	  int deptno = rs.getInt("no");   // 컬럼헤더|위치(1부터)
+          int deptno2 = rs.getInt(1);
+
+	  String dname = rs.getString("dname"); // 2
+          String loc = rs.getString("loc"); // 3
+
+      }
+
+     8) DBMS 는 외부자원이기 때문에 항상 close() 
+
+         사용한 순서
+	 Connection con연결
+	 PreparedStatement  pstmt얻기
+	 ResultSet rs 얻기
+
+
+	 close 작업은 사용한 역순
+           rs.close();
+	   pstmt.close();
+	   con.close();
