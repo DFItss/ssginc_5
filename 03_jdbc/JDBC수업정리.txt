@@ -156,3 +156,9 @@
 
 	 ResultSet rs =  pstmt.executeQuery();
 	   rs.getXXX
+
+
+
+6. DML
+ => JDBC는 기본적으로 auto commit 으로 동작된다. (************)
+   계좌이체등과 같은 트랜잭션으로 처리해야 되는 작업을 할수 없음.
