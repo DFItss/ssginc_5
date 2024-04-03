@@ -11,6 +11,29 @@ import java.util.List;
 // DAO 패턴: Data Access Object
 public class DeptDAO {
 
+	// 부서 삭제
+	public int delete(Connection con, int deptno) {
+int n = 0;
+		 PreparedStatement pstmt = null;
+	     try {
+String sql = "delete from dept where deptno=?";
+             pstmt = con.prepareStatement(sql);
+pstmt.setInt(1, deptno);
+n = pstmt.executeUpdate();
+		  }catch (SQLException e) {
+			e.printStackTrace();
+		  }finally {
+			   try {
+				if(pstmt!=null)pstmt.close();
+			} catch (SQLException e) {e.printStackTrace();}
+		  }//end finally
+return n;		
+	}
+	
+	
+	
+	
+	
 	//부서 저장
 	public int insert(Connection con, DeptDTO dto) {
 int n = 0;
@@ -33,7 +56,7 @@ n = pstmt.executeUpdate();
 return n;
 	}//end insert
 	
-	
+
 	
 	
 	// 목록보기

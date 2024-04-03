@@ -13,6 +13,7 @@ public class DeptMain {
 			
 			System.out.println("1. 전체목록");
 			System.out.println("2. 부서저장");
+			System.out.println("3. 부서삭제");
 			System.out.println("0. 종료");
 			System.out.println("-------------------");
 			String num = scan.next();
@@ -41,7 +42,14 @@ public class DeptMain {
 DeptService service = new DeptServiceImpl();						
 int n = service.insert(dto);
 System.out.println(n+" 개가 저장됨.");
-				
+
+			}else if("3".equals(num)) {
+				System.out.println("삭제할 부서번호를 입력하세요.");
+				String deptno = scan.next();
+				// DeptService 연동
+DeptService service = new DeptServiceImpl();						
+int n = service.delete(Integer.parseInt(deptno));
+System.out.println(n+" 개가 삭제됨.");				
 			}else {
 				System.out.println("번호를 잘못 입력했습니다.");
 			}

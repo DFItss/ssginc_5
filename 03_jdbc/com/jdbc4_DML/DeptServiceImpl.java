@@ -66,4 +66,25 @@ n = dao.insert(con, dto);
 return n;
 		}
 
+		@Override
+		public int delete(int deptno) {
+			int n = 0;
+			  Connection con = null;
+	    	  try {
+				  con =  DriverManager.getConnection(url, userid, passwd);
+				  //DeptDAO 연동
+				  DeptDAO dao = new  DeptDAO();
+n = dao.delete(con, deptno);
+	    	  }catch (SQLException e) {
+	  			e.printStackTrace();
+	  		  }finally {
+	  			   try {
+	  				if(con!=null)con.close();
+	  			} catch (SQLException e) {
+	  				e.printStackTrace();
+	  			}
+	  		  }//end finally
+	    	  return n;
+		}
+
 }
