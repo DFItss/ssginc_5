@@ -1,0 +1,44 @@
+
+ JDBC ( Java DataBase Connectivity )
+
+
+ 1. 개요
+   - 자바와 DB 연동하는 자바기술.
+
+ 2. 특징
+   - DBMS 종류와 독립적이다.
+     단 DBMS 벤더가 JDBC를 지원해야 된다. (*********)
+   - DBMS 벤더는 사용자가 만든 자바어플리케이션과 
+     DBMS 간의 연동을 위해서 클래스파일(*.jar 압축) 제공한다.
+   - DBMS 벤더에서 제공해준 jar 파일을 '드라이버(driver)'라고 부른다.
+
+      (*.class )                             (*.class )
+     자바어플리케이션  -------------------------- MySQL  ( mysql-connector-j-8.jar )
+                   -------------------------- Oracle ( ojdbc6-g.jar )
+		   -------------------------- MS-SQL ( *.jar)
+
+         자바                                      벤더
+	1)인터페이스                                MySQL
+	                        
+	Connection 인터페이스                  public class MYSQL_CONNECT implements Connection{
+	   abstract connect();                    public void connect(){}
+
+                                                 Oracle
+                                             public class ORACLE_CONNECT implements Connection{
+                                                  public void connect(){}
+       Connection con = new MYSQL_CONNECT();
+                  con = new ORACLE_CONNECT();
+                con.connect()
+
+3. mysql 연동하기 위한 환경설정
+
+   1) MySQL 드라이버 다운로드
+  
+   http://dev.mysql.com/downloads/connector/j > platform independent > 4.8M zip 다운 >
+   압축 해체 > mysql-connector-j-8.3.0.jar ( mysql 드라이버 )
+
+   2) 이클립스에서 MySQL 드라이버(jar)를 인식하도록 설정
+     - build path 한다고 부른다.
+    
+     - 자바프로젝트 선택 > 오른쪽 클릭 > build path > configure build path > 3번째 탭 libraries > 
+       classpath 선택하고 오른쪽 항목에서  Add External jars.. 클릭 > mysql-connector-j-8.3.0.jar 선택
