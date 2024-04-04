@@ -2,8 +2,11 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
 <mapper namespace="org.mybatis.example.BlogMapper">
-  <select id="selectBlog" resultType="Blog">
-    select * from Blog where id = #{id}
-  </select>
+    <!-- 전체조회 -->
+    <select id="findAll" resultType="com.dto.DeptDTO">
+    	select deptno, dname, loc
+    	from dept
+    </select>
 </mapper>
