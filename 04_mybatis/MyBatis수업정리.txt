@@ -25,3 +25,33 @@ MyBatis 프레임워크
      - 자바프로젝트 선택 > 오른쪽 클릭 > build path > configure build path > 3번째 탭 libraries > 
        classpath 선택하고 오른쪽 항목에서  Add External jars.. 클릭 >
         mysql-connector-j-8.3.0.jar 와 mybatis-3.5.14.jar 선택
+
+
+4. MyBatis 사용방법
+
+   1)  JDBC에서 사용했던 4가지 정보를 외부파일에 저장.
+       => jdbc.properties
+       => src 폴더에 저장. ( 패키지 설정 가능 )
+
+     * properties 에 저장하는 형식
+      key=value
+      key=value
+
+     jdbc.driver=com.mysql.cj.jdbc.Driver
+     jdbc.url=jdbc:mysql://localhost:3306/testdb
+     jdbc.userid=root
+     jdbc.passwd=1234
+
+   2) 최소 2개의 xml 파일이 필요
+     ==> *.xml 
+
+      가. 설정파일
+        - 용도: mybatis 사용시 환경설정 정보들 관리( DB연동정보, DTO별칭, mapper 등록)
+        - Configuration.xml
+
+
+      나. mapper 파일
+        - 용도: JDBC에서 사용했던 SQL문을 저장하는 파일.
+	- 테이블당 하나씩 작성.
+	- DeptMapper.xml
+	  EmpMapper.xml
