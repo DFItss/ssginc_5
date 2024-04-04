@@ -46,7 +46,7 @@ MyBatis 프레임워크
      ==> *.xml 
      => src 폴더에 저장. ( 패키지 설정 가능 )
 
-      가. 설정파일
+      가. 설정 파일
       https://mybatis.org/mybatis-3/getting-started.html#building-sqlsessionfactory-from-xml
         - 용도: mybatis 사용시 환경설정 정보들 관리( DB연동정보, DTO별칭, mapper 등록)
         - Configuration.xml
@@ -55,11 +55,11 @@ MyBatis 프레임워크
       나. mapper 파일
       https://mybatis.org/mybatis-3/getting-started.html#exploring-mapped-sql-statements
         - 용도: JDBC에서 사용했던 SQL문을 저장하는 파일.
-	- 테이블당 하나씩 작성.
+	- 테이블당 하나씩 작성. ( 테이블명Mapper.xml )
 	- DeptMapper.xml
 	  EmpMapper.xml
 
-    3) Configuration.xml 파일을 읽는 자바코드가 필요.
+     *  Configuration.xml 파일을 읽는 자바코드가 필요.
       ==> com.config.MySqlSessionFactory.java 만들고 복사해서 사용.
 
      public class MySqlSessionFactory {
@@ -84,7 +84,7 @@ sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 	}
 	
 
-    4) JDBC vs MyBatis
+    * JDBC vs MyBatis
 
       가. JDBC에서 필요한 API
 
@@ -97,3 +97,51 @@ sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
           - SqlSessionFactory
 	  - SqlSession (***********)
 	   ==> SqlSession session  = MySqlSessionFactory.getSession();
+
+
+    * SqlSession의 메서드	  
+     ==> DeptMapper.xml 에 있는 태그를 호출하는 메서드
+
+      가. select 작업
+	  # 단일 레코드 반환
+	  DeptDTO dto = session.selectOne("mapper의 id값");
+          DeptDTO dto = session.selectOne("mapper의 id값", Object obj); // obj는 where절에 사용
+
+	  # 다중 레코드 반환
+	  List<DeptDTO> list = session.selectList("mapper의 id값");
+          List<DeptDTO> list = session.selectList("mapper의 id값", Object obj); // obj는 where절에 사용
+
+      나. insert 작업
+	  int n = session.insert("mapper의 id값");
+          int n = session.insert("mapper의 id값", Object obj); // obj는 저장할 데이터
+
+      다. update 작업
+          int n = session.update("mapper의 id값");
+          int n = session.update("mapper의 id값", Object obj); // obj는 수정할 데이터
+
+      라. delete 작업
+
+          int n = session.delete("mapper의 id값");
+          int n = session.delete("mapper의 id값", Object obj); // obj는 삭제할 데이터
+
+
+   3) 하나의 레코드를 저장하는 DTO 작성 (******)
+     ==> select 된 결과인 레코드를 자동으로 DTO에 저장한다.
+         단, 연결고리가 존재한다. 
+	    테이블의 컬럼명(원칙은 컬럼헤더값)과 DTO의 변수명이 일치해야 된다.
+
+	 예>
+	     create table dept
+	     ( deptno INT PRIMARY KEY,
+	       dname  VARCHAR(20),
+	       loc    VARCHAR(20) );
+
+	     select deptno as no, dname, loc -- int deptno에 저장 안됨.
+	     from dept;
+
+	    public class DeptDTO{
+
+               int deptno;
+	       String dname;
+	       String loc;
+
