@@ -29,6 +29,7 @@
   <mappers>
     <!-- DeptMapper.xml 등록 -->
     <mapper resource="com/config/DeptMapper.xml"/>
+    <mapper resource="com/config/DeptMapper2.xml"/>
   </mappers>
 </configuration>
 
