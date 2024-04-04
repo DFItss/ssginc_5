@@ -4,6 +4,33 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <mapper namespace="com.config.DeptMapper2">
+   
+    <!--  삭제 -->
+    <delete id="remove" parameterType="int">
+       delete from dept
+        where deptno=#{deptno}
+    </delete>
+	<delete id="removeByDname" parameterType="string">
+       delete from dept
+        where dname=#{dname}
+    </delete>
+    <!-- 수정 -->
+     <update id="update" parameterType="DeptDTO" >
+        update dept
+        set dname = #{dname}, loc = #{loc}
+        where deptno=#{deptno}
+     </update>
+
+
+     <!-- 저장 -->
+     <insert id="save" parameterType="DeptDTO">
+        insert into dept ( deptno, dname, loc )
+        values ( #{deptno}, #{dname}, #{loc} )
+     </insert>
+     <insert id="save2" parameterType="DeptDTO">
+        insert into dept ( deptno, dname)
+        values ( #{deptno}, #{dname} )
+     </insert>
 
       <!-- 전체조회 -->
     <select id="findAll" resultType="DeptDTO">
