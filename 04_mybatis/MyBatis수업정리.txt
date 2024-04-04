@@ -1,0 +1,27 @@
+MyBatis 프레임워크
+
+1. 개요
+ - JDBC 사용을 편리하고 효율적으로 기능이 추가된 형태의 SQL Mapping Framework 프레임워크.
+ - ibatis ( OLD 버전 )
+
+2. 홈페이지에 가서 필요한 jar 다운로드 하자.
+  http://mybatis.org
+
+  1) mybatis-3.5.14 선택
+  2) assets
+     mybatis-3.5.14.zip 다운
+
+  3) 압축풀기
+    mybatis-3.5.14.jar ( build path 대상임)
+    mybatis-3.5.14.pdf ( 메뉴얼, https://mybatis.org/mybatis-3/ )
+
+3. 이클립스에서 build path
+   1) 프로젝트 생성
+   2) 2개의 jar 파일 build path
+     - mysql-connector-j-8.jar  ( mysql 드라이버 )
+     - mybatis-3.5.14.jar
+
+    
+     - 자바프로젝트 선택 > 오른쪽 클릭 > build path > configure build path > 3번째 탭 libraries > 
+       classpath 선택하고 오른쪽 항목에서  Add External jars.. 클릭 >
+        mysql-connector-j-8.3.0.jar 와 mybatis-3.5.14.jar 선택
