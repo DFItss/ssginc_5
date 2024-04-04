@@ -5,28 +5,28 @@
   
 <mapper namespace="org.mybatis.example.BlogMapper">
     <!-- 전체조회 -->
-    <select id="findAll" resultType="com.dto.DeptDTO">
+    <select id="findAll" resultType="DeptDTO">
     	select deptno as no, dname, loc
     	from dept
     </select>
     
     <!-- 조건조회1 -->
-    <select id="findByDeptno" resultType="com.dto.DeptDTO" parameterType="int">
+    <select id="findByDeptno" resultType="DeptDTO" parameterType="int">
         select deptno, dname, loc
     	from dept
     	where deptno = #{deptno}
     </select>
     
     <!-- 조건조회2 -->
-    <select id="findByDnameOrLoc" resultType="com.dto.DeptDTO"
-        parameterType="com.dto.DeptDTO">
+    <select id="findByDnameOrLoc" resultType="DeptDTO"
+        parameterType="DeptDTO">
         select deptno, dname, loc
     	from dept
     	where dname = #{dname} or loc = #{loc}
     </select>
     
      <!-- 조건조회4 -->
-    <select id="findByDnameOrLoc2" resultType="com.dto.DeptDTO"
+    <select id="findByDnameOrLoc2" resultType="DeptDTO"
         parameterType="hashmap">
         select deptno, dname, loc
     	from dept
