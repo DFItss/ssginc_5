@@ -9,8 +9,8 @@
   
   <!-- DTO 별칭-->
   <typeAliases>
-   <typeAlias type="com.dto.DeptDTO"  
-            alias="DeptDTO"/>
+   <typeAlias type="com.dto.DeptDTO"  alias="DeptDTO"/>
+    <typeAlias type="com.dto.EmpDTO"  alias="EmpDTO"/>
   </typeAliases>
   
   
@@ -30,6 +30,8 @@
     <!-- DeptMapper.xml 등록 -->
     <mapper resource="com/config/DeptMapper.xml"/>
     <mapper resource="com/config/DeptMapper2.xml"/>
+
+    <mapper resource="com/config/EmpMapper.xml"/>
   </mappers>
 </configuration>
 
