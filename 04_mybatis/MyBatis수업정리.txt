@@ -104,20 +104,20 @@ sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 
       가. select 작업
 	  # 단일 레코드 반환
-	  DeptDTO dto = session.selectOne("mapper의 id값");
-          DeptDTO dto = session.selectOne("mapper의 id값", Object obj); // obj는 where절에 사용
+	  DeptDTO dto = session.selectOne("namespace명.mapper의 id값");
+          DeptDTO dto = session.selectOne("namespace명.mapper의 id값", Object obj); // obj는 where절에 사용
 
 	  # 다중 레코드 반환
-	  List<DeptDTO> list = session.selectList("mapper의 id값");
-          List<DeptDTO> list = session.selectList("mapper의 id값", Object obj); // obj는 where절에 사용
+	  List<DeptDTO> list = session.selectList("namespace명.mapper의 id값");
+          List<DeptDTO> list = session.selectList("namespace명.mapper의 id값", Object obj); // obj는 where절에 사용
 
       나. insert 작업
-	  int n = session.insert("mapper의 id값");
-          int n = session.insert("mapper의 id값", Object obj); // obj는 저장할 데이터
+	  int n = session.insert("namespace명.mapper의 id값");
+          int n = session.insert("namespace명.mapper의 id값", Object obj); // obj는 저장할 데이터
 
       다. update 작업
-          int n = session.update("mapper의 id값");
-          int n = session.update("mapper의 id값", Object obj); // obj는 수정할 데이터
+          int n = session.update("namespace명.mapper의 id값");
+          int n = session.update("namespace명.mapper의 id값", Object obj); // obj는 수정할 데이터
 
       라. delete 작업
 
@@ -145,3 +145,47 @@ sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 	       String dname;
 	       String loc;
 
+     * parameterType="전달할 파라미터의 타입" 종류
+        https://mybatis.org/mybatis-3/configuration.html#typealiases
+
+
+
+     * 자동으로 select 한 결과가 DTO 저장(setXXX 이용)이 되고
+       반대로 파라미터로 전달한 DTO의 변수값이 #{변수값} ( getXXX 이용 )로 치환이 됨.
+
+       - 가능한이유? 테이블의 컬럼명과 DTO의 변수명이 일치하기 때문이다.
+                  정확한 문법은 컬럼명과 DTO의 getXXX() 와 setXXX()가 되어야 된다.
+
+
+     * id 값이 일치하지 않는 경우의 에러
+     Mapped Statements collection does not contain value for findByDnameOrLoc3
+
+    
+  4) com.dto.DeptDTO 의 별칭 지정하기
+  
+    ==>  com.dto.DeptDTO 을 DeptDTO(별칭) 지정
+    ==> Configuration.xml에서 별칭 지정하고 Mapper에서 별칭을 사용한다.
+
+    문법:
+       <typeAliases>
+          <typeAlias alias="DeptDTO" type="com.dto.DeptDTO"/>
+
+######################################################################
+
+5. MyBatis 동적sql 처리 ( emp 테이블로 실습 )
+
+ 1) 다중 insert 처리
+
+   mysql sql문:
+          insert into emp ( empno,ename,sal)
+	  valuse (10,'a',100),(20,'a',100),(),...;
+
+
+  mybatis sql문:
+       <insert id="multiInsert" parameterType="arraylist">
+          insert into emp ( empno,ename,sal)
+	  valuse
+	  <foreach  item="dto"    collection="list" , separator=",">
+	      (#{dto.empno},#{dto.ename} , #{dto.sal})
+	  </foreach>
+       </insert>
