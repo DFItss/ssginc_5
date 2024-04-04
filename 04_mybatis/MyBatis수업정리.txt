@@ -44,14 +44,56 @@ MyBatis 프레임워크
 
    2) 최소 2개의 xml 파일이 필요
      ==> *.xml 
+     => src 폴더에 저장. ( 패키지 설정 가능 )
 
       가. 설정파일
+      https://mybatis.org/mybatis-3/getting-started.html#building-sqlsessionfactory-from-xml
         - 용도: mybatis 사용시 환경설정 정보들 관리( DB연동정보, DTO별칭, mapper 등록)
         - Configuration.xml
-
+        
 
       나. mapper 파일
+      https://mybatis.org/mybatis-3/getting-started.html#exploring-mapped-sql-statements
         - 용도: JDBC에서 사용했던 SQL문을 저장하는 파일.
 	- 테이블당 하나씩 작성.
 	- DeptMapper.xml
 	  EmpMapper.xml
+
+    3) Configuration.xml 파일을 읽는 자바코드가 필요.
+      ==> com.config.MySqlSessionFactory.java 만들고 복사해서 사용.
+
+     public class MySqlSessionFactory {
+  
+	static SqlSessionFactory sqlSessionFactory;
+	static {
+		String resource = "com/config/Configuration.xml";
+		  InputStream inputStream=null;
+		try {
+			inputStream = Resources.getResourceAsStream(resource);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+	}//end static 블럭
+	
+	// SqlSessionFactory 로부터 SqlSession 얻는 메서드
+	public static SqlSession getSession() {
+		// MyBatis는 명시적으로 commit 지정해야 된다.
+		SqlSession session = sqlSessionFactory.openSession(); // openSession(false) 동일
+		return session;
+	}
+	
+
+    4) JDBC vs MyBatis
+
+      가. JDBC에서 필요한 API
+
+          - Connection
+	  - PreparedStatement
+	  - ResultSet
+
+      나. MyBatis에서 필요한 API
+
+          - SqlSessionFactory
+	  - SqlSession (***********)
+	   ==> SqlSession session  = MySqlSessionFactory.getSession();
