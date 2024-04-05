@@ -5,6 +5,39 @@
   
 <mapper namespace="com.config.EmpMapper">
 
+     <!-- 선택적인 update
+          update emp
+		 -set sal = 값
+		 -set ename = 값
+		 set sal = 값, ename = 값
+		 where empno= 값;
+      -->
+     <update id="update" parameterType="EmpDTO">
+     	  update emp
+     	  <set>
+     	    <if test="sal != 0">sal=#{sal},</if>
+     	    <if test="ename != null">ename=#{ename}</if>
+     	  </set>
+     	  where empno = #{empno}
+     </update> 
+
+
+
+     <!-- 
+         delete from emp
+		  where empno IN ( 800, 1000, .. )
+     -->
+    <delete id="remove" parameterType="arraylist">
+         delete from emp
+         where empno IN
+         <foreach item="x"  collection="list" 
+                 open="(" separator="," close=")">
+            #{x}
+         </foreach>
+    </delete>
+
+
+
     <!-- 
       insert into emp ( empno,ename,sal)
 	  valuse (10,'a',100),(20,'a',100),(),...
