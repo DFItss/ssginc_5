@@ -313,4 +313,17 @@ sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
                 List<EmpDTO> list7 = session.selectList("com.config.EmpMapper.paging", null, 
 		                           new RowBounds(skip, perPage));
 
-* CDATA 섹션 정리
+
+   8) CDATA 섹션 정리
+   => XML 문법
+   => CDATA (Character DATA) 표현식
+
+     <![CDATA[
+       SQL문
+     ]]>
+
+    * > : &gt;
+      <  : &lt;
+      공백: &nbsp;
+      "  : &quot;
+
