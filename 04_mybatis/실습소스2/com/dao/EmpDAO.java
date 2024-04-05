@@ -1,0 +1,25 @@
+package com.dao;
+
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSession;
+
+import com.dto.EmpDTO;
+
+public class EmpDAO {
+
+	public List<EmpDTO> findAll(SqlSession session){
+		List<EmpDTO> list = 
+				session.selectList("com.config.EmpMapper.findAll");
+		return list;
+	}
+	//save
+	public int save(SqlSession session, EmpDTO dto) {
+		
+		return 0;
+	}
+	//remove
+	public int remove(SqlSession session, int empno) {
+		return 0;
+	}
+}
