@@ -297,7 +297,20 @@ sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 	       
     7) 페이징 처리
 
-        가. 정렬
-
+        가. 내림차순 정렬 
+           <!-- 페이징 처리 -->
+	      <select id="paging" resultType="EmpDTO">
+		select empno, ename, sal
+		from emp
+		order by empno desc
+	      </select>
+	나. selectList("", 파라미터, new RoundBounds(skip, 갯수) )
+	 예>
+         	int curPage=2;
+		int perPage=3; // 페이지당 보여줄 레코드 갯수
+		int skip = (curPage-1)*perPage;
+		
+                List<EmpDTO> list7 = session.selectList("com.config.EmpMapper.paging", null, 
+		                           new RowBounds(skip, perPage));
 
 * CDATA 섹션 정리
