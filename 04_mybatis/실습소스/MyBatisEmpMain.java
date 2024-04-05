@@ -49,26 +49,28 @@ public class MyBatisEmpMain {
 //System.out.println(n4 + " 개가 수정됨.");		
 		
 		// 5. 다중 조건
-//		HashMap<String, String> map = new HashMap<>();
-////		map.put("xxx", "MANAGER");
-////		map.put("xxx", "SALESMAN");
-//List<EmpDTO> list5 = session.selectList("com.config.EmpMapper.multiChoose", map);	
-//System.out.println(list5);
+		HashMap<String, String> map = new HashMap<>();
+//		map.put("xxx", "MANAGER");  // select empno, sal from emp where sal > 1500 order by sal desc
+//		map.put("xxx", "SALESMAN"); // select empno, sal from emp where sal > 2500 order by sal desc
+List<EmpDTO> list5 = session.selectList("com.config.EmpMapper.multiChoose", map);	
+for (EmpDTO k : list5) {
+	System.out.println(k.getEmpno()+"\t"+ k.getJob()+ "\t" + k.getSal());
+}
 		
 		// 6. 단일 컬럼
 //int cnt = session.selectOne("com.config.EmpMapper.totalCount");
 //System.out.println("총레코드갯수:"+ cnt);
 		
 		//7. 페이징 처리
-		int curPage=1;
-		int perPage=3; // 페이지당 보여줄 레코드 갯수
-		int skip = (curPage-1)*perPage;
-		
-List<EmpDTO> list7 = session.selectList("com.config.EmpMapper.paging", null, 
-		                           new RowBounds(skip, perPage));
-for (EmpDTO xxx : list7) {
-	System.out.println(xxx.getEmpno()+"\t"+xxx.getEname());
-}
+//		int curPage=2;
+//		int perPage=3; // 페이지당 보여줄 레코드 갯수
+//		int skip = (curPage-1)*perPage;
+//		
+//List<EmpDTO> list7 = session.selectList("com.config.EmpMapper.paging", null, 
+//		                           new RowBounds(skip, perPage));
+//for (EmpDTO xxx : list7) {
+//	System.out.println(xxx.getEmpno()+"\t"+xxx.getEname());
+//}
 session.close();
 	}
 }

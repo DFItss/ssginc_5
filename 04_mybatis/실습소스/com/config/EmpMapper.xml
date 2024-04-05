@@ -26,14 +26,32 @@
                     job 이 'SALESMAN' 인 경우  sal > 2500 조회
 		    모두 아니면  sal > 3000 조회
        -->
-       <select id="multiChoose" parameterType="hashmap" resultType="EmpDTO">
-           select empno, sal 
+        <select id="multiChoose" parameterType="hashmap" resultType="EmpDTO">
+           select empno, job,  sal 
 		   from emp
 		   <where>
                <choose>
-                          <when test="xxx == 'MANAGER'">sal > 1500</when>
-                          <when test="xxx == 'SALESMAN'">sal > 2500</when>
-			  <otherwise>sal > 3000</otherwise>
+                          <when test="xxx == 'MANAGER'"> 
+                              <![CDATA[sal < 1500]]>
+                           </when>
+                          <when test="xxx == 'SALESMAN'">
+                            <![CDATA[sal < 2500]]>
+                          </when>
+			  <otherwise>
+			    <![CDATA[sal < 3000]]>
+			  </otherwise>
+		       </choose>
+		   </where>
+		   order by sal asc
+       </select>
+       <select id="multiChoose2" parameterType="hashmap" resultType="EmpDTO">
+           select empno, job,  sal 
+		   from emp
+		   <where>
+               <choose>
+                          <when test="xxx == 'MANAGER'"> sal &lt; 1500</when>
+                          <when test="xxx == 'SALESMAN'">sal &lt; 2500</when>
+			  <otherwise>sal &lt; 3000</otherwise>
 		       </choose>
 		   </where>
 		   order by sal asc
