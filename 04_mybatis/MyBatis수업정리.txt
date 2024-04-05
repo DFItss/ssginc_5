@@ -421,3 +421,60 @@ sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 	}
 	
 ##################################################################################
+
+    바.  Service 작성
+ 
+     a. 구조
+      
+       com.service.EmpService (인터페이스)
+          |
+      com.service.EmpServiceImpl (클래스)
+    
+     b. 역할
+        - 비즈니스 로직
+	- 트랜잭션 처리 (***** )
+
+     c. 특징
+        - SqlSession 만 얻음.
+          DAO로 SqlSession를 전달해야 됨.
+
+
+    * Connection 과 SqlSession 특징
+    => 반드시 메서드안에서 로컬 변수로 얻어야 된다. ( thread-safe 보장 )
+      이유는 공유하면 절대 안됨.
+     # JDBC 버전
+
+     public int insert(){
+        Connection con = null;
+
+	con.close();
+     }
+     
+      public int select(){
+        Connection con = null;
+
+        con.close();
+     }
+
+   사. DAO 작성
+
+    a. 구조
+      - com.dao.EmpDAO.java
+
+    b. 역할
+      - MySQL 연동
+      
+     c. 특징
+      - Service에서 전달한 SqlSession으로 메서드 호출해서 DB 연동.
+
+   아. Main 작성
+
+      a. 구조
+      - com.dao.EmpMain
+
+      b. 역할
+      - 사용자 데이터 입력 및 출력 ( 화면처리 )
+      
+     c. 특징
+      - Service 와 연동
+      - EmpDAO 생성해서 Service에 설정. (****)
