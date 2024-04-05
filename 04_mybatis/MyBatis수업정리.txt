@@ -214,9 +214,29 @@ sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
                          #{x}
 		    </foreach>
                   <where> 
-
-
   3) 다중 update 문
+      
+       mysql sql문:
+                   update emp
+		   set sal = sal + 100
+                   where empno IN ( 800, 1000, .. );
+
+       mybatis sql문:
+
+                <update id="update" paratmeter="arraylist">
+                   update emp
+		   set sal = sal + 100
+                   <where>
+                      <foreach item="x" collection="list" open="empno IN (" 
+		                        separator="," close=")">
+                           #{x}
+
+                      </foreach>
+		   </where>
+		</update>
+
+
+  4) 선택적 update 문
 
         
       mysql sql문: 어떤 컬럼을 수정할지 잘 모르는 경우
@@ -236,5 +256,48 @@ sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 		    <if test="ename !=null">ename=#{ename}</if>
                 </set>
 		where empno = 값
+
+
+   5) 조건이 여러개
+
+      mysql sql문:   job 이 'MANAGER' 인 경우  sal > 1500 조회
+                    job 이 'SALESMAN' 인 경우  sal > 2500 조회
+		    모두 아니면  sal > 3000 조회
+
+       mybatis sql문:
+         
+	           select 
+		   from emp
+		   <where>
+                       <choose>
+                          <when test="job == 'MANAGER'">sal > 1500</when>
+                          <when test="job == 'SALESMAN'">sal > 2500</when>
+			  <otherwise>sal > 3000</otherwise>
+		       </choose>
+		   </where>
+                
+    
+    6) 단일값 조회
+
+       예>
+           select count(*) as cnt
+	   from emp;
+
+           cnt
+	   -------
+	   15
+
+       JDBC 이용:
+               rs.next();
+	       rs.getInt(1);  // rs.getInt("cnt")
+
+       MyBatis 이용
+                <select id="cnt"  resultType="int">
+	        int cnt =session.selectOne("cnt");
+	       
+    7) 페이징 처리
+
+        가. 정렬
+
 
 * CDATA 섹션 정리
