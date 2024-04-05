@@ -189,3 +189,52 @@ sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 	      (#{dto.empno},#{dto.ename} , #{dto.sal})
 	  </foreach>
        </insert>
+
+ 2) 다중 delete 처리
+
+     mysql sql문:
+                  delete from emp
+		  where sal IN ( 800, 1000, .. );
+
+    mybatis sql문1: 무조건 sal 전달됨.
+                   
+               <delete id="remove" parameterType="arraylist">
+		  delete from emp
+		  where sal IN
+	           <foreach   item="x"  collection="list" open="(" separator="," close=")">
+                         #{x}
+		  </foreach>
+
+   mybatis sql문2:  sal 전달안될수도 있는 경우.
+                   
+               <delete id="remove" parameterType="arraylist">
+		  delete from emp
+		  <where> 
+	            <foreach   item="x"  collection="list" open="sal IN (" separator=","     close=")">
+                         #{x}
+		    </foreach>
+                  <where> 
+
+
+  3) 다중 update 문
+
+        
+      mysql sql문: 어떤 컬럼을 수정할지 잘 모르는 경우
+                  예> sal 또는 ename 또는 2개모두
+
+                 update emp
+		 --set sal = 값
+		 --set ename = 값
+		 set sal = 값, ename = 값
+		 where empno= 값;
+
+      mybatis sql문:
+                
+		update emp
+                <set>
+                    <if test="sal != 0">sal=#{sal},  </if>
+		    <if test="ename !=null">ename=#{ename}</if>
+                </set>
+		where empno = 값
+
+* CDATA 섹션 정리
