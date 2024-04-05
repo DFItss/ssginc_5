@@ -19,7 +19,7 @@ public class EmpDAO {
 		return 0;
 	}
 	//remove
-	public int remove(SqlSession session, int empno) {
-		return 0;
+	public int removeByEmpno(SqlSession session, int empno) {
+		return session.delete("com.config.EmpMapper.removeByEmpno", empno);
 	}
 }
