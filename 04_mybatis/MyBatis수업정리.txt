@@ -1,39 +1,39 @@
-MyBatis ÇÁ·¹ÀÓ¿öÅ©
+MyBatis í”„ë ˆì„ì›Œí¬
 
-1. °³¿ä
- - JDBC »ç¿ëÀ» Æí¸®ÇÏ°í È¿À²ÀûÀ¸·Î ±â´ÉÀÌ Ãß°¡µÈ ÇüÅÂÀÇ SQL Mapping Framework ÇÁ·¹ÀÓ¿öÅ©.
- - ibatis ( OLD ¹öÀü )
+1. ê°œìš”
+ - JDBC ì‚¬ìš©ì„ í¸ë¦¬í•˜ê³  íš¨ìœ¨ì ìœ¼ë¡œ ê¸°ëŠ¥ì´ ì¶”ê°€ëœ í˜•íƒœì˜ SQL Mapping Framework í”„ë ˆì„ì›Œí¬.
+ - ibatis ( OLD ë²„ì „ )
 
-2. È¨ÆäÀÌÁö¿¡ °¡¼­ ÇÊ¿äÇÑ jar ´Ù¿î·Îµå ÇÏÀÚ.
+2. í™ˆí˜ì´ì§€ì— ê°€ì„œ í•„ìš”í•œ jar ë‹¤ìš´ë¡œë“œ í•˜ì.
   http://mybatis.org
 
-  1) mybatis-3.5.14 ¼±ÅÃ
+  1) mybatis-3.5.14 ì„ íƒ
   2) assets
-     mybatis-3.5.14.zip ´Ù¿î
+     mybatis-3.5.14.zip ë‹¤ìš´
 
-  3) ¾ĞÃàÇ®±â
-    mybatis-3.5.14.jar ( build path ´ë»óÀÓ)
-    mybatis-3.5.14.pdf ( ¸Ş´º¾ó, https://mybatis.org/mybatis-3/ )
+  3) ì••ì¶•í’€ê¸°
+    mybatis-3.5.14.jar ( build path ëŒ€ìƒì„)
+    mybatis-3.5.14.pdf ( ë©”ë‰´ì–¼, https://mybatis.org/mybatis-3/ )
 
-3. ÀÌÅ¬¸³½º¿¡¼­ build path
-   1) ÇÁ·ÎÁ§Æ® »ı¼º
-   2) 2°³ÀÇ jar ÆÄÀÏ build path
-     - mysql-connector-j-8.jar  ( mysql µå¶óÀÌ¹ö )
+3. ì´í´ë¦½ìŠ¤ì—ì„œ build path
+   1) í”„ë¡œì íŠ¸ ìƒì„±
+   2) 2ê°œì˜ jar íŒŒì¼ build path
+     - mysql-connector-j-8.jar  ( mysql ë“œë¼ì´ë²„ )
      - mybatis-3.5.14.jar
 
     
-     - ÀÚ¹ÙÇÁ·ÎÁ§Æ® ¼±ÅÃ > ¿À¸¥ÂÊ Å¬¸¯ > build path > configure build path > 3¹øÂ° ÅÇ libraries > 
-       classpath ¼±ÅÃÇÏ°í ¿À¸¥ÂÊ Ç×¸ñ¿¡¼­  Add External jars.. Å¬¸¯ >
-        mysql-connector-j-8.3.0.jar ¿Í mybatis-3.5.14.jar ¼±ÅÃ
+     - ìë°”í”„ë¡œì íŠ¸ ì„ íƒ > ì˜¤ë¥¸ìª½ í´ë¦­ > build path > configure build path > 3ë²ˆì§¸ íƒ­ libraries > 
+       classpath ì„ íƒí•˜ê³  ì˜¤ë¥¸ìª½ í•­ëª©ì—ì„œ  Add External jars.. í´ë¦­ >
+        mysql-connector-j-8.3.0.jar ì™€ mybatis-3.5.14.jar ì„ íƒ
 
 
-4. MyBatis »ç¿ë¹æ¹ı
+4. MyBatis ì‚¬ìš©ë°©ë²•
 
-   1)  JDBC¿¡¼­ »ç¿ëÇß´ø 4°¡Áö Á¤º¸¸¦ ¿ÜºÎÆÄÀÏ¿¡ ÀúÀå.
+   1)  JDBCì—ì„œ ì‚¬ìš©í–ˆë˜ 4ê°€ì§€ ì •ë³´ë¥¼ ì™¸ë¶€íŒŒì¼ì— ì €ì¥.
        => jdbc.properties
-       => src Æú´õ¿¡ ÀúÀå. ( ÆĞÅ°Áö ¼³Á¤ °¡´É )
+       => src í´ë”ì— ì €ì¥. ( íŒ¨í‚¤ì§€ ì„¤ì • ê°€ëŠ¥ )
 
-     * properties ¿¡ ÀúÀåÇÏ´Â Çü½Ä
+     * properties ì— ì €ì¥í•˜ëŠ” í˜•ì‹
       key=value
       key=value
 
@@ -42,25 +42,25 @@ MyBatis ÇÁ·¹ÀÓ¿öÅ©
      jdbc.userid=root
      jdbc.passwd=1234
 
-   2) ÃÖ¼Ò 2°³ÀÇ xml ÆÄÀÏÀÌ ÇÊ¿ä
+   2) ìµœì†Œ 2ê°œì˜ xml íŒŒì¼ì´ í•„ìš”
      ==> *.xml 
-     => src Æú´õ¿¡ ÀúÀå. ( ÆĞÅ°Áö ¼³Á¤ °¡´É )
+     => src í´ë”ì— ì €ì¥. ( íŒ¨í‚¤ì§€ ì„¤ì • ê°€ëŠ¥ )
 
-      °¡. ¼³Á¤ ÆÄÀÏ
+      ê°€. ì„¤ì • íŒŒì¼
       https://mybatis.org/mybatis-3/getting-started.html#building-sqlsessionfactory-from-xml
-        - ¿ëµµ: mybatis »ç¿ë½Ã È¯°æ¼³Á¤ Á¤º¸µé °ü¸®( DB¿¬µ¿Á¤º¸, DTOº°Äª, mapper µî·Ï)
+        - ìš©ë„: mybatis ì‚¬ìš©ì‹œ í™˜ê²½ì„¤ì • ì •ë³´ë“¤ ê´€ë¦¬( DBì—°ë™ì •ë³´, DTOë³„ì¹­, mapper ë“±ë¡)
         - Configuration.xml
         
 
-      ³ª. mapper ÆÄÀÏ
+      ë‚˜. mapper íŒŒì¼
       https://mybatis.org/mybatis-3/getting-started.html#exploring-mapped-sql-statements
-        - ¿ëµµ: JDBC¿¡¼­ »ç¿ëÇß´ø SQL¹®À» ÀúÀåÇÏ´Â ÆÄÀÏ.
-	- Å×ÀÌºí´ç ÇÏ³ª¾¿ ÀÛ¼º. ( Å×ÀÌºí¸íMapper.xml )
+        - ìš©ë„: JDBCì—ì„œ ì‚¬ìš©í–ˆë˜ SQLë¬¸ì„ ì €ì¥í•˜ëŠ” íŒŒì¼.
+	- í…Œì´ë¸”ë‹¹ í•˜ë‚˜ì”© ì‘ì„±. ( í…Œì´ë¸”ëª…Mapper.xml )
 	- DeptMapper.xml
 	  EmpMapper.xml
 
-     *  Configuration.xml ÆÄÀÏÀ» ÀĞ´Â ÀÚ¹ÙÄÚµå°¡ ÇÊ¿ä.
-      ==> com.config.MySqlSessionFactory.java ¸¸µé°í º¹»çÇØ¼­ »ç¿ë.
+     *  Configuration.xml íŒŒì¼ì„ ì½ëŠ” ìë°”ì½”ë“œê°€ í•„ìš”.
+      ==> com.config.MySqlSessionFactory.java ë§Œë“¤ê³  ë³µì‚¬í•´ì„œ ì‚¬ìš©.
 
      public class MySqlSessionFactory {
   
@@ -74,69 +74,69 @@ MyBatis ÇÁ·¹ÀÓ¿öÅ©
 			e.printStackTrace();
 		}
 sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
-	}//end static ºí·°
+	}//end static ë¸”ëŸ­
 	
-	// SqlSessionFactory ·ÎºÎÅÍ SqlSession ¾ò´Â ¸Ş¼­µå
+	// SqlSessionFactory ë¡œë¶€í„° SqlSession ì–»ëŠ” ë©”ì„œë“œ
 	public static SqlSession getSession() {
-		// MyBatis´Â ¸í½ÃÀûÀ¸·Î commit ÁöÁ¤ÇØ¾ß µÈ´Ù.
-		SqlSession session = sqlSessionFactory.openSession(); // openSession(false) µ¿ÀÏ
+		// MyBatisëŠ” ëª…ì‹œì ìœ¼ë¡œ commit ì§€ì •í•´ì•¼ ëœë‹¤.
+		SqlSession session = sqlSessionFactory.openSession(); // openSession(false) ë™ì¼
 		return session;
 	}
 	
 
     * JDBC vs MyBatis
 
-      °¡. JDBC¿¡¼­ ÇÊ¿äÇÑ API
+      ê°€. JDBCì—ì„œ í•„ìš”í•œ API
 
           - Connection
 	  - PreparedStatement
 	  - ResultSet
 
-      ³ª. MyBatis¿¡¼­ ÇÊ¿äÇÑ API
+      ë‚˜. MyBatisì—ì„œ í•„ìš”í•œ API
 
           - SqlSessionFactory
 	  - SqlSession (***********)
 	   ==> SqlSession session  = MySqlSessionFactory.getSession();
 
 
-    * SqlSessionÀÇ ¸Ş¼­µå	  
-     ==> DeptMapper.xml ¿¡ ÀÖ´Â ÅÂ±×¸¦ È£ÃâÇÏ´Â ¸Ş¼­µå
+    * SqlSessionì˜ ë©”ì„œë“œ	  
+     ==> DeptMapper.xml ì— ìˆëŠ” íƒœê·¸ë¥¼ í˜¸ì¶œí•˜ëŠ” ë©”ì„œë“œ
 
-      °¡. select ÀÛ¾÷
-	  # ´ÜÀÏ ·¹ÄÚµå ¹İÈ¯
-	  DeptDTO dto = session.selectOne("namespace¸í.mapperÀÇ id°ª");
-          DeptDTO dto = session.selectOne("namespace¸í.mapperÀÇ id°ª", Object obj); // obj´Â whereÀı¿¡ »ç¿ë
+      ê°€. select ì‘ì—…
+	  # ë‹¨ì¼ ë ˆì½”ë“œ ë°˜í™˜
+	  DeptDTO dto = session.selectOne("namespaceëª….mapperì˜ idê°’");
+          DeptDTO dto = session.selectOne("namespaceëª….mapperì˜ idê°’", Object obj); // objëŠ” whereì ˆì— ì‚¬ìš©
 
-	  # ´ÙÁß ·¹ÄÚµå ¹İÈ¯
-	  List<DeptDTO> list = session.selectList("namespace¸í.mapperÀÇ id°ª");
-          List<DeptDTO> list = session.selectList("namespace¸í.mapperÀÇ id°ª", Object obj); // obj´Â whereÀı¿¡ »ç¿ë
+	  # ë‹¤ì¤‘ ë ˆì½”ë“œ ë°˜í™˜
+	  List<DeptDTO> list = session.selectList("namespaceëª….mapperì˜ idê°’");
+          List<DeptDTO> list = session.selectList("namespaceëª….mapperì˜ idê°’", Object obj); // objëŠ” whereì ˆì— ì‚¬ìš©
 
-      ³ª. insert ÀÛ¾÷
-	  int n = session.insert("namespace¸í.mapperÀÇ id°ª");
-          int n = session.insert("namespace¸í.mapperÀÇ id°ª", Object obj); // obj´Â ÀúÀåÇÒ µ¥ÀÌÅÍ
+      ë‚˜. insert ì‘ì—…
+	  int n = session.insert("namespaceëª….mapperì˜ idê°’");
+          int n = session.insert("namespaceëª….mapperì˜ idê°’", Object obj); // objëŠ” ì €ì¥í•  ë°ì´í„°
 
-      ´Ù. update ÀÛ¾÷
-          int n = session.update("namespace¸í.mapperÀÇ id°ª");
-          int n = session.update("namespace¸í.mapperÀÇ id°ª", Object obj); // obj´Â ¼öÁ¤ÇÒ µ¥ÀÌÅÍ
+      ë‹¤. update ì‘ì—…
+          int n = session.update("namespaceëª….mapperì˜ idê°’");
+          int n = session.update("namespaceëª….mapperì˜ idê°’", Object obj); // objëŠ” ìˆ˜ì •í•  ë°ì´í„°
 
-      ¶ó. delete ÀÛ¾÷
+      ë¼. delete ì‘ì—…
 
-          int n = session.delete("mapperÀÇ id°ª");
-          int n = session.delete("mapperÀÇ id°ª", Object obj); // obj´Â »èÁ¦ÇÒ µ¥ÀÌÅÍ
+          int n = session.delete("mapperì˜ idê°’");
+          int n = session.delete("mapperì˜ idê°’", Object obj); // objëŠ” ì‚­ì œí•  ë°ì´í„°
 
 
-   3) ÇÏ³ªÀÇ ·¹ÄÚµå¸¦ ÀúÀåÇÏ´Â DTO ÀÛ¼º (******)
-     ==> select µÈ °á°úÀÎ ·¹ÄÚµå¸¦ ÀÚµ¿À¸·Î DTO¿¡ ÀúÀåÇÑ´Ù.
-         ´Ü, ¿¬°á°í¸®°¡ Á¸ÀçÇÑ´Ù. 
-	    Å×ÀÌºíÀÇ ÄÃ·³¸í(¿øÄ¢Àº ÄÃ·³Çì´õ°ª)°ú DTOÀÇ º¯¼ö¸íÀÌ ÀÏÄ¡ÇØ¾ß µÈ´Ù.
+   3) í•˜ë‚˜ì˜ ë ˆì½”ë“œë¥¼ ì €ì¥í•˜ëŠ” DTO ì‘ì„± (******)
+     ==> select ëœ ê²°ê³¼ì¸ ë ˆì½”ë“œë¥¼ ìë™ìœ¼ë¡œ DTOì— ì €ì¥í•œë‹¤.
+         ë‹¨, ì—°ê²°ê³ ë¦¬ê°€ ì¡´ì¬í•œë‹¤. 
+	    í…Œì´ë¸”ì˜ ì»¬ëŸ¼ëª…(ì›ì¹™ì€ ì»¬ëŸ¼í—¤ë”ê°’)ê³¼ DTOì˜ ë³€ìˆ˜ëª…ì´ ì¼ì¹˜í•´ì•¼ ëœë‹¤.
 
-	 ¿¹>
+	 ì˜ˆ>
 	     create table dept
 	     ( deptno INT PRIMARY KEY,
 	       dname  VARCHAR(20),
 	       loc    VARCHAR(20) );
 
-	     select deptno as no, dname, loc -- int deptno¿¡ ÀúÀå ¾ÈµÊ.
+	     select deptno as no, dname, loc -- int deptnoì— ì €ì¥ ì•ˆë¨.
 	     from dept;
 
 	    public class DeptDTO{
@@ -145,43 +145,43 @@ sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 	       String dname;
 	       String loc;
 
-     * parameterType="Àü´ŞÇÒ ÆÄ¶ó¹ÌÅÍÀÇ Å¸ÀÔ" Á¾·ù
+     * parameterType="ì „ë‹¬í•  íŒŒë¼ë¯¸í„°ì˜ íƒ€ì…" ì¢…ë¥˜
         https://mybatis.org/mybatis-3/configuration.html#typealiases
 
 
 
-     * ÀÚµ¿À¸·Î select ÇÑ °á°ú°¡ DTO ÀúÀå(setXXX ÀÌ¿ë)ÀÌ µÇ°í
-       ¹İ´ë·Î ÆÄ¶ó¹ÌÅÍ·Î Àü´ŞÇÑ DTOÀÇ º¯¼ö°ªÀÌ #{º¯¼ö°ª} ( getXXX ÀÌ¿ë )·Î Ä¡È¯ÀÌ µÊ.
+     * ìë™ìœ¼ë¡œ select í•œ ê²°ê³¼ê°€ DTO ì €ì¥(setXXX ì´ìš©)ì´ ë˜ê³ 
+       ë°˜ëŒ€ë¡œ íŒŒë¼ë¯¸í„°ë¡œ ì „ë‹¬í•œ DTOì˜ ë³€ìˆ˜ê°’ì´ #{ë³€ìˆ˜ê°’} ( getXXX ì´ìš© )ë¡œ ì¹˜í™˜ì´ ë¨.
 
-       - °¡´ÉÇÑÀÌÀ¯? Å×ÀÌºíÀÇ ÄÃ·³¸í°ú DTOÀÇ º¯¼ö¸íÀÌ ÀÏÄ¡ÇÏ±â ¶§¹®ÀÌ´Ù.
-                  Á¤È®ÇÑ ¹®¹ıÀº ÄÃ·³¸í°ú DTOÀÇ getXXX() ¿Í setXXX()°¡ µÇ¾î¾ß µÈ´Ù.
+       - ê°€ëŠ¥í•œì´ìœ ? í…Œì´ë¸”ì˜ ì»¬ëŸ¼ëª…ê³¼ DTOì˜ ë³€ìˆ˜ëª…ì´ ì¼ì¹˜í•˜ê¸° ë•Œë¬¸ì´ë‹¤.
+                  ì •í™•í•œ ë¬¸ë²•ì€ ì»¬ëŸ¼ëª…ê³¼ DTOì˜ getXXX() ì™€ setXXX()ê°€ ë˜ì–´ì•¼ ëœë‹¤.
 
 
-     * id °ªÀÌ ÀÏÄ¡ÇÏÁö ¾Ê´Â °æ¿ìÀÇ ¿¡·¯
+     * id ê°’ì´ ì¼ì¹˜í•˜ì§€ ì•ŠëŠ” ê²½ìš°ì˜ ì—ëŸ¬
      Mapped Statements collection does not contain value for findByDnameOrLoc3
 
     
-  4) com.dto.DeptDTO ÀÇ º°Äª ÁöÁ¤ÇÏ±â
+  4) com.dto.DeptDTO ì˜ ë³„ì¹­ ì§€ì •í•˜ê¸°
   
-    ==>  com.dto.DeptDTO À» DeptDTO(º°Äª) ÁöÁ¤
-    ==> Configuration.xml¿¡¼­ º°Äª ÁöÁ¤ÇÏ°í Mapper¿¡¼­ º°ÄªÀ» »ç¿ëÇÑ´Ù.
+    ==>  com.dto.DeptDTO ì„ DeptDTO(ë³„ì¹­) ì§€ì •
+    ==> Configuration.xmlì—ì„œ ë³„ì¹­ ì§€ì •í•˜ê³  Mapperì—ì„œ ë³„ì¹­ì„ ì‚¬ìš©í•œë‹¤.
 
-    ¹®¹ı:
+    ë¬¸ë²•:
        <typeAliases>
           <typeAlias alias="DeptDTO" type="com.dto.DeptDTO"/>
 
 ######################################################################
 
-5. MyBatis µ¿Àûsql Ã³¸® ( emp Å×ÀÌºí·Î ½Ç½À )
+5. MyBatis ë™ì sql ì²˜ë¦¬ ( emp í…Œì´ë¸”ë¡œ ì‹¤ìŠµ )
 
- 1) ´ÙÁß insert Ã³¸®
+ 1) ë‹¤ì¤‘ insert ì²˜ë¦¬
 
-   mysql sql¹®:
+   mysql sqlë¬¸:
           insert into emp ( empno,ename,sal)
 	  valuse (10,'a',100),(20,'a',100),(),...;
 
 
-  mybatis sql¹®:
+  mybatis sqlë¬¸:
        <insert id="multiInsert" parameterType="arraylist">
           insert into emp ( empno,ename,sal)
 	  valuse
@@ -190,13 +190,13 @@ sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 	  </foreach>
        </insert>
 
- 2) ´ÙÁß delete Ã³¸®
+ 2) ë‹¤ì¤‘ delete ì²˜ë¦¬
 
-     mysql sql¹®:
+     mysql sqlë¬¸:
                   delete from emp
 		  where sal IN ( 800, 1000, .. );
 
-    mybatis sql¹®1: ¹«Á¶°Ç sal Àü´ŞµÊ.
+    mybatis sqlë¬¸1: ë¬´ì¡°ê±´ sal ì „ë‹¬ë¨.
                    
                <delete id="remove" parameterType="arraylist">
 		  delete from emp
@@ -205,7 +205,7 @@ sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
                          #{x}
 		  </foreach>
 
-   mybatis sql¹®2:  sal Àü´Ş¾ÈµÉ¼öµµ ÀÖ´Â °æ¿ì.
+   mybatis sqlë¬¸2:  sal ì „ë‹¬ì•ˆë ìˆ˜ë„ ìˆëŠ” ê²½ìš°.
                    
                <delete id="remove" parameterType="arraylist">
 		  delete from emp
@@ -214,14 +214,14 @@ sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
                          #{x}
 		    </foreach>
                   <where> 
-  3) ´ÙÁß update ¹®
+  3) ë‹¤ì¤‘ update ë¬¸
       
-       mysql sql¹®:
+       mysql sqlë¬¸:
                    update emp
 		   set sal = sal + 100
                    where empno IN ( 800, 1000, .. );
 
-       mybatis sql¹®:
+       mybatis sqlë¬¸:
 
                 <update id="update" paratmeter="arraylist">
                    update emp
@@ -236,35 +236,35 @@ sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 		</update>
 
 
-  4) ¼±ÅÃÀû update ¹®
+  4) ì„ íƒì  update ë¬¸
 
         
-      mysql sql¹®: ¾î¶² ÄÃ·³À» ¼öÁ¤ÇÒÁö Àß ¸ğ¸£´Â °æ¿ì
-                  ¿¹> sal ¶Ç´Â ename ¶Ç´Â 2°³¸ğµÎ
+      mysql sqlë¬¸: ì–´ë–¤ ì»¬ëŸ¼ì„ ìˆ˜ì •í• ì§€ ì˜ ëª¨ë¥´ëŠ” ê²½ìš°
+                  ì˜ˆ> sal ë˜ëŠ” ename ë˜ëŠ” 2ê°œëª¨ë‘
 
                  update emp
-		 --set sal = °ª
-		 --set ename = °ª
-		 set sal = °ª, ename = °ª
-		 where empno= °ª;
+		 --set sal = ê°’
+		 --set ename = ê°’
+		 set sal = ê°’, ename = ê°’
+		 where empno= ê°’;
 
-      mybatis sql¹®:
+      mybatis sqlë¬¸:
                 
 		update emp
                 <set>
                     <if test="sal != 0">sal=#{sal},  </if>
 		    <if test="ename !=null">ename=#{ename}</if>
                 </set>
-		where empno = °ª
+		where empno = ê°’
 
 
-   5) Á¶°ÇÀÌ ¿©·¯°³
+   5) ì¡°ê±´ì´ ì—¬ëŸ¬ê°œ
 
-      mysql sql¹®:   job ÀÌ 'MANAGER' ÀÎ °æ¿ì  sal > 1500 Á¶È¸
-                    job ÀÌ 'SALESMAN' ÀÎ °æ¿ì  sal > 2500 Á¶È¸
-		    ¸ğµÎ ¾Æ´Ï¸é  sal > 3000 Á¶È¸
+      mysql sqlë¬¸:   job ì´ 'MANAGER' ì¸ ê²½ìš°  sal > 1500 ì¡°íšŒ
+                    job ì´ 'SALESMAN' ì¸ ê²½ìš°  sal > 2500 ì¡°íšŒ
+		    ëª¨ë‘ ì•„ë‹ˆë©´  sal > 3000 ì¡°íšŒ
 
-       mybatis sql¹®:
+       mybatis sqlë¬¸:
          
 	           select 
 		   from emp
@@ -277,9 +277,9 @@ sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 		   </where>
                 
     
-    6) ´ÜÀÏ°ª Á¶È¸
+    6) ë‹¨ì¼ê°’ ì¡°íšŒ
 
-       ¿¹>
+       ì˜ˆ>
            select count(*) as cnt
 	   from emp;
 
@@ -287,116 +287,116 @@ sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 	   -------
 	   15
 
-       JDBC ÀÌ¿ë:
+       JDBC ì´ìš©:
                rs.next();
 	       rs.getInt(1);  // rs.getInt("cnt")
 
-       MyBatis ÀÌ¿ë
+       MyBatis ì´ìš©
                 <select id="cnt"  resultType="int">
 	        int cnt =session.selectOne("cnt");
 	       
-    7) ÆäÀÌÂ¡ Ã³¸®
+    7) í˜ì´ì§• ì²˜ë¦¬
 
-        °¡. ³»¸²Â÷¼ø Á¤·Ä 
-           <!-- ÆäÀÌÂ¡ Ã³¸® -->
+        ê°€. ë‚´ë¦¼ì°¨ìˆœ ì •ë ¬ 
+           <!-- í˜ì´ì§• ì²˜ë¦¬ -->
 	      <select id="paging" resultType="EmpDTO">
 		select empno, ename, sal
 		from emp
 		order by empno desc
 	      </select>
-	³ª. selectList("", ÆÄ¶ó¹ÌÅÍ, new RoundBounds(skip, °¹¼ö) )
-	 ¿¹>
+	ë‚˜. selectList("", íŒŒë¼ë¯¸í„°, new RoundBounds(skip, ê°¯ìˆ˜) )
+	 ì˜ˆ>
          	int curPage=2;
-		int perPage=3; // ÆäÀÌÁö´ç º¸¿©ÁÙ ·¹ÄÚµå °¹¼ö
+		int perPage=3; // í˜ì´ì§€ë‹¹ ë³´ì—¬ì¤„ ë ˆì½”ë“œ ê°¯ìˆ˜
 		int skip = (curPage-1)*perPage;
 		
                 List<EmpDTO> list7 = session.selectList("com.config.EmpMapper.paging", null, 
 		                           new RowBounds(skip, perPage));
 
 
-   8) CDATA ¼½¼Ç Á¤¸®
-   => XML ¹®¹ı
-   => CDATA (Character DATA) Ç¥Çö½Ä
+   8) CDATA ì„¹ì…˜ ì •ë¦¬
+   => XML ë¬¸ë²•
+   => CDATA (Character DATA) í‘œí˜„ì‹
 
      <![CDATA[
-       SQL¹®
+       SQLë¬¸
      ]]>
 
     * > : &gt;
       <  : &lt;
-      °ø¹é: &nbsp;
+      ê³µë°±: &nbsp;
       "  : &quot;
 
 #############################################################
-Mybatis ¾ÆÅ°ÅØÃÄ
+Mybatis ì•„í‚¤í…ì³
 
-1) ¾ÆÅ°ÅØÃÄ
-                           EmpService(ÀÎÅÍÆäÀÌ½º)
+1) ì•„í‚¤í…ì³
+                           EmpService(ì¸í„°í˜ì´ìŠ¤)
                                |
- EmpMain       <-------->  EmpServiceImpl(Å¬·¡½º) <----------> EmpDAO <-----------> MySQL
- (main¸Ş¼­µå)               - ºñÁî´Ï½º·ÎÁ÷ Ã³¸®                   - DB ¿¬µ¿
- -»ç¿ëÀÚÀÔ·Â¹×               - Æ®·£Àè¼ÇÃ³¸®(***)
-  Ãâ·Â(È­¸éÃ³¸®)
+ EmpMain       <-------->  EmpServiceImpl(í´ë˜ìŠ¤) <----------> EmpDAO <-----------> MySQL
+ (mainë©”ì„œë“œ)               - ë¹„ì¦ˆë‹ˆìŠ¤ë¡œì§ ì²˜ë¦¬                   - DB ì—°ë™
+ -ì‚¬ìš©ìì…ë ¥ë°               - íŠ¸ëœì­ì…˜ì²˜ë¦¬(***)
+  ì¶œë ¥(í™”ë©´ì²˜ë¦¬)
                                                  EmpDTO
-						 - µ¥ÀÌÅÍ Àü´Ş¿ë
+						 - ë°ì´í„° ì „ë‹¬ìš©
 
-2) MyBatis ¿¬µ¿
+2) MyBatis ì—°ë™
 
-  °¡. MySQL µå¶óÀÌ¹ö ¹× MyBatis ¶óÀÌºê·¯¸® ´Ù¿î·Îµå ¹× build path
+  ê°€. MySQL ë“œë¼ì´ë²„ ë° MyBatis ë¼ì´ë¸ŒëŸ¬ë¦¬ ë‹¤ìš´ë¡œë“œ ë° build path
      mysql-connector-j-8.3.0.jar
      mybatis-3.5.14.jar
 
-  ³ª. DB ¿¬µ¿½Ã ÇÊ¿äÇÑ 4°³ÀÇ °ªÀ» ÀúÀåÇÑ jdbc.properties ÀÛ¼º
-    => src Æú´õ ( classpath °æ·Î )
-    => package Çü½Ä »ç¿ë °¡´É ( ¿¹> com.config.jdbc.properties )
-       Á¢±ÙÇÒ ¶§´Â / °æ·Î »ç¿ë ( ¿¹> com/confog/jdbc.properties )
+  ë‚˜. DB ì—°ë™ì‹œ í•„ìš”í•œ 4ê°œì˜ ê°’ì„ ì €ì¥í•œ jdbc.properties ì‘ì„±
+    => src í´ë” ( classpath ê²½ë¡œ )
+    => package í˜•ì‹ ì‚¬ìš© ê°€ëŠ¥ ( ì˜ˆ> com.config.jdbc.properties )
+       ì ‘ê·¼í•  ë•ŒëŠ” / ê²½ë¡œ ì‚¬ìš© ( ì˜ˆ> com/confog/jdbc.properties )
     
-    * È¯°æº¯¼ö
-     JAVA_HOME=jdkÈ¨µğ·ºÅä¸®°æ·Î
-     PATH=¸í·É¾î°æ·Î;¸í·É¾î°æ·Î1
-     CLASSPATH=Å¬·¡½ºÆÄÀÏÀÌÀÖ´Â°æ·Î(*.jar)
+    * í™˜ê²½ë³€ìˆ˜
+     JAVA_HOME=jdkí™ˆë””ë ‰í† ë¦¬ê²½ë¡œ
+     PATH=ëª…ë ¹ì–´ê²½ë¡œ;ëª…ë ¹ì–´ê²½ë¡œ1
+     CLASSPATH=í´ë˜ìŠ¤íŒŒì¼ì´ìˆëŠ”ê²½ë¡œ(*.jar)
 
-  ´Ù. Å×ÀÌºíÀÇ ÄÃ·³À» ÀúÀåÇÏ±â À§ÇÑ DTO Å¬·¡½º ÀÛ¼º
-     ==> emp Å×ÀÌºí ·¹ÄÚµå ÀúÀå¿ëÀ¸·Î com.dto.EmpDTO ÀÛ¼º
-     ==> ÀÚµ¿À¸·Î mappingÇØ¼­ »ç¿ëÇÏ±â À§ÇØ¼­
-         EmpDTOÀÇ º¯¼ö¸íÀº °¡´ÉÇÏ¸é emp Å×ÀÌºíÀÇ ÄÃ·³¸íÀ¸·Î ÁöÁ¤ÇÑ´Ù.
-         ¹İµå½Ã Å×ÀÌºíÀÇ ÄÃ·³¸íÀ¸·Î ÁöÁ¤µÈ setÄÃ·¯¸í() , getÄÃ·³¸í() ÁöÁ¤ÇØ¾ß µÈ´Ù.(******)
-     ==> DTO ´Â ±âº»»ı¼ºÀÚ°¡ ÇÊ¼öÀÌ´Ù.
-       ÀÌÀ¯´Â <select id="paging" resultType="EmpDTO"> ÁöÁ¤ÇÏ¸é
-       ³»ºÎÀûÀ¸·Î ½Ã½ºÅÛÀÌ ±âº»»ı¼ºÀÚ¸¦ ÀÌ¿ëÇØ¼­ EmpDTO¸¦ °´Ã¼»ı¼ºÇÑ´Ù.
-     ==> Å×ÀÌºí´ç ÇÑ°³¾¿ ÀÛ¼º.
+  ë‹¤. í…Œì´ë¸”ì˜ ì»¬ëŸ¼ì„ ì €ì¥í•˜ê¸° ìœ„í•œ DTO í´ë˜ìŠ¤ ì‘ì„±
+     ==> emp í…Œì´ë¸” ë ˆì½”ë“œ ì €ì¥ìš©ìœ¼ë¡œ com.dto.EmpDTO ì‘ì„±
+     ==> ìë™ìœ¼ë¡œ mappingí•´ì„œ ì‚¬ìš©í•˜ê¸° ìœ„í•´ì„œ
+         EmpDTOì˜ ë³€ìˆ˜ëª…ì€ ê°€ëŠ¥í•˜ë©´ emp í…Œì´ë¸”ì˜ ì»¬ëŸ¼ëª…ìœ¼ë¡œ ì§€ì •í•œë‹¤.
+         ë°˜ë“œì‹œ í…Œì´ë¸”ì˜ ì»¬ëŸ¼ëª…ìœ¼ë¡œ ì§€ì •ëœ setì»¬ëŸ¬ëª…() , getì»¬ëŸ¼ëª…() ì§€ì •í•´ì•¼ ëœë‹¤.(******)
+     ==> DTO ëŠ” ê¸°ë³¸ìƒì„±ìê°€ í•„ìˆ˜ì´ë‹¤.
+       ì´ìœ ëŠ” <select id="paging" resultType="EmpDTO"> ì§€ì •í•˜ë©´
+       ë‚´ë¶€ì ìœ¼ë¡œ ì‹œìŠ¤í…œì´ ê¸°ë³¸ìƒì„±ìë¥¼ ì´ìš©í•´ì„œ EmpDTOë¥¼ ê°ì²´ìƒì„±í•œë‹¤.
+     ==> í…Œì´ë¸”ë‹¹ í•œê°œì”© ì‘ì„±.
   
-  ¶ó. 2°³ÀÇ xml ÀÛ¼º
-     => src Æú´õ ( classpath °æ·Î )
-     => package Çü½Ä »ç¿ë °¡´É ( ¿¹> com.config.Configuration.xml )
-       Á¢±ÙÇÒ ¶§´Â / °æ·Î »ç¿ë ( ¿¹> com/confog/Configuration.xml )
+  ë¼. 2ê°œì˜ xml ì‘ì„±
+     => src í´ë” ( classpath ê²½ë¡œ )
+     => package í˜•ì‹ ì‚¬ìš© ê°€ëŠ¥ ( ì˜ˆ> com.config.Configuration.xml )
+       ì ‘ê·¼í•  ë•ŒëŠ” / ê²½ë¡œ ì‚¬ìš© ( ì˜ˆ> com/confog/Configuration.xml )
 
-     a. ¼³Á¤ Á¤º¸
-       - ¿ëµµ: jdbc.properties µî·ÏÇØ¼­ DB ¿¬µ¿ÇÔ.
-              DTO º°Äª ÁöÁ¤.
-	      mapper µî·Ï.
- https://mybatis.org/mybatis-3/getting-started.html#building-sqlsessionfactory-from-xml ÂüÁ¶
-	¿¹> Configuration.xml
-
-
-     b. sql Á¤º¸
-       - ¿ëµµ: sql ¹® ¼³Á¤.
-       - Å×ÀÌºí´ç ÇÑ°³¾¿ ÀÛ¼º.
-       - Å×ÀÌºíMapper.xml ¸í¸í¹ı ±ÇÀå.
-https://mybatis.org/mybatis-3/getting-started.html#exploring-mapped-sql-statements ÂüÁ¶
-        ¿¹> EmpMapper.xml
+     a. ì„¤ì • ì •ë³´
+       - ìš©ë„: jdbc.properties ë“±ë¡í•´ì„œ DB ì—°ë™í•¨.
+              DTO ë³„ì¹­ ì§€ì •.
+	      mapper ë“±ë¡.
+ https://mybatis.org/mybatis-3/getting-started.html#building-sqlsessionfactory-from-xml ì°¸ì¡°
+	ì˜ˆ> Configuration.xml
 
 
-   ¸¶. Configuration.xml¸¦ ÀÚ¹ÙÄÚµå·Î ÀĞ±â
-https://mybatis.org/mybatis-3/getting-started.html#building-sqlsessionfactory-from-xml ÂüÁ¶
+     b. sql ì •ë³´
+       - ìš©ë„: sql ë¬¸ ì„¤ì •.
+       - í…Œì´ë¸”ë‹¹ í•œê°œì”© ì‘ì„±.
+       - í…Œì´ë¸”Mapper.xml ëª…ëª…ë²• ê¶Œì¥.
+https://mybatis.org/mybatis-3/getting-started.html#exploring-mapped-sql-statements ì°¸ì¡°
+        ì˜ˆ> EmpMapper.xml
 
-  ¿øº»:
+
+   ë§ˆ. Configuration.xmlë¥¼ ìë°”ì½”ë“œë¡œ ì½ê¸°
+https://mybatis.org/mybatis-3/getting-started.html#building-sqlsessionfactory-from-xml ì°¸ì¡°
+
+  ì›ë³¸:
         String resource = "org/mybatis/example/mybatis-config.xml";
 	InputStream inputStream = Resources.getResourceAsStream(resource);
 	SqlSessionFactory sqlSessionFactory =
 	  new SqlSessionFactoryBuilder().build(inputStream);
 
- º¯°æ: 
+ ë³€ê²½: 
        MySqlSessionFactory.java
 
        public class MySqlSessionFactory {
@@ -411,38 +411,38 @@ https://mybatis.org/mybatis-3/getting-started.html#building-sqlsessionfactory-fr
 			e.printStackTrace();
 		}
 sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
-	}//end static ºí·°
+	}//end static ë¸”ëŸ­
 	
-	// SqlSessionFactory ·ÎºÎÅÍ SqlSession ¾ò´Â ¸Ş¼­µå
+	// SqlSessionFactory ë¡œë¶€í„° SqlSession ì–»ëŠ” ë©”ì„œë“œ
 	public static SqlSession getSession() {
-		// MyBatis´Â ¸í½ÃÀûÀ¸·Î commit ÁöÁ¤ÇØ¾ß µÈ´Ù.
-		SqlSession session = sqlSessionFactory.openSession(); // openSession(false) µ¿ÀÏ
+		// MyBatisëŠ” ëª…ì‹œì ìœ¼ë¡œ commit ì§€ì •í•´ì•¼ ëœë‹¤.
+		SqlSession session = sqlSessionFactory.openSession(); // openSession(false) ë™ì¼
 		return session;
 	}
 	
 ##################################################################################
 
-    ¹Ù.  Service ÀÛ¼º
+    ë°”.  Service ì‘ì„±
  
-     a. ±¸Á¶
+     a. êµ¬ì¡°
       
-       com.service.EmpService (ÀÎÅÍÆäÀÌ½º)
+       com.service.EmpService (ì¸í„°í˜ì´ìŠ¤)
           |
-      com.service.EmpServiceImpl (Å¬·¡½º)
+      com.service.EmpServiceImpl (í´ë˜ìŠ¤)
     
-     b. ¿ªÇÒ
-        - ºñÁî´Ï½º ·ÎÁ÷
-	- Æ®·£Àè¼Ç Ã³¸® (***** )
+     b. ì—­í• 
+        - ë¹„ì¦ˆë‹ˆìŠ¤ ë¡œì§
+	- íŠ¸ëœì­ì…˜ ì²˜ë¦¬ (***** )
 
-     c. Æ¯Â¡
-        - SqlSession ¸¸ ¾òÀ½.
-          DAO·Î SqlSession¸¦ Àü´ŞÇØ¾ß µÊ.
+     c. íŠ¹ì§•
+        - SqlSession ë§Œ ì–»ìŒ.
+          DAOë¡œ SqlSessionë¥¼ ì „ë‹¬í•´ì•¼ ë¨.
 
 
-    * Connection °ú SqlSession Æ¯Â¡
-    => ¹İµå½Ã ¸Ş¼­µå¾È¿¡¼­ ·ÎÄÃ º¯¼ö·Î ¾ò¾î¾ß µÈ´Ù. ( thread-safe º¸Àå )
-      ÀÌÀ¯´Â °øÀ¯ÇÏ¸é Àı´ë ¾ÈµÊ.
-     # JDBC ¹öÀü
+    * Connection ê³¼ SqlSession íŠ¹ì§•
+    => ë°˜ë“œì‹œ ë©”ì„œë“œì•ˆì—ì„œ ë¡œì»¬ ë³€ìˆ˜ë¡œ ì–»ì–´ì•¼ ëœë‹¤. ( thread-safe ë³´ì¥ )
+      ì´ìœ ëŠ” ê³µìœ í•˜ë©´ ì ˆëŒ€ ì•ˆë¨.
+     # JDBC ë²„ì „
 
      public int insert(){
         Connection con = null;
@@ -456,25 +456,29 @@ sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
         con.close();
      }
 
-   »ç. DAO ÀÛ¼º
+   ì‚¬. DAO ì‘ì„±
 
-    a. ±¸Á¶
+    a. êµ¬ì¡°
       - com.dao.EmpDAO.java
 
-    b. ¿ªÇÒ
-      - MySQL ¿¬µ¿
+    b. ì—­í• 
+      - MySQL ì—°ë™
       
-     c. Æ¯Â¡
-      - Service¿¡¼­ Àü´ŞÇÑ SqlSessionÀ¸·Î ¸Ş¼­µå È£ÃâÇØ¼­ DB ¿¬µ¿.
+     c. íŠ¹ì§•
+      - Serviceì—ì„œ ì „ë‹¬í•œ SqlSessionìœ¼ë¡œ ë©”ì„œë“œ í˜¸ì¶œí•´ì„œ DB ì—°ë™.
 
-   ¾Æ. Main ÀÛ¼º
+   ì•„. Main ì‘ì„±
 
-      a. ±¸Á¶
+      a. êµ¬ì¡°
       - com.dao.EmpMain
 
-      b. ¿ªÇÒ
-      - »ç¿ëÀÚ µ¥ÀÌÅÍ ÀÔ·Â ¹× Ãâ·Â ( È­¸éÃ³¸® )
+      b. ì—­í• 
+      - ì‚¬ìš©ì ë°ì´í„° ì…ë ¥ ë° ì¶œë ¥ ( í™”ë©´ì²˜ë¦¬ )
       
-     c. Æ¯Â¡
-      - Service ¿Í ¿¬µ¿
-      - EmpDAO »ı¼ºÇØ¼­ Service¿¡ ¼³Á¤. (****)
+     c. íŠ¹ì§•
+      - Service ì™€ ì—°ë™
+      - EmpDAO ìƒì„±í•´ì„œ Serviceì— ì„¤ì •. (****)
+
+######################################################################
+ì¡°ì¸ ( ResultMap í™œìš© )
+https://mybatis.org/mybatis-3/ko/sqlmap-xml.html#result-maps
